@@ -1,0 +1,28 @@
+{
+  "volume": "VOLUME-2B",
+  "source": "/mnt/6E9A84429A8408B3/WORK/BetterGovPH/Budget-NEP/NEP_PDF_DATA/pdf_ocr/output/v2b-full",
+  "trees": {
+    "byou": {
+      "file": "byou.json.gz",
+      "kind": "A",
+      "span": {
+        "from": 13,
+        "to": 108
+      },
+      "n_rows": 2341,
+      "n_roots": 29,
+      "n_pages": 96
+    },
+    "pap": {
+      "file": "pap.json.gz",
+      "kind": "B",
+      "span": {
+        "from": 115,
+        "to": 691
+      },
+      "n_rows": 16298,
+      "n_roots": 42,
+      "n_pages": 576
+    }
+  }
+}

@@ -10,6 +10,19 @@ Full-featured **pdf_ocr live** viewer as the site root:
 
 The lighter HTML-only packed viewer is **not** the primary UX here.
 
+## Right-panel views
+
+1. **PDF OCR** — per-page tables (default)
+2. **By-OU Tree** — collated hierarchy p.13–108 (`data/v2b-full/trees/byou.json.gz`)
+3. **PAP Tree** — collated hierarchy p.115–691 (`…/pap.json.gz`)
+
+Rebuild trees from monorepo:
+
+```bash
+python pdf_ocr/scripts/collate_hier_trees.py pdf_ocr/output/v2b-full
+python NEP-VOL-2-BROWSER/scripts/sync_from_repo.py --skip-pdf
+```
+
 ## Layout
 
 ```text

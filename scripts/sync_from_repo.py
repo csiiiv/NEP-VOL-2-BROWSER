@@ -26,6 +26,7 @@ PACK_SRC = ROOT / "raw-viewer" / "data" / "pdf_ocr"
 LIVE_SRC = ROOT / "raw-viewer" / "static" / "pdf-ocr-live.html"
 QA_REDIRECT = ROOT / "raw-viewer" / "static" / "qa.html"
 QA_PANEL_JS = ROOT / "raw-viewer" / "static" / "qa-panel.js"
+TREE_PANEL_JS = ROOT / "raw-viewer" / "static" / "tree-panel.js"
 PDF_GZ = ROOT / "pdfs" / "NEP-2027-VOLUME-2B_OCR.pdf.gz"
 
 SITE_CONFIG = """
@@ -88,6 +89,8 @@ def sync_viewer() -> None:
     (BROWSER / "index.html").write_text(html, encoding="utf-8")
     if QA_PANEL_JS.is_file():
         shutil.copy2(QA_PANEL_JS, BROWSER / "qa-panel.js")
+    if TREE_PANEL_JS.is_file():
+        shutil.copy2(TREE_PANEL_JS, BROWSER / "tree-panel.js")
     if QA_REDIRECT.is_file():
         # Point redirect at index.html (pack-mode site root)
         redir = QA_REDIRECT.read_text(encoding="utf-8")
@@ -139,6 +142,21 @@ def sync_pack(name: str) -> dict:
             src_f = qa_src / fname
             if src_f.is_file():
                 shutil.copy2(src_f, qa_dest / fname)
+
+    # Collated hierarchy trees (prefer .gz)
+    trees_src = ROOT / "pdf_ocr" / "output" / name / "trees"
+    trees_dest = dest / "trees"
+    if trees_src.is_dir():
+        trees_dest.mkdir(parents=True, exist_ok=True)
+        for fname in ("index.json", "byou.json.gz", "pap.json.gz", "byou.json", "pap.json"):
+            src_f = trees_src / fname
+            if not src_f.is_file():
+                continue
+            # Skip uncompressed if gzip twin exists (keep Pages lean)
+            if fname.endswith(".json") and fname != "index.json":
+                if (trees_src / f"{fname}.gz").is_file():
+                    continue
+            shutil.copy2(src_f, trees_dest / fname)
 
     return manifest
 

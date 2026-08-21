@@ -304,8 +304,71 @@ body.split-dragging { cursor: col-resize; user-select: none; }
 #row-detail .rd-kv .v { word-break: break-word; }
 
 #right { flex: 1 1 auto; display: flex; flex-direction: column; min-width: 280px; }
+#viewbar {
+  flex: 0 0 auto; display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+  padding: 6px 10px; background: var(--panel); border-bottom: 1px solid var(--border);
+}
+#viewbar .lbl {
+  color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: .06em;
+}
+#viewbar button {
+  font-size: 11px; padding: 3px 9px;
+}
+#viewbar button.active {
+  border-color: var(--accent); background: #1a2838; color: var(--accent); font-weight: 650;
+}
+#viewbar .tr-search {
+  margin-left: auto; min-width: 140px; max-width: 220px; flex: 1;
+  font-size: 12px; padding: 3px 8px;
+}
 #docpane {
   flex: 1; overflow: auto; padding: 12px 14px 24px; outline: none; background: var(--bg);
+}
+#treepane {
+  flex: 1; overflow: auto; padding: 10px 12px 24px; background: var(--bg); display: none;
+}
+#treepane.on { display: block; }
+#docpane.off { display: none; }
+
+.tr-head { margin: 0 0 10px; }
+.tr-title { font-weight: 650; font-size: 13px; }
+.tr-muted { color: var(--muted); font-weight: 500; font-size: 11px; margin-left: 8px; }
+.tr-empty { color: var(--muted); padding: 16px 4px; }
+.tr-node { margin: 2px 0; border-left: 1px solid var(--border); padding-left: 6px; }
+.tr-node > summary {
+  cursor: pointer; list-style: none; display: flex; flex-wrap: wrap; gap: 6px 10px;
+  align-items: baseline; padding: 3px 4px; border-radius: 4px;
+}
+.tr-node > summary::-webkit-details-marker { display: none; }
+.tr-node > summary::before {
+  content: "▸"; color: var(--muted); font-size: 10px; width: 12px; display: inline-block;
+}
+.tr-node[open] > summary::before { content: "▾"; }
+.tr-node > summary:hover { background: var(--panel); }
+.tr-children { margin: 0 0 4px 10px; }
+.tr-leaf {
+  display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: baseline;
+  padding: 2px 4px 2px 16px; border-radius: 4px;
+}
+.tr-leaf:hover { background: var(--panel); }
+.tr-label { font-size: 12px; line-height: 1.35; }
+.tr-count {
+  font-size: 10px; color: var(--muted); background: var(--panel2);
+  border: 1px solid var(--border); border-radius: 8px; padding: 0 6px;
+}
+.tr-meta { display: inline-flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.tr-role, .tr-prexc {
+  font-size: 10px; color: var(--muted); font-family: ui-monospace, Consolas, monospace;
+}
+.tr-prexc { color: #9fd4c2; }
+.tr-page {
+  font-size: 10px; padding: 0 5px; color: var(--accent); background: transparent;
+  border-color: transparent;
+}
+.tr-page:hover { text-decoration: underline; color: var(--sel); }
+.tr-amt {
+  flex: 1 1 100%; font-size: 11px; color: #b8c0d0;
+  font-family: ui-monospace, Consolas, monospace; padding-left: 12px;
 }
 .scroll-loader {
   display: none; text-align: center; padding: 12px 0; color: var(--muted); font-size: 11px;
@@ -567,7 +630,15 @@ tr.funding td.amt { color: #c5d4e8; }
   </div>
   <div id="splitbar" role="separator" aria-orientation="vertical"></div>
   <div id="right">
+    <div id="viewbar">
+      <span class="lbl">View</span>
+      <button type="button" data-view="ocr" class="active" title="Per-page OCR tables">PDF OCR</button>
+      <button type="button" data-view="byou" title="Collated By-OU hierarchy (p.13–108)">By-OU Tree</button>
+      <button type="button" data-view="pap" title="Collated PAP hierarchy (p.115–691)">PAP Tree</button>
+      <input id="tree-q" class="tr-search" type="search" placeholder="Filter tree…" hidden>
+    </div>
     <div id="docpane" tabindex="-1"></div>
+    <div id="treepane" aria-label="Hierarchy tree"></div>
   </div>
 </div>
 
@@ -674,6 +745,7 @@ window.__NEP_VIEWER__ = {
 <script type="module">
 import * as pdfjsLib from "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs";
 import { createQaPanel, QA_REPORT_IDS } from "./qa-panel.js";
+import { renderTreeInto, fetchTreeJson } from "./tree-panel.js";
 
 pdfjsLib.GlobalWorkerOptions.workerSrc =
   "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs";
@@ -704,6 +776,18 @@ const PDF_URL = (vol) => `${SITE.pdfBase}/NEP-2027-${vol}_OCR.pdf`;
 const PACK_MANIFEST_URL = (name) => `${PACK_BASE}/${name}/manifest.json`;
 const PACK_SHARD_URL = (name, file) => `${PACK_BASE}/${name}/${file}`;
 const PACK_QA_URL = (name, file) => `${PACK_BASE}/${name}/qa/${file}`;
+const TREE_INDEX_CANDIDATES = (name) => {
+  const outs = [];
+  if (OUTPUT_BASE) outs.push(`${OUTPUT_BASE}/${encodeURIComponent(name)}/trees/index.json`);
+  if (PACK_BASE) outs.push(`${PACK_BASE}/${encodeURIComponent(name)}/trees/index.json`);
+  return outs;
+};
+const TREE_FILE_CANDIDATES = (name, file) => {
+  const outs = [];
+  if (OUTPUT_BASE) outs.push(`${OUTPUT_BASE}/${encodeURIComponent(name)}/trees/${file}`);
+  if (PACK_BASE) outs.push(`${PACK_BASE}/${encodeURIComponent(name)}/trees/${file}`);
+  return outs;
+};
 
 const SCROLL_BUFFER = 2;
 const SCROLL_EDGE = 1;
@@ -751,6 +835,9 @@ const state = {
   pageCount: 0,
   selectedBlockId: null,
   kindFilter: "",
+  rightView: "ocr", // ocr | byou | pap
+  treeCache: { byou: null, pap: null, index: null },
+  treeQuery: "",
   selection: null, // { kind: "cell"|"col", pdf_rect, label, page0, colKey? }
   show: { cells: false, cols: false },
   zoom: { mode: "fitw", pct: 100 },
@@ -2535,6 +2622,7 @@ async function loadPack(name, page0) {
   state.dataShardCache.clear();
   state.manifest = null;
   state.index = null;
+  state.treeCache = { byou: null, pap: null, index: null };
   $("#run").value = name;
   $("#pageno").value = String(page0 + 1);
 
@@ -2588,6 +2676,7 @@ async function loadRun(run, page0) {
   state.pages = [];
   state.byPdf = new Map();
   state.inflight.clear();
+  state.treeCache = { byou: null, pap: null, index: null };
   $("#run").value = run;
   $("#pageno").value = String(page0 + 1);
 
@@ -2822,6 +2911,104 @@ $("#z-rot").onclick = () => {
     document.body.classList.remove("split-dragging");
   });
 })();
+
+async function fetchFirstOk(urls) {
+  let lastErr = null;
+  for (const url of urls) {
+    try {
+      return await fetchTreeJson(url);
+    } catch (err) {
+      lastErr = err;
+    }
+  }
+  throw lastErr || new Error("not found");
+}
+
+async function ensureTree(which) {
+  if (state.treeCache[which]) return state.treeCache[which];
+  const name = state.packName || state.run;
+  if (!state.treeCache.index) {
+    try {
+      state.treeCache.index = await fetchFirstOk(TREE_INDEX_CANDIDATES(name));
+    } catch (_) {
+      state.treeCache.index = { trees: {} };
+    }
+  }
+  const meta = state.treeCache.index.trees?.[which];
+  const file = meta?.file || `${which}.json.gz`;
+  const tree = await fetchFirstOk(TREE_FILE_CANDIDATES(name, file));
+  state.treeCache[which] = tree;
+  return tree;
+}
+
+function paintTree() {
+  const which = state.rightView;
+  const host = $("#treepane");
+  if (which !== "byou" && which !== "pap") return;
+  const tree = state.treeCache[which];
+  if (!tree) {
+    host.innerHTML = `<p class="tr-empty">Loading ${which} tree…</p>`;
+    return;
+  }
+  renderTreeInto(host, tree, {
+    query: state.treeQuery,
+    openDepth: which === "byou" ? 1 : 0,
+    onGoPage: async (page1, { row } = {}) => {
+      await setRightView("ocr");
+      await goToPage(page1, { row, push: true });
+    },
+  });
+}
+
+async function setRightView(view) {
+  state.rightView = view;
+  document.querySelectorAll("#viewbar [data-view]").forEach((btn) => {
+    btn.classList.toggle("active", btn.dataset.view === view);
+  });
+  const q = $("#tree-q");
+  const isTree = view === "byou" || view === "pap";
+  $("#docpane")?.classList.toggle("off", isTree);
+  $("#treepane")?.classList.toggle("on", isTree);
+  if (q) q.hidden = !isTree;
+
+  if (!isTree) {
+    setStatus(
+      state.mode === "pack"
+        ? `Pack ${state.packName} · PDF OCR view`
+        : `Live ${state.run} · PDF OCR view`
+    );
+    return;
+  }
+
+  const label = view === "byou" ? "By-OU Tree" : "PAP Tree";
+  $("#treepane").innerHTML = `<p class="tr-empty">Loading ${label}…</p>`;
+  setLoad(`Loading ${label}…`);
+  try {
+    await ensureTree(view);
+    paintTree();
+    const t = state.treeCache[view];
+    setStatus(
+      `${label} · p.${t.span?.from}–${t.span?.to} · ${t.n_rows} rows · ${t.n_roots} roots`
+    );
+  } catch (err) {
+    $("#treepane").innerHTML =
+      `<p class="tr-empty">Failed to load tree: ${escapeHtml(err.message || err)}. ` +
+      `Run <code>python pdf_ocr/scripts/collate_hier_trees.py …</code></p>`;
+    setStatus(`${label} load failed`);
+  } finally {
+    setLoad(null);
+  }
+}
+
+document.querySelectorAll("#viewbar [data-view]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    setRightView(btn.dataset.view || "ocr");
+  });
+});
+$("#tree-q")?.addEventListener("input", (e) => {
+  state.treeQuery = e.target.value || "";
+  paintTree();
+});
 
 window.addEventListener("resize", () => {
   if (state.pdfDoc) renderPdfPage(state.scroll.pdfFocusPage ?? state.page);
