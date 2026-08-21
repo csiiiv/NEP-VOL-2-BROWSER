@@ -1,0 +1,28 @@
+{
+  "packs": [
+    {
+      "name": "v2b-full",
+      "volume": "VOLUME-2B",
+      "page_count": 722,
+      "n_shards": 1,
+      "n_data_shards": 1,
+      "taxonomy": {
+        "present": true,
+        "table_count": 730,
+        "kinds": {
+          "A": 97,
+          "B": 576,
+          "C": 1,
+          "D": 1,
+          "E": 1,
+          "F": 4,
+          "G": 1,
+          "H": 5,
+          "P": 42,
+          "U": 2
+        }
+      },
+      "manifest": "v2b-full/manifest.json"
+    }
+  ]
+}

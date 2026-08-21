@@ -1,0 +1,2033 @@
+{
+  "pages": 722,
+  "order": [
+    "chainage",
+    "coordinates"
+  ],
+  "chainage": {
+    "cue_rows": 3562,
+    "parsed_rows": 3562,
+    "miss_rows": 0,
+    "parse_rate": 1.0,
+    "multi_segment_rows": 866,
+    "incomplete_spans": 4,
+    "spans_by_kind": {
+      "K": 3261,
+      "Chainage": 281,
+      "Sta": 2012,
+      "C": 158,
+      "KM": 1
+    }
+  },
+  "coordinates": {
+    "cue_rows": 595,
+    "parsed_rows": 595,
+    "miss_rows": 0,
+    "parse_rate": 1.0,
+    "multi_point_rows": 19,
+    "incomplete_spans": 28,
+    "swapped_lon_lat": 246,
+    "by_kind": {
+      "decimal": 742,
+      "decimal_hem": 13,
+      "dms": 1
+    }
+  },
+  "write": true,
+  "pages_written": 338,
+  "rows_touched": 8278,
+  "label_ocr_rewrites": 4156,
+  "dsc_rewrites": 0,
+  "dsc_matcher": "staged",
+  "title_ocr_rewrites": 0,
+  "all_kinds": false,
+  "chainage_hit_samples": [
+    {
+      "page": 195,
+      "row": 9,
+      "label": "Maharlika Highway (LZ)",
+      "label_title": "Maharlika Highway (LZ)",
+      "chainages": [
+        {
+          "kind": "K",
+          "from": "0026+(-1036)",
+          "to": "0026+(-120)"
+        },
+        {
+          "kind": "K",
+          "from": "0028+240",
+          "to": "0028+590"
+        },
+        {
+          "kind": "K",
+          "from": "0029+350",
+          "to": "0030+000"
+        }
+      ],
+      "n": 3
+    },
+    {
+      "page": 195,
+      "row": 11,
+      "label": "Manila North Rd",
+      "label_title": "Manila North Rd",
+      "chainages": [
+        {
+          "kind": "K",
+          "from": "0212+007",
+          "to": "0213+497"
+        },
+        {
+          "kind": "K",
+          "from": "0215+(-927)",
+          "to": "0215+(-837)"
+        },
+        {
+          "kind": "K",
+          "from": "0215+(-808)",
+          "to": "0215+(-077)"
+        }
+      ],
+      "n": 13
+    },
+    {
+      "page": 195,
+      "row": 12,
+      "label": "Manila North Rd",
+      "label_title": "Manila North Rd",
+      "chainages": [
+        {
+          "kind": "K",
+          "from": "0235+415",
+          "to": "0236+005"
+        },
+        {
+          "kind": "K",
+          "from": "0236+238",
+          "to": "0236+755"
+        },
+        {
+          "kind": "K",
+          "from": "0247+523",
+          "to": "0247+588"
+        }
+      ],
+      "n": 10
+    },
+    {
+      "page": 195,
+      "row": 13,
+      "label": "Pangasinan-La Union Inter-Provl Rd",
+      "label_title": "Pangasinan-La Union Inter-Provl Rd",
+      "chainages": [
+        {
+          "kind": "K",
+          "from": "0386+737",
+          "to": "0389+142"
+        }
+      ],
+      "n": 1
+    },
+    {
+      "page": 195,
+      "row": 14,
+      "label": "Pangasinan-La Union Inter-Provl Rd",
+      "label_title": "Pangasinan-La Union Inter-Provl Rd",
+      "chainages": [
+        {
+          "kind": "K",
+          "from": "0390+000",
+          "to": "0391+137"
+        },
+        {
+          "kind": "K",
+          "from": "0391+420",
+          "to": "0392+000"
+        }
+      ],
+      "n": 2
+    },
+    {
+      "page": 195,
+      "row": 16,
+      "label": "Cauayan-Cabatuan Rd",
+      "label_title": "Cauayan-Cabatuan Rd",
+      "chainages": [
+        {
+          "kind": "K",
+          "from": "0378+137",
+          "to": "0380+268"
+        }
+      ],
+      "n": 1
+    },
+    {
+      "page": 195,
+      "row": 17,
+      "label": "Jct Ipil-Quirino Bdry Rd",
+      "label_title": "Jct Ipil-Quirino Bdry Rd",
+      "chainages": [
+        {
+          "kind": "K",
+          "from": "0350+157",
+          "to": "0352+902"
+        }
+      ],
+      "n": 1
+    },
+    {
+      "page": 195,
+      "row": 18,
+      "label": "Santiago-Tuguegarao Rd",
+      "label_title": "Santiago-Tuguegarao Rd",
+      "chainages": [
+        {
+          "kind": "K",
+          "from": "0362+050",
+          "to": "0363+753"
+        }
+      ],
+      "n": 1
+    },
+    {
+      "page": 195,
+      "row": 19,
+      "label": "Santiago-Tuguegarao Rd",
+      "label_title": "Santiago-Tuguegarao Rd",
+      "chainages": [
+        {
+          "kind": "K",
+          "from": "0431+070",
+          "to": "0433+241"
+        }
+      ],
+      "n": 1
+    },
+    {
+      "page": 195,
+      "row": 21,
+      "label": "Jose Abad Santos Ave (JASA)",
+      "label_title": "Jose Abad Santos Ave (JASA)",
+      "chainages": [
+        {
+          "kind": "K",
+          "from": "0081+134",
+          "to": "0082+000"
+        }
+      ],
+      "n": 1
+    },
+    {
+      "page": 195,
+      "row": 22,
+      "label": "Jose Abad Santos Ave (JASA)",
+      "label_title": "Jose Abad Santos Ave (JASA)",
+      "chainages": [
+        {
+          "kind": "K",
+          "from": "0082+000",
+          "to": "0083+000"
+        }
+      ],
+      "n": 1
+    },
+    {
+      "page": 196,
+      "row": 2,
+      "label": "Calamba-Sta Cruz-Famy Jct Rd",
+      "label_title": "Calamba-Sta Cruz-Famy Jct Rd",
+      "chainages": [
+        {
+          "kind": "K",
+          "from": "0074+145",
+          "to": "0075+427"
+        },
+        {
+          "kind": "K",
+          "from": "0076+114",
+          "to": "0076+558"
+        }
+      ],
+      "n": 2
+    },
+    {
+      "page": 196,
+      "row": 3,
+      "label": "Juanita R. Remulla, Sr. Rd",
+      "label_title": "Juanita R. Remulla, Sr. Rd",
+      "chainages": [
+        {
+          "kind": "K",
+          "from": "0040+191",
+          "to": "0040+435"
+        },
+        {
+          "kind": "K",
+          "from": "0040+660",
+          "to": "0042+000"
+        },
+        {
+          "kind": "K",
+          "from": "0045+577",
+          "to": "0045+983"
+        }
+      ],
+      "n": 6
+    },
+    {
+      "page": 196,
+      "row": 4,
+      "label": "Maharlika Highway ( Manila South Road)",
+      "label_title": "Maharlika Highway ( Manila South Road)",
+      "chainages": [
+        {
+          "kind": "K",
+          "from": "0042+336",
+          "to": "0042+410"
+        }
+      ],
+      "n": 1
+    },
+    {
+      "page": 196,
+      "row": 5,
+      "label": "Maharlika Highway ( Manila South Road)",
+      "label_title": "Maharlika Highway ( Manila South Road)",
+      "chainages": [
+        {
+          "kind": "K",
+          "from": "0044+553",
+          "to": "0045+000"
+        }
+      ],
+      "n": 1
+    },
+    {
+      "page": 196,
+      "row": 6,
+      "label": "Maharlika Highway ( Manila South Road)",
+      "label_title": "Maharlika Highway ( Manila South Road)",
+      "chainages": [
+        {
+          "kind": "K",
+          "from": "0048+016",
+          "to": "0048+349"
+        },
+        {
+          "kind": "K",
+          "from": "0049+945",
+          "to": "0050+000"
+        }
+      ],
+      "n": 2
+    },
+    {
+      "page": 196,
+      "row": 7,
+      "label": "Maharlika Highway (MSR Diversion Rd)",
+      "label_title": "Maharlika Highway (MSR Diversion Rd)",
+      "chainages": [
+        {
+          "kind": "K",
+          "from": "0125+(-350)",
+          "to": "0126+000"
+        }
+      ],
+      "n": 1
+    },
+    {
+      "page": 196,
+      "row": 8,
+      "label": "Manila-Batangas Rd",
+      "label_title": "Manila-Batangas Rd",
+      "chainages": [
+        {
+          "kind": "K",
+          "from": "0065+000",
+          "to": "0065+874"
+        },
+        {
+          "kind": "K",
+          "from": "0068+000",
+          "to": "0069+334"
+        }
+      ],
+      "n": 2
+    },
+    {
+      "page": 196,
+      "row": 9,
+      "label": "Maspang H-way",
+      "label_title": "Maspang H-way",
+      "chainages": [
+        {
+          "kind": "K",
+          "from": "0070+(-895)",
+          "to": "0071+280"
+        },
+        {
+          "kind": "K",
+          "from": "0071+613",
+          "to": "0072+045"
+        }
+      ],
+      "n": 2
+    },
+    {
+      "page": 196,
+      "row": 11,
+      "label": "Preventive Maintenance along Calapan North Road",
+      "label_title": "Preventive Maintenance along Calapan North Road",
+      "chainages": [
+        {
+          "kind": "K",
+          "from": "0015+964",
+          "to": "0016+181"
+        },
+        {
+          "kind": "K",
+          "from": "0018+452",
+          "to": "0019+511"
+        },
+        {
+          "kind": "K",
+          "from": "0026+962",
+          "to": "0027+311"
+        }
+      ],
+      "n": 6
+    }
+  ],
+  "chainage_miss_samples": [],
+  "chainage_samples_by_kind": {
+    "kind:K": [
+      {
+        "page": 195,
+        "row": 9,
+        "label": "Maharlika Highway (LZ)",
+        "label_title": "Maharlika Highway (LZ)",
+        "chainages": [
+          {
+            "kind": "K",
+            "from": "0026+(-1036)",
+            "to": "0026+(-120)"
+          },
+          {
+            "kind": "K",
+            "from": "0028+240",
+            "to": "0028+590"
+          },
+          {
+            "kind": "K",
+            "from": "0029+350",
+            "to": "0030+000"
+          }
+        ],
+        "n": 3
+      },
+      {
+        "page": 195,
+        "row": 11,
+        "label": "Manila North Rd",
+        "label_title": "Manila North Rd",
+        "chainages": [
+          {
+            "kind": "K",
+            "from": "0212+007",
+            "to": "0213+497"
+          },
+          {
+            "kind": "K",
+            "from": "0215+(-927)",
+            "to": "0215+(-837)"
+          },
+          {
+            "kind": "K",
+            "from": "0215+(-808)",
+            "to": "0215+(-077)"
+          }
+        ],
+        "n": 13
+      },
+      {
+        "page": 195,
+        "row": 12,
+        "label": "Manila North Rd",
+        "label_title": "Manila North Rd",
+        "chainages": [
+          {
+            "kind": "K",
+            "from": "0235+415",
+            "to": "0236+005"
+          },
+          {
+            "kind": "K",
+            "from": "0236+238",
+            "to": "0236+755"
+          },
+          {
+            "kind": "K",
+            "from": "0247+523",
+            "to": "0247+588"
+          }
+        ],
+        "n": 10
+      },
+      {
+        "page": 195,
+        "row": 13,
+        "label": "Pangasinan-La Union Inter-Provl Rd",
+        "label_title": "Pangasinan-La Union Inter-Provl Rd",
+        "chainages": [
+          {
+            "kind": "K",
+            "from": "0386+737",
+            "to": "0389+142"
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 195,
+        "row": 14,
+        "label": "Pangasinan-La Union Inter-Provl Rd",
+        "label_title": "Pangasinan-La Union Inter-Provl Rd",
+        "chainages": [
+          {
+            "kind": "K",
+            "from": "0390+000",
+            "to": "0391+137"
+          },
+          {
+            "kind": "K",
+            "from": "0391+420",
+            "to": "0392+000"
+          }
+        ],
+        "n": 2
+      },
+      {
+        "page": 195,
+        "row": 16,
+        "label": "Cauayan-Cabatuan Rd",
+        "label_title": "Cauayan-Cabatuan Rd",
+        "chainages": [
+          {
+            "kind": "K",
+            "from": "0378+137",
+            "to": "0380+268"
+          }
+        ],
+        "n": 1
+      }
+    ],
+    "multi_segment": [
+      {
+        "page": 195,
+        "row": 9,
+        "label": "Maharlika Highway (LZ)",
+        "label_title": "Maharlika Highway (LZ)",
+        "chainages": [
+          {
+            "kind": "K",
+            "from": "0026+(-1036)",
+            "to": "0026+(-120)"
+          },
+          {
+            "kind": "K",
+            "from": "0028+240",
+            "to": "0028+590"
+          },
+          {
+            "kind": "K",
+            "from": "0029+350",
+            "to": "0030+000"
+          }
+        ],
+        "n": 3
+      },
+      {
+        "page": 195,
+        "row": 11,
+        "label": "Manila North Rd",
+        "label_title": "Manila North Rd",
+        "chainages": [
+          {
+            "kind": "K",
+            "from": "0212+007",
+            "to": "0213+497"
+          },
+          {
+            "kind": "K",
+            "from": "0215+(-927)",
+            "to": "0215+(-837)"
+          },
+          {
+            "kind": "K",
+            "from": "0215+(-808)",
+            "to": "0215+(-077)"
+          }
+        ],
+        "n": 13
+      },
+      {
+        "page": 195,
+        "row": 12,
+        "label": "Manila North Rd",
+        "label_title": "Manila North Rd",
+        "chainages": [
+          {
+            "kind": "K",
+            "from": "0235+415",
+            "to": "0236+005"
+          },
+          {
+            "kind": "K",
+            "from": "0236+238",
+            "to": "0236+755"
+          },
+          {
+            "kind": "K",
+            "from": "0247+523",
+            "to": "0247+588"
+          }
+        ],
+        "n": 10
+      },
+      {
+        "page": 195,
+        "row": 14,
+        "label": "Pangasinan-La Union Inter-Provl Rd",
+        "label_title": "Pangasinan-La Union Inter-Provl Rd",
+        "chainages": [
+          {
+            "kind": "K",
+            "from": "0390+000",
+            "to": "0391+137"
+          },
+          {
+            "kind": "K",
+            "from": "0391+420",
+            "to": "0392+000"
+          }
+        ],
+        "n": 2
+      },
+      {
+        "page": 196,
+        "row": 2,
+        "label": "Calamba-Sta Cruz-Famy Jct Rd",
+        "label_title": "Calamba-Sta Cruz-Famy Jct Rd",
+        "chainages": [
+          {
+            "kind": "K",
+            "from": "0074+145",
+            "to": "0075+427"
+          },
+          {
+            "kind": "K",
+            "from": "0076+114",
+            "to": "0076+558"
+          }
+        ],
+        "n": 2
+      },
+      {
+        "page": 196,
+        "row": 3,
+        "label": "Juanita R. Remulla, Sr. Rd",
+        "label_title": "Juanita R. Remulla, Sr. Rd",
+        "chainages": [
+          {
+            "kind": "K",
+            "from": "0040+191",
+            "to": "0040+435"
+          },
+          {
+            "kind": "K",
+            "from": "0040+660",
+            "to": "0042+000"
+          },
+          {
+            "kind": "K",
+            "from": "0045+577",
+            "to": "0045+983"
+          }
+        ],
+        "n": 6
+      }
+    ],
+    "kind:Chainage": [
+      {
+        "page": 198,
+        "row": 20,
+        "label": "Maharlika Highway (Pagadian City-Zamboanga City Rd) - (S01638MN)",
+        "label_title": "Maharlika Highway (Pagadian City-Zamboanga City Rd) - (S01638MN)",
+        "chainages": [
+          {
+            "kind": "Chainage",
+            "from": "000",
+            "to": "505"
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 198,
+        "row": 21,
+        "label": "Maharlika Highway (Pagadian City-Zamboanga City Rd) - (S01639MN)",
+        "label_title": "Maharlika Highway (Pagadian City-Zamboanga City Rd) - (S01639MN)",
+        "chainages": [
+          {
+            "kind": "Chainage",
+            "from": "000",
+            "to": "324"
+          },
+          {
+            "kind": "Chainage",
+            "from": "1048",
+            "to": "2603"
+          }
+        ],
+        "n": 2
+      },
+      {
+        "page": 199,
+        "row": 2,
+        "label": "Maharlika Highway (Lanao-Pagadian-Zamboanga City Rd) - (S01632MN)",
+        "label_title": "Maharlika Highway (Lanao-Pagadian-Zamboanga City Rd) - (S01632MN)",
+        "chainages": [
+          {
+            "kind": "Chainage",
+            "from": "000",
+            "to": "110"
+          },
+          {
+            "kind": "Chainage",
+            "from": "140",
+            "to": "270"
+          },
+          {
+            "kind": "Chainage",
+            "from": "300",
+            "to": "436"
+          }
+        ],
+        "n": 3
+      },
+      {
+        "page": 199,
+        "row": 3,
+        "label": "Maharlika Highway (Lanao-Pagadian-Zamboanga City Rd) - (S01634MN)",
+        "label_title": "Maharlika Highway (Lanao-Pagadian-Zamboanga City Rd) - (S01634MN)",
+        "chainages": [
+          {
+            "kind": "Chainage",
+            "from": "000",
+            "to": "116"
+          },
+          {
+            "kind": "Chainage",
+            "from": "197",
+            "to": "301"
+          }
+        ],
+        "n": 2
+      },
+      {
+        "page": 200,
+        "row": 12,
+        "label": "Maharlika Highway (Marbel-Makar Rd) - (S00253MN)",
+        "label_title": "Maharlika Highway (Marbel-Makar Rd) - (S00253MN)",
+        "chainages": [
+          {
+            "kind": "Chainage",
+            "from": "33078",
+            "to": "33564"
+          },
+          {
+            "kind": "Chainage",
+            "from": "34565",
+            "to": "35161"
+          }
+        ],
+        "n": 2
+      },
+      {
+        "page": 201,
+        "row": 37,
+        "label": "Naveleta-Naic-Tagaytay Rd - (S06092LZ)",
+        "label_title": "Naveleta-Naic-Tagaytay Rd - (S06092LZ)",
+        "chainages": [
+          {
+            "kind": "Chainage",
+            "from": "188",
+            "to": "212"
+          }
+        ],
+        "n": 1
+      }
+    ],
+    "incomplete": [
+      {
+        "page": 221,
+        "row": 27,
+        "label": "Tigbauan-Cordova-Leon Jct Rd",
+        "label_title": "Tigbauan-Cordova-Leon Jct Rd",
+        "chainages": [
+          {
+            "kind": "K",
+            "from": "0023+728",
+            "to": "0024+000"
+          },
+          {
+            "kind": "K",
+            "from": "0024+000",
+            "to": "0024+",
+            "incomplete": true
+          }
+        ],
+        "n": 2
+      },
+      {
+        "page": 243,
+        "row": 27,
+        "label": "Jose Abad Santos Ave (Jasa)",
+        "label_title": "Jose Abad Santos Ave (Jasa)",
+        "chainages": [
+          {
+            "kind": "K",
+            "from": "0121+864",
+            "to": "0121+956"
+          },
+          {
+            "kind": "K",
+            "from": "0122+068",
+            "to": "0122+",
+            "incomplete": true
+          }
+        ],
+        "n": 2
+      },
+      {
+        "page": 264,
+        "row": 36,
+        "label": "Jct Switch-Jct Monte Alegre Rd",
+        "label_title": "Jct Switch-Jct Monte Alegre Rd",
+        "chainages": [
+          {
+            "kind": "K",
+            "from": "1642+624",
+            "to": "1643+296"
+          },
+          {
+            "kind": "K",
+            "from": "1645+000",
+            "to": "1645+",
+            "incomplete": true
+          }
+        ],
+        "n": 2
+      },
+      {
+        "page": 276,
+        "row": 13,
+        "label": "Jct Bolodbolod-Albor Rd",
+        "label_title": "Jct Bolodbolod-Albor Rd",
+        "chainages": [
+          {
+            "kind": "K",
+            "from": "0060+(-809)",
+            "to": "0060+(-082)"
+          },
+          {
+            "kind": "K",
+            "from": "0060+(-069)",
+            "to": "K0060",
+            "incomplete": true
+          }
+        ],
+        "n": 2
+      }
+    ],
+    "kind:Sta": [
+      {
+        "page": 277,
+        "row": 6,
+        "label": "Bauang-San Fernando-San Juan Bypass Road (Bauang Section}, La Union",
+        "label_title": "Bauang-San Fernando-San Juan Bypass Road (Bauang Section}, La Union",
+        "chainages": [
+          {
+            "kind": "Sta",
+            "from": "0+000",
+            "to": "3+003"
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 277,
+        "row": 8,
+        "label": "Bauang-San Fernando-San Juan ByPass Road, San Fernando, La Union",
+        "label_title": "Bauang-San Fernando-San Juan ByPass Road, San Fernando, La Union",
+        "chainages": [
+          {
+            "kind": "Sta",
+            "from": "7+797.87",
+            "to": "13+461.69"
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 277,
+        "row": 11,
+        "label": "Dagupan-Mangaldan Diversion Road, Dagupan City-Mangaldan, Sta.- Pangasinan",
+        "label_title": "Dagupan-Mangaldan Diversion Road, Dagupan City-Mangaldan, Sta.- Pangasinan",
+        "chainages": [
+          {
+            "kind": "Sta",
+            "from": "0+861",
+            "to": "1+512"
+          },
+          {
+            "kind": "Sta",
+            "from": "5+280"
+          },
+          {
+            "kind": "Sta",
+            "from": "6+089.9"
+          }
+        ],
+        "n": 3
+      },
+      {
+        "page": 277,
+        "row": 12,
+        "label": "Dagupan-Mangaldan-Calasiao Circumferential Road, Dagupan City-Mangaldan, Pangasinan",
+        "label_title": "Dagupan-Mangaldan-Calasiao Circumferential Road, Dagupan City-Mangaldan, Pangasinan",
+        "chainages": [
+          {
+            "kind": "Sta",
+            "from": "6+114.62",
+            "to": "6+620.48"
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 277,
+        "row": 14,
+        "label": "Laoag-San Nicolas Bypass Road, San Nicolas, Ilocos Norte",
+        "label_title": "Laoag-San Nicolas Bypass Road, San Nicolas, Ilocos Norte",
+        "chainages": [
+          {
+            "kind": "Sta",
+            "from": "4+237.62",
+            "to": "5+318.72"
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 277,
+        "row": 17,
+        "label": "Malasiqui Diversion Road, Malasiqui, Pangasinan",
+        "label_title": "Malasiqui Diversion Road, Malasiqui, Pangasinan",
+        "chainages": [
+          {
+            "kind": "Sta",
+            "from": "7+680.5",
+            "to": "8+198.74"
+          }
+        ],
+        "n": 1
+      }
+    ],
+    "kind:C": [
+      {
+        "page": 347,
+        "row": 13,
+        "label": "Construction of Drainage along Yanga St. going to Maysilo Pumping Station, Malabon City",
+        "label_title": "Construction of Drainage along Yanga St. going to Maysilo Pumping Station, Malabon City",
+        "chainages": [
+          {
+            "kind": "C",
+            "from": "C0+000",
+            "to": "C0+964"
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 347,
+        "row": 15,
+        "label": "Construction of Drainage System along Gen. Borromeo St., Malabon City",
+        "label_title": "Construction of Drainage System along Gen. Borromeo St., Malabon City",
+        "chainages": [
+          {
+            "kind": "C",
+            "from": "C0+000",
+            "to": "C0+818"
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 347,
+        "row": 19,
+        "label": "Construction of Flood Control Structures, the Banks of Shelterville Creek, Barangay 171, Caloocan City",
+        "label_title": "Construction of Flood Control Structures, the Banks of Shelterville Creek, Barangay 171, Caloocan City",
+        "chainages": [
+          {
+            "kind": "C",
+            "from": "C0+000",
+            "to": "C0+238"
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 347,
+        "row": 20,
+        "label": "Construction of Flood Control Wall Along Pasolo Creek, Barangay Pasolo, Valenzuela City",
+        "label_title": "Construction of Flood Control Wall Along Pasolo Creek, Barangay Pasolo, Valenzuela City",
+        "chainages": [
+          {
+            "kind": "C",
+            "from": "C0+000",
+            "to": "C0+350"
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 347,
+        "row": 21,
+        "label": "Construction of Flood Control Wall along the Bankers, Barangay 171, Caloocan City",
+        "label_title": "Construction of Flood Control Wall along the Bankers, Barangay 171, Caloocan City",
+        "chainages": [
+          {
+            "kind": "C",
+            "from": "C0+500",
+            "to": "C0+816"
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 347,
+        "row": 22,
+        "label": "Construction of Flood Control Wall along the Banks of Creeks along Dona Aurora Creek, Baranqay 177, Caloocan City",
+        "label_title": "Construction of Flood Control Wall along the Banks of Creeks along Dona Aurora Creek, Baranqay 177, Caloocan City",
+        "chainages": [
+          {
+            "kind": "C",
+            "from": "C0+000",
+            "to": "C0+600"
+          }
+        ],
+        "n": 1
+      }
+    ],
+    "kind:KM": [
+      {
+        "page": 371,
+        "row": 7,
+        "label": "Construction of Drainage along Pangasinan Nueva-Ecija Road, Barangay Carmen East - Tomana East, Rosales, Pangasinan",
+        "label_title": "Construction of Drainage along Pangasinan Nueva-Ecija Road, Barangay Carmen East - Tomana East, Rosales, Pangasinan",
+        "chainages": [
+          {
+            "kind": "KM",
+            "from": "171+138",
+            "to": "174+622"
+          }
+        ],
+        "n": 1
+      }
+    ]
+  },
+  "gps_hit_samples": [
+    {
+      "page": 347,
+      "row": 7,
+      "label": "Completion of Dampalit Pumping Station (Pumps No. 3 and No. 4), Barangay Dampalit, Malabon City",
+      "label_title": "Completion of Dampalit Pumping Station (Pumps No. 3 and No. 4), Barangay Dampalit, Malabon City",
+      "coordinates": [
+        {
+          "raw": "(14.701817, 120.928578)",
+          "lat": 14.701817,
+          "lon": 120.928578,
+          "kind": "decimal"
+        }
+      ],
+      "n": 1
+    },
+    {
+      "page": 347,
+      "row": 8,
+      "label": "Construction of Bonifacio Pumping Station, Malabon City",
+      "label_title": "Construction of Bonifacio Pumping Station, Malabon City",
+      "coordinates": [
+        {
+          "raw": "(14.672467, 120.942268)",
+          "lat": 14.672467,
+          "lon": 120.942268,
+          "kind": "decimal"
+        }
+      ],
+      "n": 1
+    },
+    {
+      "page": 347,
+      "row": 9,
+      "label": "Construction of Celest Pumping Station, Navotas City",
+      "label_title": "Construction of Celest Pumping Station, Navotas City",
+      "coordinates": [
+        {
+          "raw": "(14.661703, 120.947822)",
+          "lat": 14.661703,
+          "lon": 120.947822,
+          "kind": "decimal"
+        }
+      ],
+      "n": 1
+    },
+    {
+      "page": 348,
+      "row": 2,
+      "label": "Construction of Flood Gate, Barangay Dampalit, Malabon City",
+      "label_title": "Construction of Flood Gate, Barangay Dampalit, Malabon City",
+      "coordinates": [
+        {
+          "raw": "(14.685342, 120.937810)",
+          "lat": 14.685342,
+          "lon": 120.93781,
+          "kind": "decimal"
+        }
+      ],
+      "n": 1
+    },
+    {
+      "page": 348,
+      "row": 7,
+      "label": "Construction of G. Araneta Avenue Pumping Station, Quezon City",
+      "label_title": "Construction of G. Araneta Avenue Pumping Station, Quezon City",
+      "coordinates": [
+        {
+          "raw": "14.619030, 121.016025",
+          "lat": 14.61903,
+          "lon": 121.016025,
+          "kind": "decimal"
+        }
+      ],
+      "n": 1
+    },
+    {
+      "page": 348,
+      "row": 8,
+      "label": "Construction of Malabon City Hall Pumping Station including Drainage System, Malabon City",
+      "label_title": "Construction of Malabon City Hall Pumping Station including Drainage System, Malabon City",
+      "coordinates": [
+        {
+          "raw": "(14.657047, 120.950025)",
+          "lat": 14.657047,
+          "lon": 120.950025,
+          "kind": "decimal"
+        }
+      ],
+      "n": 1
+    },
+    {
+      "page": 348,
+      "row": 11,
+      "label": "Construction of Maysilo Pumping Station with Closing of Gaps along Malabon-Tullahan River, Malabon City",
+      "label_title": "Construction of Maysilo Pumping Station with Closing of Gaps along Malabon-Tullahan River, Malabon City",
+      "coordinates": [
+        {
+          "raw": "(14.674117, 120.96322)",
+          "lat": 14.674117,
+          "lon": 120.96322,
+          "kind": "decimal"
+        }
+      ],
+      "n": 1
+    },
+    {
+      "page": 348,
+      "row": 12,
+      "label": "Construction of Pumping Station at Barangay 625 along Dalisay St., Manila City",
+      "label_title": "Construction of Pumping Station at Barangay 625 along Dalisay St., Manila City",
+      "coordinates": [
+        {
+          "raw": "(14.58871068, 121.01646968)",
+          "lat": 14.5887107,
+          "lon": 121.0164697,
+          "kind": "decimal"
+        }
+      ],
+      "n": 1
+    },
+    {
+      "page": 348,
+      "row": 14,
+      "label": "Construction of Pumping Station, Tanza Kaliwa, Barangay Tanza 1, Navotas City",
+      "label_title": "Construction of Pumping Station, Tanza Kaliwa, Barangay Tanza 1, Navotas City",
+      "coordinates": [
+        {
+          "raw": "(14.67327, 120.941505)",
+          "lat": 14.67327,
+          "lon": 120.941505,
+          "kind": "decimal"
+        }
+      ],
+      "n": 1
+    },
+    {
+      "page": 348,
+      "row": 16,
+      "label": "Construction of Remegio Pumping Station 2, Malabon City",
+      "label_title": "Construction of Remegio Pumping Station 2, Malabon City",
+      "coordinates": [
+        {
+          "raw": "(14.67442, 120.962198)",
+          "lat": 14.67442,
+          "lon": 120.962198,
+          "kind": "decimal"
+        }
+      ],
+      "n": 1
+    },
+    {
+      "page": 349,
+      "row": 3,
+      "label": "Rehabilitation of Arroceros Pumping Station, Manila City",
+      "label_title": "Rehabilitation of Arroceros Pumping Station, Manila City",
+      "coordinates": [
+        {
+          "raw": "14.593238, 120.983126",
+          "lat": 14.593238,
+          "lon": 120.983126,
+          "kind": "decimal"
+        }
+      ],
+      "n": 1
+    },
+    {
+      "page": 350,
+      "row": 1,
+      "label": "Rehabilitation of Kalabingkoho Pump Station, Barangay Malanday, Valenzuela City",
+      "label_title": "Rehabilitation of Kalabingkoho Pump Station, Barangay Malanday, Valenzuela City",
+      "coordinates": [
+        {
+          "raw": "14.721878, 120.957836",
+          "lat": 14.721878,
+          "lon": 120.957836,
+          "kind": "decimal"
+        }
+      ],
+      "n": 1
+    },
+    {
+      "page": 350,
+      "row": 6,
+      "label": "Rehabilitation of Pandacan Pumping Station, Manila City",
+      "label_title": "Rehabilitation of Pandacan Pumping Station, Manila City",
+      "coordinates": [
+        {
+          "raw": "14.593337, 121.003283",
+          "lat": 14.593337,
+          "lon": 121.003283,
+          "kind": "decimal"
+        }
+      ],
+      "n": 1
+    },
+    {
+      "page": 350,
+      "row": 14,
+      "label": "Rehabilitation of Sta Clara Pumping Station, Manila City",
+      "label_title": "Rehabilitation of Sta Clara Pumping Station, Manila City",
+      "coordinates": [
+        {
+          "raw": "14.579576, 121.016544",
+          "lat": 14.579576,
+          "lon": 121.016544,
+          "kind": "decimal"
+        }
+      ],
+      "n": 1
+    },
+    {
+      "page": 350,
+      "row": 15,
+      "label": "Upgrading of Balete Pumping Station, Manila City",
+      "label_title": "Upgrading of Balete Pumping Station, Manila City",
+      "coordinates": [
+        {
+          "raw": "(14.587813, 120.987103)",
+          "lat": 14.587813,
+          "lon": 120.987103,
+          "kind": "decimal"
+        }
+      ],
+      "n": 1
+    },
+    {
+      "page": 350,
+      "row": 16,
+      "label": "Upgrading of Harbor View Pumping Station, Manila City",
+      "label_title": "Upgrading of Harbor View Pumping Station, Manila City",
+      "coordinates": [
+        {
+          "raw": "14.578508, 120.975252",
+          "lat": 14.578508,
+          "lon": 120.975252,
+          "kind": "decimal"
+        }
+      ],
+      "n": 1
+    },
+    {
+      "page": 352,
+      "row": 7,
+      "label": "Construction of Concrete Slope Protection Structure with Steel Sheet Pile Foundation along Angat River, Barangay Pulo, San Rafael, Bulacan",
+      "label_title": "Construction of Concrete Slope Protection Structure with Steel Sheet Pile Foundation along Angat River, Barangay Pulo, S",
+      "coordinates": [
+        {
+          "raw": "(14.961361, 121.005369)",
+          "lat": 14.961361,
+          "lon": 121.005369,
+          "kind": "decimal"
+        }
+      ],
+      "n": 1
+    },
+    {
+      "page": 354,
+      "row": 14,
+      "label": "Construction of Flood Mitigation Structure along Halang Creek at Soliven Avenue to Greenheights Newtown Subdivision, Barangay Mayamot, Antipolo City",
+      "label_title": "Construction of Flood Mitigation Structure along Halang Creek at Soliven Avenue to Greenheights Newtown Subdivision, Bar",
+      "coordinates": [
+        {
+          "raw": "(14.63001 \u00b0N, 121.12183\u00b0E)",
+          "lat": 14.63001,
+          "lon": 121.12183,
+          "kind": "decimal_hem"
+        }
+      ],
+      "n": 1
+    },
+    {
+      "page": 358,
+      "row": 24,
+      "label": "Construction of Flood Mitigation Structure along Pitogo River, Barangay Pitogo, Consolacion, Cebu",
+      "label_title": "Construction of Flood Mitigation Structure along Pitogo River, Barangay Pitogo, Consolacion, Cebu",
+      "coordinates": [
+        {
+          "raw": "(10.378902, 123.964015)",
+          "lat": 10.378902,
+          "lon": 123.964015,
+          "kind": "decimal"
+        }
+      ],
+      "n": 1
+    },
+    {
+      "page": 364,
+      "row": 8,
+      "label": "Construction of Marina Development Project, Butuan City Riverpark and Riverwalk with Drainage and Sidewalks, Butuan City, Agusan Del Norte",
+      "label_title": "Construction of Marina Development Project, Butuan City Riverpark and Riverwalk with Drainage and Sidewalks, Butuan City",
+      "coordinates": [
+        {
+          "raw": "8.951115, 125.543812",
+          "lat": 8.951115,
+          "lon": 125.543812,
+          "kind": "decimal"
+        }
+      ],
+      "n": 1
+    }
+  ],
+  "gps_miss_samples": [],
+  "gps_samples_by_kind": {
+    "kind:decimal": [
+      {
+        "page": 347,
+        "row": 7,
+        "label": "Completion of Dampalit Pumping Station (Pumps No. 3 and No. 4), Barangay Dampalit, Malabon City",
+        "label_title": "Completion of Dampalit Pumping Station (Pumps No. 3 and No. 4), Barangay Dampalit, Malabon City",
+        "coordinates": [
+          {
+            "raw": "(14.701817, 120.928578)",
+            "lat": 14.701817,
+            "lon": 120.928578,
+            "kind": "decimal"
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 347,
+        "row": 8,
+        "label": "Construction of Bonifacio Pumping Station, Malabon City",
+        "label_title": "Construction of Bonifacio Pumping Station, Malabon City",
+        "coordinates": [
+          {
+            "raw": "(14.672467, 120.942268)",
+            "lat": 14.672467,
+            "lon": 120.942268,
+            "kind": "decimal"
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 347,
+        "row": 9,
+        "label": "Construction of Celest Pumping Station, Navotas City",
+        "label_title": "Construction of Celest Pumping Station, Navotas City",
+        "coordinates": [
+          {
+            "raw": "(14.661703, 120.947822)",
+            "lat": 14.661703,
+            "lon": 120.947822,
+            "kind": "decimal"
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 348,
+        "row": 2,
+        "label": "Construction of Flood Gate, Barangay Dampalit, Malabon City",
+        "label_title": "Construction of Flood Gate, Barangay Dampalit, Malabon City",
+        "coordinates": [
+          {
+            "raw": "(14.685342, 120.937810)",
+            "lat": 14.685342,
+            "lon": 120.93781,
+            "kind": "decimal"
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 348,
+        "row": 7,
+        "label": "Construction of G. Araneta Avenue Pumping Station, Quezon City",
+        "label_title": "Construction of G. Araneta Avenue Pumping Station, Quezon City",
+        "coordinates": [
+          {
+            "raw": "14.619030, 121.016025",
+            "lat": 14.61903,
+            "lon": 121.016025,
+            "kind": "decimal"
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 348,
+        "row": 8,
+        "label": "Construction of Malabon City Hall Pumping Station including Drainage System, Malabon City",
+        "label_title": "Construction of Malabon City Hall Pumping Station including Drainage System, Malabon City",
+        "coordinates": [
+          {
+            "raw": "(14.657047, 120.950025)",
+            "lat": 14.657047,
+            "lon": 120.950025,
+            "kind": "decimal"
+          }
+        ],
+        "n": 1
+      }
+    ],
+    "kind:decimal_hem": [
+      {
+        "page": 354,
+        "row": 14,
+        "label": "Construction of Flood Mitigation Structure along Halang Creek at Soliven Avenue to Greenheights Newtown Subdivision, Barangay Mayamot, Antipolo City",
+        "label_title": "Construction of Flood Mitigation Structure along Halang Creek at Soliven Avenue to Greenheights Newtown Subdivision, Bar",
+        "coordinates": [
+          {
+            "raw": "(14.63001 \u00b0N, 121.12183\u00b0E)",
+            "lat": 14.63001,
+            "lon": 121.12183,
+            "kind": "decimal_hem"
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 383,
+        "row": 14,
+        "label": "Construction of Drainage Canal across Marikina Infanta Highway (near Ahon Coffee) K0033, Barangay San Jose, Antipolo City",
+        "label_title": "Construction of Drainage Canal across Marikina Infanta Highway (near Ahon Coffee) K0033, Barangay San Jose, Antipolo Cit",
+        "coordinates": [
+          {
+            "raw": "(14.631951 \u00b0N, 121.232339\u00b0E)",
+            "lat": 14.631951,
+            "lon": 121.232339,
+            "kind": "decimal_hem"
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 384,
+        "row": 7,
+        "label": "Construction of Flood Mitigation Structure along Bulao River at Sitio Ondoy, Sitio San Verga, Sitio Dilain Palayan, Barangay Muntindilaw, Antipolo City",
+        "label_title": "Construction of Flood Mitigation Structure along Bulao River at Sitio Ondoy, Sitio San Verga, Sitio Dilain Palayan, Bara",
+        "coordinates": [
+          {
+            "raw": "(14.599294\u00b0N, 121.124592\u00b0E)",
+            "lat": 14.599294,
+            "lon": 121.124592,
+            "kind": "decimal_hem"
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 384,
+        "row": 10,
+        "label": "Rehabilitation of Drainage Canal at Halang Road (along Knights of Columbus), Barangay San Roque, Antipolo City",
+        "label_title": "Rehabilitation of Drainage Canal at Halang Road (along Knights of Columbus), Barangay San Roque, Antipolo City",
+        "coordinates": [
+          {
+            "raw": "(14.S64132\u00b0N, 121.176475\u00b0E)",
+            "lat": 14.564132,
+            "lon": 121.176475,
+            "kind": "decimal_hem"
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 384,
+        "row": 11,
+        "label": "Rehabilitation of Flood Control Structure at Payagwan River, Barangay San Jose, Antipolo City",
+        "label_title": "Rehabilitation of Flood Control Structure at Payagwan River, Barangay San Jose, Antipolo City",
+        "coordinates": [
+          {
+            "raw": "(14.660891\u00b0N, 121.253200 \u00b0E)",
+            "lat": 14.660891,
+            "lon": 121.2532,
+            "kind": "decimal_hem"
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 399,
+        "row": 9,
+        "label": "Construction of Daguitan Flood Control Structure and Drainage system, Daguitan River Basin Downstream, Poblacion Dist. VI, Burauen, Leyte",
+        "label_title": "Construction of Daguitan Flood Control Structure and Drainage system, Daguitan River Basin Downstream, Poblacion Dist. V",
+        "coordinates": [
+          {
+            "raw": "(LS: 10.9730N, 124.9025E)",
+            "lat": 10.973,
+            "lon": 124.9025,
+            "kind": "decimal_hem",
+            "role": "LS"
+          },
+          {
+            "raw": "(RS: 10.9734N, 124.9020E)",
+            "lat": 10.9734,
+            "lon": 124.902,
+            "kind": "decimal_hem",
+            "role": "RS"
+          }
+        ],
+        "n": 2
+      }
+    ],
+    "incomplete": [
+      {
+        "page": 365,
+        "row": 20,
+        "label": "Construction of South Pinagkabalian Pumping Station, Malabon City",
+        "label_title": "Construction of South Pinagkabalian Pumping Station, Malabon City",
+        "coordinates": [
+          {
+            "raw": "(14.674353,",
+            "lat": 14.674353,
+            "kind": "decimal",
+            "incomplete": true
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 365,
+        "row": 21,
+        "label": "Construction of Tanza Housing 1 Pumping Station, Navotas City",
+        "label_title": "Construction of Tanza Housing 1 Pumping Station, Navotas City",
+        "coordinates": [
+          {
+            "raw": "(14.682914,",
+            "lat": 14.682914,
+            "kind": "decimal",
+            "incomplete": true
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 395,
+        "row": 9,
+        "label": "Construction of Pumping Station at Barangay Batis, San Juan City",
+        "label_title": "Construction of Pumping Station at Barangay Batis, San Juan City",
+        "coordinates": [
+          {
+            "raw": "(121.022756,",
+            "lon": 121.022756,
+            "kind": "decimal",
+            "incomplete": true
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 411,
+        "row": 12,
+        "label": "Construction of Water Supply, Barangay Asinan Proper, Subic, Zambales",
+        "label_title": "Construction of Water Supply, Barangay Asinan Proper, Subic, Zambales",
+        "coordinates": [
+          {
+            "raw": "(14.89507,",
+            "lat": 14.89507,
+            "kind": "decimal",
+            "incomplete": true
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 411,
+        "row": 13,
+        "label": "Construction of Water Supply, Barangay Batiawan, Subic Zambales",
+        "label_title": "Construction of Water Supply, Barangay Batiawan, Subic Zambales",
+        "coordinates": [
+          {
+            "raw": "(14.931408,",
+            "lat": 14.931408,
+            "kind": "decimal",
+            "incomplete": true
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 411,
+        "row": 14,
+        "label": "Construction of Water Supply, Barangay Cawag, Subic, Zambales",
+        "label_title": "Construction of Water Supply, Barangay Cawag, Subic, Zambales",
+        "coordinates": [
+          {
+            "raw": "(14.844035,",
+            "lat": 14.844035,
+            "kind": "decimal",
+            "incomplete": true
+          }
+        ],
+        "n": 1
+      }
+    ],
+    "swapped_lon_lat": [
+      {
+        "page": 369,
+        "row": 10,
+        "label": "Rehabilitation of Valencia Pumping Station, Manila City",
+        "label_title": "Rehabilitation of Valencia Pumping Station, Manila City",
+        "coordinates": [
+          {
+            "raw": "(121.00283581, 14.59742448)",
+            "lat": 14.5974245,
+            "lon": 121.0028358,
+            "kind": "decimal",
+            "swapped": true
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 375,
+        "row": 13,
+        "label": "Construction of Box Culvert, Barangay Kaybanban, City of San Jose del Monte, Bulacan",
+        "label_title": "Construction of Box Culvert, Barangay Kaybanban, City of San Jose del Monte, Bulacan",
+        "coordinates": [
+          {
+            "raw": "(121.097106, 14.814449)",
+            "lat": 14.814449,
+            "lon": 121.097106,
+            "kind": "decimal",
+            "swapped": true
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 375,
+        "row": 18,
+        "label": "Construction of Drainage Canal, Diamond Crest, Barangay San Manuel, City of San Jose Del Monte, Bulacan",
+        "label_title": "Construction of Drainage Canal, Diamond Crest, Barangay San Manuel, City of San Jose Del Monte, Bulacan",
+        "coordinates": [
+          {
+            "raw": "(121.072098, 14.780461)",
+            "lat": 14.780461,
+            "lon": 121.072098,
+            "kind": "decimal",
+            "swapped": true
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 402,
+        "row": 23,
+        "label": "Construction of Pumping Station, San Jose, Calumpit, Bulacan",
+        "label_title": "Construction of Pumping Station, San Jose, Calumpit, Bulacan",
+        "coordinates": [
+          {
+            "raw": "(120.731042, 14.885722)",
+            "lat": 14.885722,
+            "lon": 120.731042,
+            "kind": "decimal",
+            "swapped": true
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 418,
+        "row": 26,
+        "label": "Construction of Water Supply Systems, Brgy. Caniogan, Tubod, Lanao del Norte",
+        "label_title": "Construction of Water Supply Systems, Brgy. Caniogan, Tubod, Lanao del Norte",
+        "coordinates": [
+          {
+            "raw": "(123.89399, 7.995810)",
+            "lat": 7.99581,
+            "lon": 123.89399,
+            "kind": "decimal",
+            "swapped": true
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 437,
+        "row": 1,
+        "label": "Construction (Completion) of Laog Bridge, Barangay Laog, Angat, Bulacan",
+        "label_title": "Construction (Completion) of Laog Bridge, Barangay Laog, Angat, Bulacan",
+        "coordinates": [
+          {
+            "raw": "(121.031563, 14.924604)",
+            "lat": 14.924604,
+            "lon": 121.031563,
+            "kind": "decimal",
+            "swapped": true
+          }
+        ],
+        "n": 1
+      }
+    ],
+    "ocr_letter_digit": [
+      {
+        "page": 384,
+        "row": 10,
+        "label": "Rehabilitation of Drainage Canal at Halang Road (along Knights of Columbus), Barangay San Roque, Antipolo City",
+        "label_title": "Rehabilitation of Drainage Canal at Halang Road (along Knights of Columbus), Barangay San Roque, Antipolo City",
+        "coordinates": [
+          {
+            "raw": "(14.S64132\u00b0N, 121.176475\u00b0E)",
+            "lat": 14.564132,
+            "lon": 121.176475,
+            "kind": "decimal_hem"
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 566,
+        "row": 2,
+        "label": "Repair/Rehabilitation of Multi-Purpose Building (Barangay Hall), Mabalacat City, Pampanga Atlu-Bola - Bical - Bundagul - Cacutud - Calumpang - Camachiles - Dapd",
+        "label_title": "Repair/Rehabilitation of Multi-Purpose Building (Barangay Hall), Mabalacat City, Pampanga Atlu-Bola - Bical - Bundagul -",
+        "coordinates": [
+          {
+            "raw": "15.235720, 120.582129",
+            "lat": 15.23572,
+            "lon": 120.582129,
+            "kind": "decimal"
+          },
+          {
+            "raw": "15.195213, 120.619830",
+            "lat": 15.195213,
+            "lon": 120.61983,
+            "kind": "decimal"
+          },
+          {
+            "raw": "15.228599, 120.607119",
+            "lat": 15.228599,
+            "lon": 120.607119,
+            "kind": "decimal"
+          },
+          {
+            "raw": "1S.2231S4, 120.57779",
+            "lat": 15.223154,
+            "lon": 120.57779,
+            "kind": "decimal"
+          }
+        ],
+        "n": 27
+      },
+      {
+        "page": 630,
+        "row": 12,
+        "label": "Construction (Completion) of Multi-Purpose Building, Tagbac, Ragay, camarines Sur",
+        "label_title": "Construction (Completion) of Multi-Purpose Building, Tagbac, Ragay, camarines Sur",
+        "coordinates": [
+          {
+            "raw": "(13.7S0147N, 122.819633E)",
+            "lat": 13.750147,
+            "lon": 122.819633,
+            "kind": "decimal_hem"
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 678,
+        "row": 18,
+        "label": "Construction Four Story of Department of Human Settlement and Urban Development Regional Office II Building, Carig Sur, Tuguegarao City, Cagayan",
+        "label_title": "Construction Four Story of Department of Human Settlement and Urban Development Regional Office II Building, Carig Sur, ",
+        "coordinates": [
+          {
+            "raw": "17.6S365, 121.74721",
+            "lat": 17.65365,
+            "lon": 121.74721,
+            "kind": "decimal"
+          }
+        ],
+        "n": 1
+      },
+      {
+        "page": 683,
+        "row": 2,
+        "label": "Rehabilitation of DPWH Batanes District Engineering Office (DEO) Building - Annex Building (Technical Building), Barangay Kaychanarianan, Basco, Batanes",
+        "label_title": "Rehabilitation of DPWH Batanes District Engineering Office (DEO) Building - Annex Building (Technical Building), Baranga",
+        "coordinates": [
+          {
+            "raw": "(20.448S12\u00b0, 121.966952\u00b0)",
+            "lat": 20.448512,
+            "lon": 121.966952,
+            "kind": "decimal"
+          }
+        ],
+        "n": 1
+      }
+    ],
+    "multi_point": [
+      {
+        "page": 386,
+        "row": 26,
+        "label": "Construction of Drainage Structure along Transition House, Barangay San Isidro, Jaro, Iloilo City, Iloilo",
+        "label_title": "Construction of Drainage Structure along Transition House, Barangay San Isidro, Jaro, Iloilo City, Iloilo",
+        "coordinates": [
+          {
+            "raw": "(10.73971, 122.54791)",
+            "lat": 10.73971,
+            "lon": 122.54791,
+            "kind": "decimal"
+          },
+          {
+            "raw": "(10.73585, 122.54781)",
+            "lat": 10.73585,
+            "lon": 122.54781,
+            "kind": "decimal"
+          }
+        ],
+        "n": 2
+      },
+      {
+        "page": 399,
+        "row": 9,
+        "label": "Construction of Daguitan Flood Control Structure and Drainage system, Daguitan River Basin Downstream, Poblacion Dist. VI, Burauen, Leyte",
+        "label_title": "Construction of Daguitan Flood Control Structure and Drainage system, Daguitan River Basin Downstream, Poblacion Dist. V",
+        "coordinates": [
+          {
+            "raw": "(LS: 10.9730N, 124.9025E)",
+            "lat": 10.973,
+            "lon": 124.9025,
+            "kind": "decimal_hem",
+            "role": "LS"
+          },
+          {
+            "raw": "(RS: 10.9734N, 124.9020E)",
+            "lat": 10.9734,
+            "lon": 124.902,
+            "kind": "decimal_hem",
+            "role": "RS"
+          }
+        ],
+        "n": 2
+      },
+      {
+        "page": 402,
+        "row": 7,
+        "label": "Rehabilitation of Buli Creek, Barangay Sta. Lucia, Pasig City ( - )",
+        "label_title": "Rehabilitation of Buli Creek, Barangay Sta. Lucia, Pasig City ( - )",
+        "coordinates": [
+          {
+            "raw": "14.5787955, 121.1068795",
+            "lat": 14.5787955,
+            "lon": 121.1068795,
+            "kind": "decimal"
+          },
+          {
+            "raw": "14.5508543, 121.0788276",
+            "lat": 14.5508543,
+            "lon": 121.0788276,
+            "kind": "decimal"
+          }
+        ],
+        "n": 2
+      },
+      {
+        "page": 403,
+        "row": 13,
+        "label": "Rehabilitation of Aganan Flood Control Structure (Jaro-Aganan River), Barangay Jibao- an, Sta. Barbara, Iloilo",
+        "label_title": "Rehabilitation of Aganan Flood Control Structure (Jaro-Aganan River), Barangay Jibao- an, Sta. Barbara, Iloilo",
+        "coordinates": [
+          {
+            "raw": "(10.779801, 122.505634)",
+            "lat": 10.779801,
+            "lon": 122.505634,
+            "kind": "decimal"
+          },
+          {
+            "raw": "(10.779923, 122.505644)",
+            "lat": 10.779923,
+            "lon": 122.505644,
+            "kind": "decimal"
+          }
+        ],
+        "n": 2
+      },
+      {
+        "page": 563,
+        "row": 18,
+        "label": "Construction of Multi-Purpose Building (Covered Court), Angeles City, Pampanga (Cluster Barangays I) AGAPITO DEL ROSARI0- AMSIC - ANUNAS- BALIBAGO- CAPAYA- CLAR",
+        "label_title": "Construction of Multi-Purpose Building (Covered Court), Angeles City, Pampanga (Cluster Barangays I) AGAPITO DEL ROSARI0",
+        "coordinates": [
+          {
+            "raw": "15.144299318628299, 120.58950109064817",
+            "lat": 15.1442993,
+            "lon": 120.5895011,
+            "kind": "decimal"
+          },
+          {
+            "raw": "15.155914843123659, 120.57122824086312",
+            "lat": 15.1559148,
+            "lon": 120.5712282,
+            "kind": "decimal"
+          },
+          {
+            "raw": "15.155685101922105, 120.55356457224914",
+            "lat": 15.1556851,
+            "lon": 120.5535646,
+            "kind": "decimal"
+          }
+        ],
+        "n": 8
+      },
+      {
+        "page": 563,
+        "row": 19,
+        "label": "Construction of Multi-Purpose Building (Covered Court), Angeles City, Pampanga (Cluster Barangays II) CUTUD- LOURDES NORTH WEST- LOURDES SUR (TALIMUNDOC)- LOURD",
+        "label_title": "Construction of Multi-Purpose Building (Covered Court), Angeles City, Pampanga (Cluster Barangays II) CUTUD- LOURDES NOR",
+        "coordinates": [
+          {
+            "raw": "15.175510389013915, 120.62669571202673",
+            "lat": 15.1755104,
+            "lon": 120.6266957,
+            "kind": "decimal"
+          },
+          {
+            "raw": "15.144727873557219, 120.5846101806296",
+            "lat": 15.1447279,
+            "lon": 120.5846102,
+            "kind": "decimal"
+          },
+          {
+            "raw": "15.142032406195453, 120.59083143817257",
+            "lat": 15.1420324,
+            "lon": 120.5908314,
+            "kind": "decimal"
+          }
+        ],
+        "n": 8
+      }
+    ],
+    "ls_rs": [
+      {
+        "page": 399,
+        "row": 9,
+        "label": "Construction of Daguitan Flood Control Structure and Drainage system, Daguitan River Basin Downstream, Poblacion Dist. VI, Burauen, Leyte",
+        "label_title": "Construction of Daguitan Flood Control Structure and Drainage system, Daguitan River Basin Downstream, Poblacion Dist. V",
+        "coordinates": [
+          {
+            "raw": "(LS: 10.9730N, 124.9025E)",
+            "lat": 10.973,
+            "lon": 124.9025,
+            "kind": "decimal_hem",
+            "role": "LS"
+          },
+          {
+            "raw": "(RS: 10.9734N, 124.9020E)",
+            "lat": 10.9734,
+            "lon": 124.902,
+            "kind": "decimal_hem",
+            "role": "RS"
+          }
+        ],
+        "n": 2
+      },
+      {
+        "page": 399,
+        "row": 13,
+        "label": "Construction of Marabong Flood Control Structure and Drainage system, Marabong River Basin Downstream, Barangay Moguing, Burauen, Leyte (RS: 10.9622N, 124.902 7",
+        "label_title": "Construction of Marabong Flood Control Structure and Drainage system, Marabong River Basin Downstream, Barangay Moguing,",
+        "coordinates": [
+          {
+            "raw": "(LS:10.9615N, 124.9030E)",
+            "lat": 10.9615,
+            "lon": 124.903,
+            "kind": "decimal_hem",
+            "role": "LS"
+          }
+        ],
+        "n": 1
+      }
+    ],
+    "kind:dms": [
+      {
+        "page": 653,
+        "row": 2,
+        "label": "Construction of Multipurpose Buliding, Himayangan Compound, Catbalogan City",
+        "label_title": "Construction of Multipurpose Buliding, Himayangan Compound, Catbalogan City",
+        "coordinates": [
+          {
+            "raw": "(11 \u00b046'32.00\"N, 124\u00b053'6.04\"E)",
+            "lat": 11.7755556,
+            "lon": 124.8850111,
+            "kind": "dms"
+          }
+        ],
+        "n": 1
+      }
+    ]
+  },
+  "title_ocr_samples": []
+}

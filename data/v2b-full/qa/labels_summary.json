@@ -1,0 +1,4929 @@
+{
+  "dir": "/mnt/6E9A84429A8408B3/WORK/BetterGovPH/Budget-NEP/NEP_PDF_DATA/pdf_ocr/output/v2b-full",
+  "n_pages": 722,
+  "n_rows": 19567,
+  "n_labeled_rows": 19567,
+  "n_unique_labels": 11688,
+  "n_suspect": 26,
+  "n_suspect_unfixed": 26,
+  "n_suspect_fixed": 108,
+  "n_prose_skipped": 653,
+  "include_prose": false,
+  "n_near_dup_groups": 89,
+  "label_ocr_rewrites": 5863,
+  "rows_by_kind": {
+    "B": 16298,
+    "A": 2342,
+    "P": 689,
+    "F": 95,
+    "H": 87,
+    "G": 26,
+    "D": 20,
+    "C": 6,
+    "U": 3,
+    "E": 1
+  },
+  "suspect_reason_counts": {
+    "rare_spaced_sibling": 22,
+    "possible_split": 3,
+    "weird_punct": 1
+  },
+  "fixed_reason_counts": {
+    "bang_as_I": 38,
+    "letter_digit": 30,
+    "weird_punct": 19,
+    "possible_split": 17,
+    "known_word_split": 7
+  },
+  "top_unique": [
+    {
+      "label": "Central Office",
+      "count": 140,
+      "samples": [
+        {
+          "page": 8,
+          "row": 1
+        },
+        {
+          "page": 13,
+          "row": 5
+        },
+        {
+          "page": 23,
+          "row": 5
+        },
+        {
+          "page": 23,
+          "row": 10
+        },
+        {
+          "page": 23,
+          "row": 13
+        }
+      ],
+      "pages": [
+        8,
+        13,
+        23,
+        23,
+        23
+      ],
+      "kinds": {
+        "D": 1,
+        "A": 86,
+        "B": 53
+      }
+    },
+    {
+      "label": "National Capital Region",
+      "count": 93,
+      "samples": [
+        {
+          "page": 115,
+          "row": 2
+        },
+        {
+          "page": 115,
+          "row": 5
+        },
+        {
+          "page": 115,
+          "row": 14
+        },
+        {
+          "page": 121,
+          "row": 21
+        },
+        {
+          "page": 127,
+          "row": 24
+        }
+      ],
+      "pages": [
+        115,
+        115,
+        115,
+        121,
+        127
+      ],
+      "kinds": {
+        "B": 93
+      }
+    },
+    {
+      "label": "National Capital Region (NCR)",
+      "count": 89,
+      "samples": [
+        {
+          "page": 8,
+          "row": 3
+        },
+        {
+          "page": 13,
+          "row": 4
+        },
+        {
+          "page": 23,
+          "row": 4
+        },
+        {
+          "page": 23,
+          "row": 9
+        },
+        {
+          "page": 23,
+          "row": 12
+        }
+      ],
+      "pages": [
+        8,
+        13,
+        23,
+        23,
+        23
+      ],
+      "kinds": {
+        "D": 1,
+        "A": 88
+      }
+    },
+    {
+      "label": "Region VIII",
+      "count": 85,
+      "samples": [
+        {
+          "page": 119,
+          "row": 13
+        },
+        {
+          "page": 131,
+          "row": 19
+        },
+        {
+          "page": 135,
+          "row": 22
+        },
+        {
+          "page": 142,
+          "row": 21
+        },
+        {
+          "page": 143,
+          "row": 5
+        }
+      ],
+      "pages": [
+        119,
+        131,
+        135,
+        142,
+        143
+      ],
+      "kinds": {
+        "B": 85
+      }
+    },
+    {
+      "label": "Region XIII",
+      "count": 80,
+      "samples": [
+        {
+          "page": 121,
+          "row": 5
+        },
+        {
+          "page": 127,
+          "row": 9
+        },
+        {
+          "page": 142,
+          "row": 26
+        },
+        {
+          "page": 143,
+          "row": 10
+        },
+        {
+          "page": 144,
+          "row": 25
+        }
+      ],
+      "pages": [
+        121,
+        127,
+        142,
+        143,
+        144
+      ],
+      "kinds": {
+        "B": 80
+      }
+    },
+    {
+      "label": "Region IV-A",
+      "count": 78,
+      "samples": [
+        {
+          "page": 135,
+          "row": 3
+        },
+        {
+          "page": 137,
+          "row": 30
+        },
+        {
+          "page": 142,
+          "row": 15
+        },
+        {
+          "page": 142,
+          "row": 33
+        },
+        {
+          "page": 144,
+          "row": 14
+        }
+      ],
+      "pages": [
+        135,
+        137,
+        142,
+        142,
+        144
+      ],
+      "kinds": {
+        "B": 78
+      }
+    },
+    {
+      "label": "Region III",
+      "count": 77,
+      "samples": [
+        {
+          "page": 122,
+          "row": 30
+        },
+        {
+          "page": 128,
+          "row": 33
+        },
+        {
+          "page": 134,
+          "row": 27
+        },
+        {
+          "page": 142,
+          "row": 14
+        },
+        {
+          "page": 142,
+          "row": 32
+        }
+      ],
+      "pages": [
+        122,
+        128,
+        134,
+        142,
+        142
+      ],
+      "kinds": {
+        "B": 77
+      }
+    },
+    {
+      "label": "Region VII",
+      "count": 77,
+      "samples": [
+        {
+          "page": 125,
+          "row": 4
+        },
+        {
+          "page": 131,
+          "row": 7
+        },
+        {
+          "page": 135,
+          "row": 19
+        },
+        {
+          "page": 142,
+          "row": 20
+        },
+        {
+          "page": 143,
+          "row": 4
+        }
+      ],
+      "pages": [
+        125,
+        131,
+        135,
+        142,
+        143
+      ],
+      "kinds": {
+        "B": 77
+      }
+    },
+    {
+      "label": "Region XII",
+      "count": 76,
+      "samples": [
+        {
+          "page": 133,
+          "row": 2
+        },
+        {
+          "page": 142,
+          "row": 25
+        },
+        {
+          "page": 143,
+          "row": 9
+        },
+        {
+          "page": 144,
+          "row": 24
+        },
+        {
+          "page": 152,
+          "row": 27
+        }
+      ],
+      "pages": [
+        133,
+        142,
+        143,
+        144,
+        152
+      ],
+      "kinds": {
+        "B": 76
+      }
+    },
+    {
+      "label": "Region IX",
+      "count": 75,
+      "samples": [
+        {
+          "page": 135,
+          "row": 26
+        },
+        {
+          "page": 140,
+          "row": 13
+        },
+        {
+          "page": 142,
+          "row": 22
+        },
+        {
+          "page": 143,
+          "row": 6
+        },
+        {
+          "page": 144,
+          "row": 21
+        }
+      ],
+      "pages": [
+        135,
+        140,
+        142,
+        143,
+        144
+      ],
+      "kinds": {
+        "B": 75
+      }
+    },
+    {
+      "label": "Region VI",
+      "count": 72,
+      "samples": [
+        {
+          "page": 130,
+          "row": 19
+        },
+        {
+          "page": 135,
+          "row": 11
+        },
+        {
+          "page": 138,
+          "row": 36
+        },
+        {
+          "page": 142,
+          "row": 18
+        },
+        {
+          "page": 143,
+          "row": 2
+        }
+      ],
+      "pages": [
+        130,
+        135,
+        138,
+        142,
+        143
+      ],
+      "kinds": {
+        "B": 72
+      }
+    },
+    {
+      "label": "Region II",
+      "count": 70,
+      "samples": [
+        {
+          "page": 116,
+          "row": 15
+        },
+        {
+          "page": 128,
+          "row": 21
+        },
+        {
+          "page": 134,
+          "row": 23
+        },
+        {
+          "page": 142,
+          "row": 13
+        },
+        {
+          "page": 142,
+          "row": 31
+        }
+      ],
+      "pages": [
+        116,
+        128,
+        134,
+        142,
+        142
+      ],
+      "kinds": {
+        "B": 70
+      }
+    },
+    {
+      "label": "Region X",
+      "count": 69,
+      "samples": [
+        {
+          "page": 135,
+          "row": 29
+        },
+        {
+          "page": 142,
+          "row": 23
+        },
+        {
+          "page": 143,
+          "row": 7
+        },
+        {
+          "page": 144,
+          "row": 22
+        },
+        {
+          "page": 151,
+          "row": 34
+        }
+      ],
+      "pages": [
+        135,
+        142,
+        143,
+        144,
+        151
+      ],
+      "kinds": {
+        "B": 69
+      }
+    },
+    {
+      "label": "Cordillera Administrative Region",
+      "count": 67,
+      "samples": [
+        {
+          "page": 128,
+          "row": 8
+        },
+        {
+          "page": 134,
+          "row": 16
+        },
+        {
+          "page": 142,
+          "row": 12
+        },
+        {
+          "page": 142,
+          "row": 30
+        },
+        {
+          "page": 144,
+          "row": 29
+        }
+      ],
+      "pages": [
+        128,
+        134,
+        142,
+        142,
+        144
+      ],
+      "kinds": {
+        "B": 67
+      }
+    },
+    {
+      "label": "Region XI",
+      "count": 67,
+      "samples": [
+        {
+          "page": 120,
+          "row": 19
+        },
+        {
+          "page": 126,
+          "row": 23
+        },
+        {
+          "page": 135,
+          "row": 32
+        },
+        {
+          "page": 141,
+          "row": 7
+        },
+        {
+          "page": 142,
+          "row": 24
+        }
+      ],
+      "pages": [
+        120,
+        126,
+        135,
+        141,
+        142
+      ],
+      "kinds": {
+        "B": 67
+      }
+    },
+    {
+      "label": "Region V",
+      "count": 63,
+      "samples": [
+        {
+          "page": 135,
+          "row": 6
+        },
+        {
+          "page": 142,
+          "row": 17
+        },
+        {
+          "page": 143,
+          "row": 1
+        },
+        {
+          "page": 145,
+          "row": 19
+        },
+        {
+          "page": 146,
+          "row": 8
+        }
+      ],
+      "pages": [
+        135,
+        142,
+        143,
+        145,
+        146
+      ],
+      "kinds": {
+        "B": 63
+      }
+    },
+    {
+      "label": "MIMAROPA Region",
+      "count": 58,
+      "samples": [
+        {
+          "page": 142,
+          "row": 16
+        },
+        {
+          "page": 142,
+          "row": 34
+        },
+        {
+          "page": 155,
+          "row": 28
+        },
+        {
+          "page": 162,
+          "row": 7
+        },
+        {
+          "page": 168,
+          "row": 7
+        }
+      ],
+      "pages": [
+        142,
+        142,
+        155,
+        162,
+        168
+      ],
+      "kinds": {
+        "B": 58
+      }
+    },
+    {
+      "label": "Region I",
+      "count": 56,
+      "samples": [
+        {
+          "page": 115,
+          "row": 24
+        },
+        {
+          "page": 134,
+          "row": 20
+        },
+        {
+          "page": 142,
+          "row": 11
+        },
+        {
+          "page": 142,
+          "row": 29
+        },
+        {
+          "page": 145,
+          "row": 3
+        }
+      ],
+      "pages": [
+        115,
+        134,
+        142,
+        142,
+        145
+      ],
+      "kinds": {
+        "B": 56
+      }
+    },
+    {
+      "label": "Negros Island Region",
+      "count": 55,
+      "samples": [
+        {
+          "page": 118,
+          "row": 26
+        },
+        {
+          "page": 124,
+          "row": 29
+        },
+        {
+          "page": 142,
+          "row": 19
+        },
+        {
+          "page": 143,
+          "row": 3
+        },
+        {
+          "page": 144,
+          "row": 18
+        }
+      ],
+      "pages": [
+        118,
+        124,
+        142,
+        143,
+        144
+      ],
+      "kinds": {
+        "B": 55
+      }
+    },
+    {
+      "label": "Engineering Office",
+      "count": 53,
+      "samples": [
+        {
+          "page": 14,
+          "row": 25
+        },
+        {
+          "page": 15,
+          "row": 2
+        },
+        {
+          "page": 15,
+          "row": 25
+        },
+        {
+          "page": 16,
+          "row": 15
+        },
+        {
+          "page": 16,
+          "row": 17
+        }
+      ],
+      "pages": [
+        14,
+        15,
+        15,
+        16,
+        16
+      ],
+      "kinds": {
+        "A": 53
+      }
+    },
+    {
+      "label": "Maharlika Highway (LZ)",
+      "count": 52,
+      "samples": [
+        {
+          "page": 195,
+          "row": 9
+        },
+        {
+          "page": 196,
+          "row": 15
+        },
+        {
+          "page": 196,
+          "row": 16
+        },
+        {
+          "page": 196,
+          "row": 17
+        },
+        {
+          "page": 196,
+          "row": 18
+        }
+      ],
+      "pages": [
+        195,
+        196,
+        196,
+        196,
+        196
+      ],
+      "kinds": {
+        "B": 52
+      }
+    },
+    {
+      "label": "Leyte 4th District Engineering Office",
+      "count": 41,
+      "samples": [
+        {
+          "page": 19,
+          "row": 23
+        },
+        {
+          "page": 29,
+          "row": 25
+        },
+        {
+          "page": 33,
+          "row": 4
+        },
+        {
+          "page": 35,
+          "row": 25
+        },
+        {
+          "page": 44,
+          "row": 27
+        }
+      ],
+      "pages": [
+        19,
+        29,
+        33,
+        35,
+        44
+      ],
+      "kinds": {
+        "A": 17,
+        "B": 24
+      }
+    },
+    {
+      "label": "Nueva Ecija 1st District Engineering Office",
+      "count": 40,
+      "samples": [
+        {
+          "page": 15,
+          "row": 19
+        },
+        {
+          "page": 31,
+          "row": 9
+        },
+        {
+          "page": 38,
+          "row": 13
+        },
+        {
+          "page": 54,
+          "row": 13
+        },
+        {
+          "page": 58,
+          "row": 10
+        }
+      ],
+      "pages": [
+        15,
+        31,
+        38,
+        54,
+        58
+      ],
+      "kinds": {
+        "A": 15,
+        "B": 25
+      }
+    },
+    {
+      "label": "Apayao 2nd District Engineering Office",
+      "count": 39,
+      "samples": [
+        {
+          "page": 14,
+          "row": 11
+        },
+        {
+          "page": 38,
+          "row": 9
+        },
+        {
+          "page": 41,
+          "row": 3
+        },
+        {
+          "page": 44,
+          "row": 3
+        },
+        {
+          "page": 45,
+          "row": 19
+        }
+      ],
+      "pages": [
+        14,
+        38,
+        41,
+        44,
+        45
+      ],
+      "kinds": {
+        "A": 15,
+        "B": 24
+      }
+    },
+    {
+      "label": "Laguna 3rd District Engineering Office",
+      "count": 38,
+      "samples": [
+        {
+          "page": 16,
+          "row": 13
+        },
+        {
+          "page": 31,
+          "row": 20
+        },
+        {
+          "page": 35,
+          "row": 1
+        },
+        {
+          "page": 37,
+          "row": 4
+        },
+        {
+          "page": 38,
+          "row": 21
+        }
+      ],
+      "pages": [
+        16,
+        31,
+        35,
+        37,
+        38
+      ],
+      "kinds": {
+        "A": 15,
+        "B": 23
+      }
+    },
+    {
+      "label": "Batangas 2nd District Engineering Office",
+      "count": 37,
+      "samples": [
+        {
+          "page": 16,
+          "row": 5
+        },
+        {
+          "page": 29,
+          "row": 2
+        },
+        {
+          "page": 31,
+          "row": 13
+        },
+        {
+          "page": 38,
+          "row": 15
+        },
+        {
+          "page": 48,
+          "row": 6
+        }
+      ],
+      "pages": [
+        16,
+        29,
+        31,
+        38,
+        48
+      ],
+      "kinds": {
+        "A": 14,
+        "B": 23
+      }
+    },
+    {
+      "label": "Negros Occidental 3rd District Engineering Office",
+      "count": 35,
+      "samples": [
+        {
+          "page": 18,
+          "row": 16
+        },
+        {
+          "page": 29,
+          "row": 17
+        },
+        {
+          "page": 32,
+          "row": 15
+        },
+        {
+          "page": 35,
+          "row": 14
+        },
+        {
+          "page": 39,
+          "row": 17
+        }
+      ],
+      "pages": [
+        18,
+        29,
+        32,
+        35,
+        39
+      ],
+      "kinds": {
+        "A": 13,
+        "B": 22
+      }
+    },
+    {
+      "label": "Batangas 4th District Engineering Office",
+      "count": 33,
+      "samples": [
+        {
+          "page": 16,
+          "row": 7
+        },
+        {
+          "page": 29,
+          "row": 3
+        },
+        {
+          "page": 31,
+          "row": 14
+        },
+        {
+          "page": 38,
+          "row": 16
+        },
+        {
+          "page": 41,
+          "row": 18
+        }
+      ],
+      "pages": [
+        16,
+        29,
+        31,
+        38,
+        41
+      ],
+      "kinds": {
+        "A": 12,
+        "B": 21
+      }
+    },
+    {
+      "label": "Capiz 2nd District Engineering Office",
+      "count": 33,
+      "samples": [
+        {
+          "page": 18,
+          "row": 3
+        },
+        {
+          "page": 35,
+          "row": 10
+        },
+        {
+          "page": 42,
+          "row": 11
+        },
+        {
+          "page": 49,
+          "row": 28
+        },
+        {
+          "page": 51,
+          "row": 21
+        }
+      ],
+      "pages": [
+        18,
+        35,
+        42,
+        49,
+        51
+      ],
+      "kinds": {
+        "A": 11,
+        "B": 22
+      }
+    },
+    {
+      "label": "Cotabato 1st District Engineering Office",
+      "count": 33,
+      "samples": [
+        {
+          "page": 22,
+          "row": 6
+        },
+        {
+          "page": 33,
+          "row": 15
+        },
+        {
+          "page": 36,
+          "row": 8
+        },
+        {
+          "page": 37,
+          "row": 23
+        },
+        {
+          "page": 50,
+          "row": 13
+        }
+      ],
+      "pages": [
+        22,
+        33,
+        36,
+        37,
+        50
+      ],
+      "kinds": {
+        "A": 13,
+        "B": 20
+      }
+    },
+    {
+      "label": "Negros Occidental 5th District Engineering Office",
+      "count": 33,
+      "samples": [
+        {
+          "page": 18,
+          "row": 18
+        },
+        {
+          "page": 29,
+          "row": 18
+        },
+        {
+          "page": 37,
+          "row": 10
+        },
+        {
+          "page": 39,
+          "row": 18
+        },
+        {
+          "page": 42,
+          "row": 15
+        }
+      ],
+      "pages": [
+        18,
+        29,
+        37,
+        39,
+        42
+      ],
+      "kinds": {
+        "A": 12,
+        "B": 21
+      }
+    },
+    {
+      "label": "Cotabato 3rd District Engineering Office",
+      "count": 32,
+      "samples": [
+        {
+          "page": 22,
+          "row": 8
+        },
+        {
+          "page": 30,
+          "row": 13
+        },
+        {
+          "page": 33,
+          "row": 16
+        },
+        {
+          "page": 36,
+          "row": 10
+        },
+        {
+          "page": 50,
+          "row": 14
+        }
+      ],
+      "pages": [
+        22,
+        30,
+        33,
+        36,
+        50
+      ],
+      "kinds": {
+        "A": 11,
+        "B": 21
+      }
+    },
+    {
+      "label": "Nueva Ecija 2nd District Engineering Office",
+      "count": 32,
+      "samples": [
+        {
+          "page": 15,
+          "row": 20
+        },
+        {
+          "page": 31,
+          "row": 10
+        },
+        {
+          "page": 34,
+          "row": 20
+        },
+        {
+          "page": 61,
+          "row": 14
+        },
+        {
+          "page": 66,
+          "row": 2
+        }
+      ],
+      "pages": [
+        15,
+        31,
+        34,
+        61,
+        66
+      ],
+      "kinds": {
+        "A": 11,
+        "B": 21
+      }
+    },
+    {
+      "label": "Region IVA - CALABARZON",
+      "count": 32,
+      "samples": [
+        {
+          "page": 8,
+          "row": 8
+        },
+        {
+          "page": 16,
+          "row": 2
+        },
+        {
+          "page": 25,
+          "row": 3
+        },
+        {
+          "page": 26,
+          "row": 12
+        },
+        {
+          "page": 29,
+          "row": 1
+        }
+      ],
+      "pages": [
+        8,
+        16,
+        25,
+        26,
+        29
+      ],
+      "kinds": {
+        "D": 1,
+        "A": 31
+      }
+    },
+    {
+      "label": "Albay 1st District Engineering Office",
+      "count": 31,
+      "samples": [
+        {
+          "page": 17,
+          "row": 7
+        },
+        {
+          "page": 32,
+          "row": 5
+        },
+        {
+          "page": 35,
+          "row": 4
+        },
+        {
+          "page": 51,
+          "row": 14
+        },
+        {
+          "page": 53,
+          "row": 11
+        }
+      ],
+      "pages": [
+        17,
+        32,
+        35,
+        51,
+        53
+      ],
+      "kinds": {
+        "A": 11,
+        "B": 20
+      }
+    },
+    {
+      "label": "Cavite 2nd District Engineering Office",
+      "count": 31,
+      "samples": [
+        {
+          "page": 16,
+          "row": 8
+        },
+        {
+          "page": 31,
+          "row": 15
+        },
+        {
+          "page": 38,
+          "row": 17
+        },
+        {
+          "page": 41,
+          "row": 19
+        },
+        {
+          "page": 56,
+          "row": 10
+        }
+      ],
+      "pages": [
+        16,
+        31,
+        38,
+        41,
+        56
+      ],
+      "kinds": {
+        "A": 10,
+        "B": 21
+      }
+    },
+    {
+      "label": "Mindoro Occidental District Engineering Office",
+      "count": 31,
+      "samples": [
+        {
+          "page": 16,
+          "row": 28
+        },
+        {
+          "page": 42,
+          "row": 2
+        },
+        {
+          "page": 51,
+          "row": 7
+        },
+        {
+          "page": 61,
+          "row": 18
+        },
+        {
+          "page": 63,
+          "row": 24
+        }
+      ],
+      "pages": [
+        16,
+        42,
+        51,
+        61,
+        63
+      ],
+      "kinds": {
+        "A": 11,
+        "B": 20
+      }
+    },
+    {
+      "label": "Region VIII - Eastern Visayas",
+      "count": 31,
+      "samples": [
+        {
+          "page": 8,
+          "row": 14
+        },
+        {
+          "page": 19,
+          "row": 16
+        },
+        {
+          "page": 25,
+          "row": 13
+        },
+        {
+          "page": 26,
+          "row": 22
+        },
+        {
+          "page": 29,
+          "row": 23
+        }
+      ],
+      "pages": [
+        8,
+        19,
+        25,
+        26,
+        29
+      ],
+      "kinds": {
+        "D": 1,
+        "A": 30
+      }
+    },
+    {
+      "label": "Surigao del Sur 2nd District Engineering Office",
+      "count": 31,
+      "samples": [
+        {
+          "page": 23,
+          "row": 2
+        },
+        {
+          "page": 30,
+          "row": 15
+        },
+        {
+          "page": 33,
+          "row": 21
+        },
+        {
+          "page": 40,
+          "row": 15
+        },
+        {
+          "page": 43,
+          "row": 20
+        }
+      ],
+      "pages": [
+        23,
+        30,
+        33,
+        40,
+        43
+      ],
+      "kinds": {
+        "A": 11,
+        "B": 20
+      }
+    },
+    {
+      "label": "Upper Kalinga District Engineering Office",
+      "count": 31,
+      "samples": [
+        {
+          "page": 14,
+          "row": 20
+        },
+        {
+          "page": 31,
+          "row": 3
+        },
+        {
+          "page": 38,
+          "row": 11
+        },
+        {
+          "page": 41,
+          "row": 6
+        },
+        {
+          "page": 44,
+          "row": 7
+        }
+      ],
+      "pages": [
+        14,
+        31,
+        38,
+        41,
+        44
+      ],
+      "kinds": {
+        "A": 11,
+        "B": 20
+      }
+    }
+  ],
+  "suspects_head": [
+    {
+      "status": "unfixed",
+      "label": "Maharlika Highway (Lanao-Pagadian-Zamboanga City Rd)",
+      "count": 3,
+      "samples": [
+        {
+          "page": 199,
+          "row": 4
+        },
+        {
+          "page": 199,
+          "row": 5
+        },
+        {
+          "page": 199,
+          "row": 6
+        }
+      ],
+      "pages": [
+        199,
+        199,
+        199
+      ],
+      "kinds": {
+        "B": 3
+      },
+      "reasons": [
+        "rare_spaced_sibling"
+      ],
+      "parents": [
+        "Region IX"
+      ]
+    },
+    {
+      "status": "unfixed",
+      "label": "Lipa City- Alaminos Rd",
+      "count": 2,
+      "samples": [
+        {
+          "page": 205,
+          "row": 21
+        },
+        {
+          "page": 212,
+          "row": 21
+        }
+      ],
+      "pages": [
+        205,
+        212
+      ],
+      "kinds": {
+        "B": 2
+      },
+      "reasons": [
+        "rare_spaced_sibling"
+      ],
+      "parents": [
+        "Region IV-A",
+        "Laguna 3rd District Engineering Office"
+      ]
+    },
+    {
+      "status": "unfixed",
+      "label": "Asset Preservation Program",
+      "count": 1,
+      "samples": [
+        {
+          "page": 688,
+          "row": 5
+        }
+      ],
+      "pages": [
+        688
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "rare_spaced_sibling"
+      ],
+      "parents": [
+        "ORGANIZATIONAL OUTCOME 1 : Ensure Safe and Reliable National Road System"
+      ]
+    },
+    {
+      "status": "unfixed",
+      "label": "Bridge Program",
+      "count": 1,
+      "samples": [
+        {
+          "page": 689,
+          "row": 6
+        }
+      ],
+      "pages": [
+        689
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "rare_spaced_sibling"
+      ],
+      "parents": [
+        "Construction of Missing Links/New Roads"
+      ]
+    },
+    {
+      "status": "unfixed",
+      "label": "Construction of Esperanza - Lebak Bypass Road, Esperanza, Sultan Kudarat",
+      "count": 1,
+      "samples": [
+        {
+          "page": 453,
+          "row": 4
+        }
+      ],
+      "pages": [
+        453
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "rare_spaced_sibling"
+      ],
+      "parents": [
+        "Region XII"
+      ]
+    },
+    {
+      "status": "unfixed",
+      "label": "Construction of Laguindingan-Iligan City Alternate Road, Barangay Aya aya Section, Lugait, Misamis Oriental",
+      "count": 1,
+      "samples": [
+        {
+          "page": 450,
+          "row": 20
+        }
+      ],
+      "pages": [
+        450
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "possible_split:Aya aya"
+      ],
+      "parents": [
+        "Region X"
+      ]
+    },
+    {
+      "status": "unfixed",
+      "label": "Consultancy Services for the conduct of Feasibility Study of low height dams along Pagsangahan River Watershed",
+      "count": 1,
+      "samples": [
+        {
+          "page": 178,
+          "row": 6
+        }
+      ],
+      "pages": [
+        178
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "possible_split:height dams"
+      ],
+      "parents": [
+        "Region VIII"
+      ]
+    },
+    {
+      "status": "unfixed",
+      "label": "Flood Management Program",
+      "count": 1,
+      "samples": [
+        {
+          "page": 347,
+          "row": 2
+        }
+      ],
+      "pages": [
+        347
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "rare_spaced_sibling"
+      ],
+      "parents": []
+    },
+    {
+      "status": "unfixed",
+      "label": "Isaac 0 . Tolentino Ave.",
+      "count": 1,
+      "samples": [
+        {
+          "page": 211,
+          "row": 4
+        }
+      ],
+      "pages": [
+        211
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "rare_spaced_sibling"
+      ],
+      "parents": [
+        "Cavite 2nd District Engineering Office"
+      ]
+    },
+    {
+      "status": "unfixed",
+      "label": "Jose Abad Santos Ave (Jasa)",
+      "count": 1,
+      "samples": [
+        {
+          "page": 243,
+          "row": 27
+        }
+      ],
+      "pages": [
+        243
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "rare_spaced_sibling"
+      ],
+      "parents": [
+        "Zambales 2nd District Engineering Office"
+      ]
+    },
+    {
+      "status": "unfixed",
+      "label": "Kabugao-Pudtol-Luna-cagayan Bdry Rd",
+      "count": 1,
+      "samples": [
+        {
+          "page": 247,
+          "row": 4
+        }
+      ],
+      "pages": [
+        247
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "rare_spaced_sibling"
+      ],
+      "parents": [
+        "Apayao 2nd District Engineering Office"
+      ]
+    },
+    {
+      "status": "unfixed",
+      "label": "Masbate-cataingan-Placer Rd",
+      "count": 1,
+      "samples": [
+        {
+          "page": 259,
+          "row": 18
+        }
+      ],
+      "pages": [
+        259
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "rare_spaced_sibling"
+      ],
+      "parents": [
+        "Masbate 2nd District Engineering Office"
+      ]
+    },
+    {
+      "status": "unfixed",
+      "label": "Mt Province Bdry-Calanan-Pinukpuk-Abbut Rd (Cagaluan-calanan Sect)",
+      "count": 1,
+      "samples": [
+        {
+          "page": 247,
+          "row": 16
+        }
+      ],
+      "pages": [
+        247
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "rare_spaced_sibling"
+      ],
+      "parents": [
+        "Lower Kalinga District Engineering Office"
+      ]
+    },
+    {
+      "status": "unfixed",
+      "label": "Mt Province Bdry-calanan-Pinukpuk-Abbut Rd",
+      "count": 1,
+      "samples": [
+        {
+          "page": 258,
+          "row": 34
+        }
+      ],
+      "pages": [
+        258
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "rare_spaced_sibling"
+      ],
+      "parents": [
+        "Upper Kalinga District Engineering Office"
+      ]
+    },
+    {
+      "status": "unfixed",
+      "label": "Naval-caibiran Cross Country Rd",
+      "count": 1,
+      "samples": [
+        {
+          "page": 259,
+          "row": 35
+        }
+      ],
+      "pages": [
+        259
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "rare_spaced_sibling"
+      ],
+      "parents": [
+        "Biliran District Engineering Office"
+      ]
+    },
+    {
+      "status": "unfixed",
+      "label": "Network Development Program",
+      "count": 1,
+      "samples": [
+        {
+          "page": 688,
+          "row": 10
+        }
+      ],
+      "pages": [
+        688
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "rare_spaced_sibling"
+      ],
+      "parents": [
+        "ORGANIZATIONAL OUTCOME 1 : Ensure Safe and Reliable National Road System"
+      ]
+    },
+    {
+      "status": "unfixed",
+      "label": "OFFICE OF THE SECRETARY",
+      "count": 1,
+      "samples": [
+        {
+          "page": 6,
+          "row": 1
+        }
+      ],
+      "pages": [
+        6
+      ],
+      "kinds": {
+        "F": 1
+      },
+      "reasons": [
+        "rare_spaced_sibling"
+      ],
+      "parents": []
+    },
+    {
+      "status": "unfixed",
+      "label": "Palo-carigara-Ormoc Rd",
+      "count": 1,
+      "samples": [
+        {
+          "page": 229,
+          "row": 7
+        }
+      ],
+      "pages": [
+        229
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "rare_spaced_sibling"
+      ],
+      "parents": [
+        "Leyte 2nd District Engineering Office"
+      ]
+    },
+    {
+      "status": "unfixed",
+      "label": "Rehabilitation of Multi-Purpose Building (Covered Court) barangay Libertad, General Luna, , Siarqao Island,Suriqao Del Norte",
+      "count": 1,
+      "samples": [
+        {
+          "page": 674,
+          "row": 16
+        }
+      ],
+      "pages": [
+        674
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "weird_punct"
+      ],
+      "parents": [
+        "Surigao del Norte 1st District Engineering Office"
+      ]
+    },
+    {
+      "status": "unfixed",
+      "label": "Rehabilitation of Roads and Drainages along Camia st., Barangay 188, Caloocan City",
+      "count": 1,
+      "samples": [
+        {
+          "page": 461,
+          "row": 21
+        }
+      ],
+      "pages": [
+        461
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "possible_split:Camia st"
+      ],
+      "parents": [
+        "Metro Manila 3rd District Engineering Office"
+      ]
+    },
+    {
+      "status": "unfixed",
+      "label": "Sagbat-Pililla Div Rd - +",
+      "count": 1,
+      "samples": [
+        {
+          "page": 228,
+          "row": 7
+        }
+      ],
+      "pages": [
+        228
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "rare_spaced_sibling"
+      ],
+      "parents": [
+        "Rizal 2nd District Engineering Office"
+      ]
+    },
+    {
+      "status": "unfixed",
+      "label": "calapan South Rd",
+      "count": 1,
+      "samples": [
+        {
+          "page": 259,
+          "row": 15
+        }
+      ],
+      "pages": [
+        259
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "rare_spaced_sibling"
+      ],
+      "parents": [
+        "Southern Mindoro District Engineering Office"
+      ]
+    },
+    {
+      "status": "unfixed",
+      "label": "capiz-Aklan Rd",
+      "count": 1,
+      "samples": [
+        {
+          "page": 207,
+          "row": 17
+        }
+      ],
+      "pages": [
+        207
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "rare_spaced_sibling"
+      ],
+      "parents": [
+        "Region VI"
+      ]
+    },
+    {
+      "status": "unfixed",
+      "label": "catarman-calbayog Rd",
+      "count": 1,
+      "samples": [
+        {
+          "page": 259,
+          "row": 39
+        }
+      ],
+      "pages": [
+        259
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "rare_spaced_sibling"
+      ],
+      "parents": [
+        "Northern Samar 1st District Engineering Office"
+      ]
+    },
+    {
+      "status": "unfixed",
+      "label": "cavite 1st District Engineering Office",
+      "count": 1,
+      "samples": [
+        {
+          "page": 403,
+          "row": 4
+        }
+      ],
+      "pages": [
+        403
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "rare_spaced_sibling"
+      ],
+      "parents": [
+        "Region IV-A"
+      ]
+    },
+    {
+      "status": "unfixed",
+      "label": "cavite-Batangas Rd",
+      "count": 1,
+      "samples": [
+        {
+          "page": 210,
+          "row": 23
+        }
+      ],
+      "pages": [
+        210
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "rare_spaced_sibling"
+      ],
+      "parents": [
+        "Cavite 1st District Engineering Office"
+      ]
+    }
+  ],
+  "fixed_head": [
+    {
+      "status": "fixed",
+      "label_ocr": "!locos Norte 1st District Engineering Office",
+      "label": "Ilocos Norte 1st District Engineering Office",
+      "count": 8,
+      "samples": [
+        {
+          "page": 28,
+          "row": 17
+        },
+        {
+          "page": 65,
+          "row": 12
+        },
+        {
+          "page": 68,
+          "row": 23
+        },
+        {
+          "page": 115,
+          "row": 25
+        },
+        {
+          "page": 201,
+          "row": 2
+        },
+        {
+          "page": 327,
+          "row": 28
+        },
+        {
+          "page": 339,
+          "row": 15
+        },
+        {
+          "page": 682,
+          "row": 19
+        }
+      ],
+      "pages": [
+        28,
+        65,
+        68,
+        115,
+        201,
+        327,
+        339,
+        682
+      ],
+      "kinds": {
+        "A": 3,
+        "B": 5
+      },
+      "reasons": [
+        "bang_as_I"
+      ],
+      "fix_source": "dsc:standard_exact",
+      "fix_sources": {
+        "dsc:standard_exact": 8
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "!locos Sur 2nd District Engineering Office",
+      "label": "Ilocos Sur 2nd District Engineering Office",
+      "count": 8,
+      "samples": [
+        {
+          "page": 28,
+          "row": 18
+        },
+        {
+          "page": 79,
+          "row": 10
+        },
+        {
+          "page": 115,
+          "row": 28
+        },
+        {
+          "page": 201,
+          "row": 7
+        },
+        {
+          "page": 231,
+          "row": 15
+        },
+        {
+          "page": 256,
+          "row": 4
+        },
+        {
+          "page": 261,
+          "row": 7
+        },
+        {
+          "page": 405,
+          "row": 4
+        }
+      ],
+      "pages": [
+        28,
+        79,
+        115,
+        201,
+        231,
+        256,
+        261,
+        405
+      ],
+      "kinds": {
+        "A": 2,
+        "B": 6
+      },
+      "reasons": [
+        "bang_as_I"
+      ],
+      "fix_source": "dsc:standard_exact",
+      "fix_sources": {
+        "dsc:standard_exact": 8
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Region I - !locos",
+      "label": "Region I - Ilocos",
+      "count": 8,
+      "samples": [
+        {
+          "page": 8,
+          "row": 4
+        },
+        {
+          "page": 24,
+          "row": 21
+        },
+        {
+          "page": 45,
+          "row": 16
+        },
+        {
+          "page": 58,
+          "row": 5
+        },
+        {
+          "page": 68,
+          "row": 22
+        },
+        {
+          "page": 79,
+          "row": 9
+        },
+        {
+          "page": 100,
+          "row": 5
+        },
+        {
+          "page": 101,
+          "row": 7
+        }
+      ],
+      "pages": [
+        8,
+        24,
+        45,
+        58,
+        68,
+        79,
+        100,
+        101
+      ],
+      "kinds": {
+        "D": 1,
+        "A": 7
+      },
+      "reasons": [
+        "bang_as_I"
+      ],
+      "fix_source": "dsc:standard_exact",
+      "fix_sources": {
+        "dsc:standard_exact": 8
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "1. !locos Norte 1st District Engineering Office",
+      "label": "Ilocos Norte 1st District Engineering Office",
+      "count": 3,
+      "samples": [
+        {
+          "page": 147,
+          "row": 11
+        },
+        {
+          "page": 179,
+          "row": 20
+        },
+        {
+          "page": 186,
+          "row": 2
+        }
+      ],
+      "pages": [
+        147,
+        179,
+        186
+      ],
+      "kinds": {
+        "B": 3
+      },
+      "reasons": [
+        "bang_as_I"
+      ],
+      "fix_source": "dsc:standard_exact",
+      "fix_sources": {
+        "dsc:standard_exact": 3
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "2. !locos Norte 2nd District Engineering Office",
+      "label": "Ilocos Norte 2nd District Engineering Office",
+      "count": 3,
+      "samples": [
+        {
+          "page": 160,
+          "row": 6
+        },
+        {
+          "page": 179,
+          "row": 21
+        },
+        {
+          "page": 186,
+          "row": 3
+        }
+      ],
+      "pages": [
+        160,
+        179,
+        186
+      ],
+      "kinds": {
+        "B": 3
+      },
+      "reasons": [
+        "bang_as_I"
+      ],
+      "fix_source": "dsc:standard_exact",
+      "fix_sources": {
+        "dsc:standard_exact": 3
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "3. !locos Sur 1st District Engineering Office",
+      "label": "Ilocos Sur 1st District Engineering Office",
+      "count": 3,
+      "samples": [
+        {
+          "page": 160,
+          "row": 7
+        },
+        {
+          "page": 179,
+          "row": 22
+        },
+        {
+          "page": 186,
+          "row": 4
+        }
+      ],
+      "pages": [
+        160,
+        179,
+        186
+      ],
+      "kinds": {
+        "B": 3
+      },
+      "reasons": [
+        "bang_as_I"
+      ],
+      "fix_source": "dsc:standard_exact",
+      "fix_sources": {
+        "dsc:standard_exact": 3
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "National Capital Regi on (NCR)",
+      "label": "National Capital Region (NCR)",
+      "count": 3,
+      "samples": [
+        {
+          "page": 23,
+          "row": 9
+        },
+        {
+          "page": 34,
+          "row": 3
+        },
+        {
+          "page": 105,
+          "row": 2
+        }
+      ],
+      "pages": [
+        23,
+        34,
+        105
+      ],
+      "kinds": {
+        "A": 3
+      },
+      "reasons": [
+        "known_word_split"
+      ],
+      "fix_source": "dsc:standard_exact",
+      "fix_sources": {
+        "dsc:standard_exact": 3
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "!locos Norte 2nd District Engineering Office",
+      "label": "Ilocos Norte 2nd District Engineering Office",
+      "count": 2,
+      "samples": [
+        {
+          "page": 115,
+          "row": 26
+        },
+        {
+          "page": 575,
+          "row": 26
+        }
+      ],
+      "pages": [
+        115,
+        575
+      ],
+      "kinds": {
+        "B": 2
+      },
+      "reasons": [
+        "bang_as_I"
+      ],
+      "fix_source": "dsc:standard_exact",
+      "fix_sources": {
+        "dsc:standard_exact": 2
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "!locos Sur 1st District Engineering Office",
+      "label": "Ilocos Sur 1st District Engineering Office",
+      "count": 2,
+      "samples": [
+        {
+          "page": 115,
+          "row": 27
+        },
+        {
+          "page": 682,
+          "row": 21
+        }
+      ],
+      "pages": [
+        115,
+        682
+      ],
+      "kinds": {
+        "B": 2
+      },
+      "reasons": [
+        "bang_as_I"
+      ],
+      "fix_source": "dsc:standard_exact",
+      "fix_sources": {
+        "dsc:standard_exact": 2
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "!locos Sur 2nd District Engineering Office 4.",
+      "label": "Ilocos Sur 2nd District Engineering Office",
+      "count": 2,
+      "samples": [
+        {
+          "page": 147,
+          "row": 14
+        },
+        {
+          "page": 160,
+          "row": 8
+        }
+      ],
+      "pages": [
+        147,
+        160
+      ],
+      "kinds": {
+        "B": 2
+      },
+      "reasons": [
+        "bang_as_I"
+      ],
+      "fix_source": "dsc:symspell_compact_distance_1",
+      "fix_sources": {
+        "dsc:symspell_compact_distance_1": 2
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "4. !locos Sur 2nd District Engineering Office",
+      "label": "Ilocos Sur 2nd District Engineering Office",
+      "count": 2,
+      "samples": [
+        {
+          "page": 179,
+          "row": 23
+        },
+        {
+          "page": 186,
+          "row": 5
+        }
+      ],
+      "pages": [
+        179,
+        186
+      ],
+      "kinds": {
+        "B": 2
+      },
+      "reasons": [
+        "bang_as_I"
+      ],
+      "fix_source": "dsc:standard_exact",
+      "fix_sources": {
+        "dsc:standard_exact": 2
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Apayao 2nd District Engineering Offi ce",
+      "label": "Apayao 2nd District Engineering Office",
+      "count": 2,
+      "samples": [
+        {
+          "page": 63,
+          "row": 14
+        },
+        {
+          "page": 65,
+          "row": 14
+        }
+      ],
+      "pages": [
+        63,
+        65
+      ],
+      "kinds": {
+        "A": 2
+      },
+      "reasons": [
+        "possible_split:Offi ce"
+      ],
+      "fix_source": "dsc:standard_exact",
+      "fix_sources": {
+        "dsc:standard_exact": 2
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Engineering Off ice",
+      "label": "Engineering Office",
+      "count": 2,
+      "samples": [
+        {
+          "page": 16,
+          "row": 27
+        },
+        {
+          "page": 34,
+          "row": 25
+        }
+      ],
+      "pages": [
+        16,
+        34
+      ],
+      "kinds": {
+        "A": 2
+      },
+      "reasons": [
+        "possible_split:Off ice"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 2
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Nati onal Capital Region (NCR)",
+      "label": "National Capital Region (NCR)",
+      "count": 2,
+      "samples": [
+        {
+          "page": 23,
+          "row": 12
+        },
+        {
+          "page": 65,
+          "row": 6
+        }
+      ],
+      "pages": [
+        23,
+        65
+      ],
+      "kinds": {
+        "A": 2
+      },
+      "reasons": [
+        "known_word_split",
+        "possible_split:Nati onal"
+      ],
+      "fix_source": "dsc:standard_exact",
+      "fix_sources": {
+        "dsc:standard_exact": 2
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Region !VB - MIMAROPA",
+      "label": "Region IVB - MIMAROPA",
+      "count": 2,
+      "samples": [
+        {
+          "page": 8,
+          "row": 9
+        },
+        {
+          "page": 100,
+          "row": 9
+        }
+      ],
+      "pages": [
+        8,
+        100
+      ],
+      "kinds": {
+        "D": 1,
+        "A": 1
+      },
+      "reasons": [
+        "bang_as_I"
+      ],
+      "fix_source": "dsc:standard_exact",
+      "fix_sources": {
+        "dsc:standard_exact": 2
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "!locos Norte 1st District Engineering Office 1.",
+      "label": "Ilocos Norte 1st District Engineering Office",
+      "count": 1,
+      "samples": [
+        {
+          "page": 160,
+          "row": 5
+        }
+      ],
+      "pages": [
+        160
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "bang_as_I"
+      ],
+      "fix_source": "dsc:symspell_compact_distance_1",
+      "fix_sources": {
+        "dsc:symspell_compact_distance_1": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "!locos Norte 2nd District Engineering Office 2.",
+      "label": "Ilocos Norte 2nd District Engineering Office",
+      "count": 1,
+      "samples": [
+        {
+          "page": 147,
+          "row": 12
+        }
+      ],
+      "pages": [
+        147
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "bang_as_I"
+      ],
+      "fix_source": "dsc:symspell_compact_distance_1",
+      "fix_sources": {
+        "dsc:symspell_compact_distance_1": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "!locos Sur 1st District Engineering Office 3.",
+      "label": "Ilocos Sur 1st District Engineering Office",
+      "count": 1,
+      "samples": [
+        {
+          "page": 153,
+          "row": 27
+        }
+      ],
+      "pages": [
+        153
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "bang_as_I"
+      ],
+      "fix_source": "dsc:symspell_compact_distance_1",
+      "fix_sources": {
+        "dsc:symspell_compact_distance_1": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "1. Desilting, Dredging, and Cleaning of Waterways - Oplan Kontra Baha (0KB)",
+      "label": "Desilting, Dredging, and Cleaning of Waterways - Oplan Kontra Baha (OKB)",
+      "count": 1,
+      "samples": [
+        {
+          "page": 143,
+          "row": 13
+        }
+      ],
+      "pages": [
+        143
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "letter_digit:0KB"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "3. ! locos Sur 1st District Engineering Office",
+      "label": "Ilocos Sur 1st District Engineering Office",
+      "count": 1,
+      "samples": [
+        {
+          "page": 147,
+          "row": 13
+        }
+      ],
+      "pages": [
+        147
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "bang_as_I"
+      ],
+      "fix_source": "dsc:symspell_compact_distance_1",
+      "fix_sources": {
+        "dsc:symspell_compact_distance_1": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "5arangani-Sultan Kudarat Coastal Rd - K1725 + 030 - K1726 + 512",
+      "label": "Sarangani-Sultan Kudarat Coastal Rd",
+      "count": 1,
+      "samples": [
+        {
+          "page": 274,
+          "row": 9
+        }
+      ],
+      "pages": [
+        274
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "letter_digit:5arangani"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Albay 1st Distri ct Engineering Office",
+      "label": "Albay 1st District Engineering Office",
+      "count": 1,
+      "samples": [
+        {
+          "page": 75,
+          "row": 2
+        }
+      ],
+      "pages": [
+        75
+      ],
+      "kinds": {
+        "A": 1
+      },
+      "reasons": [
+        "possible_split:Distri ct"
+      ],
+      "fix_source": "dsc:standard_exact",
+      "fix_sources": {
+        "dsc:standard_exact": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Albay 1st District Engineering Offi ce",
+      "label": "Albay 1st District Engineering Office",
+      "count": 1,
+      "samples": [
+        {
+          "page": 17,
+          "row": 7
+        }
+      ],
+      "pages": [
+        17
+      ],
+      "kinds": {
+        "A": 1
+      },
+      "reasons": [
+        "possible_split:Offi ce"
+      ],
+      "fix_source": "dsc:standard_exact",
+      "fix_sources": {
+        "dsc:standard_exact": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Albay 2nd District Engineering Offi ce",
+      "label": "Albay 2nd District Engineering Office",
+      "count": 1,
+      "samples": [
+        {
+          "page": 17,
+          "row": 8
+        }
+      ],
+      "pages": [
+        17
+      ],
+      "kinds": {
+        "A": 1
+      },
+      "reasons": [
+        "possible_split:Offi ce"
+      ],
+      "fix_source": "dsc:standard_exact",
+      "fix_sources": {
+        "dsc:standard_exact": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Albuera - Burauen Rd (Albuera Section) - Sta. 7+463.S0 - Sta. 7+584.73, Barangay San Pedro, Albuera, Leyte",
+      "label": "Albuera - Burauen Rd (Albuera Section), Barangay San Pedro, Albuera, Leyte",
+      "count": 1,
+      "samples": [
+        {
+          "page": 298,
+          "row": 10
+        }
+      ],
+      "pages": [
+        298
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "letter_digit:S0"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "BIP • Local Ports and Boat Landing",
+      "label": "BIP - Local Ports and Boat Landing",
+      "count": 1,
+      "samples": [
+        {
+          "page": 676,
+          "row": 8
+        }
+      ],
+      "pages": [
+        676
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "weird_punct"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Bagong 5ilang-Capalonga Rd - K0324 + 573 - K0327 + 986",
+      "label": "Bagong Silang-Capalonga Rd",
+      "count": 1,
+      "samples": [
+        {
+          "page": 218,
+          "row": 8
+        }
+      ],
+      "pages": [
+        218
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "letter_digit:5ilang"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Bateria Br. (B00515NR) along Dumaguete North Rd (Jct Bais-Kabankalan-Negros 0cc Bdry)",
+      "label": "Bateria Br. (B00515NR) along Dumaguete North Rd (Jct Bais-Kabankalan-Negros Occ Bdry)",
+      "count": 1,
+      "samples": [
+        {
+          "page": 337,
+          "row": 1
+        }
+      ],
+      "pages": [
+        337
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "letter_digit:0cc"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Bitoclan Br. (B00132NR) along Dumaguete North Rd (Jct Bais-Kabankalan-Negros 0cc Bdry)",
+      "label": "Bitoclan Br. (B00132NR) along Dumaguete North Rd (Jct Bais-Kabankalan-Negros Occ Bdry)",
+      "count": 1,
+      "samples": [
+        {
+          "page": 341,
+          "row": 7
+        }
+      ],
+      "pages": [
+        341
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "letter_digit:0cc"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Bongabong-Sagana-Roxas-Sn Aquilino Rd - K0122 + 000 - K0122 + 421, K0124 + 000 · K0125 + 721",
+      "label": "Bongabong-Sagana-Roxas-Sn Aquilino Rd",
+      "count": 1,
+      "samples": [
+        {
+          "page": 206,
+          "row": 11
+        }
+      ],
+      "pages": [
+        206
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "weird_punct"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Cagayan de Oro Diversion Road Extension (Jct. Sayre Highway (Balubal)-Manolo Fortich· Malitbog-Claveria-Eureka, Gingoog City Road), Mantibugao-Lunocan Section, Sta. 1+739 - Sta. Sta. 2+578.11, Manolo Fortich. Bukidnon",
+      "label": "Cagayan de Oro Diversion Road Extension (Jct. Sayre Highway (Balubal)-Manolo Fortich- Malitbog-Claveria-Eureka, Gingoog City Road), Mantibugao-Lunocan Section, Sta. Sta. 2+578.11, Manolo Fortich. Bukidnon",
+      "count": 1,
+      "samples": [
+        {
+          "page": 285,
+          "row": 11
+        }
+      ],
+      "pages": [
+        285
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "weird_punct"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Calapan South Rd - K0153 + 493 - K0153 + 860, K0154 + 1037 - K0lSS + 207, K0157 + 662 - K0158 + 000",
+      "label": "Calapan South Rd",
+      "count": 1,
+      "samples": [
+        {
+          "page": 213,
+          "row": 9
+        }
+      ],
+      "pages": [
+        213
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "letter_digit:K0lSS"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Cervantes (!locos Sur) - Besao-Sagada (Mt. Province) Road via Laylaya, Sta. 12+980 - Sta 14+760",
+      "label": "Cervantes (Ilocos Sur) - Besao-Sagada (Mt. Province) Road via Laylaya",
+      "count": 1,
+      "samples": [
+        {
+          "page": 294,
+          "row": 10
+        }
+      ],
+      "pages": [
+        294
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "bang_as_I"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction (Completion) of Multi-Purpose Building (DPWH Building), Laoag City, !locos Norte",
+      "label": "Construction (Completion) of Multi-Purpose Building (DPWH Building), Laoag City, Ilocos Norte",
+      "count": 1,
+      "samples": [
+        {
+          "page": 682,
+          "row": 20
+        }
+      ],
+      "pages": [
+        682
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "bang_as_I"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction (Completion) of Multi-Purpose Building, Barangay Banlic, City of ca1amba, Laguna",
+      "label": "Construction (Completion) of Multi-Purpose Building, Barangay Banlic, City of Calamba, Laguna",
+      "count": 1,
+      "samples": [
+        {
+          "page": 617,
+          "row": 2
+        }
+      ],
+      "pages": [
+        617
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "letter_digit:ca1amba"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction (Completion) of Office Building, DPWH !locos Sur 1st DEO, Zone VI, Bantay, !locos Sur (17.579266, 120.385865)",
+      "label": "Construction (Completion) of Office Building, DPWH Ilocos Sur 1st DEO, Zone VI, Bantay, Ilocos Sur",
+      "count": 1,
+      "samples": [
+        {
+          "page": 682,
+          "row": 22
+        }
+      ],
+      "pages": [
+        682
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "bang_as_I"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction I Upgrading / Rehabilitation of Drainage along Nati onal Roads",
+      "label": "Construction I Upgrading / Rehabilitation of Drainage along National Roads",
+      "count": 1,
+      "samples": [
+        {
+          "page": 46,
+          "row": 15
+        }
+      ],
+      "pages": [
+        46
+      ],
+      "kinds": {
+        "A": 1
+      },
+      "reasons": [
+        "known_word_split",
+        "possible_split:Nati onal"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction of 8arangay Ranao-ranao to Barangay Banga Pantar Road, Marantao, Lanao del Sur",
+      "label": "Construction of Barangay Ranao-ranao to Barangay Banga Pantar Road, Marantao, Lanao del Sur",
+      "count": 1,
+      "samples": [
+        {
+          "page": 449,
+          "row": 14
+        }
+      ],
+      "pages": [
+        449
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "letter_digit:8arangay"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction of Access Road leading to Mt. Chumanchil, Sta. 1 +S0G.S - Sta. 2+006.S, Kalinga",
+      "label": "Construction of Access Road leading to Mt. Chumanchil, Kalinga",
+      "count": 1,
+      "samples": [
+        {
+          "page": 474,
+          "row": 21
+        }
+      ],
+      "pages": [
+        474
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "letter_digit:S0G"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction of Baylanan - San Miguel Bridge along Jct. Cagayan de Oro City - Dominorog • Camp Kibaritan Road to Jct SH-Aglayan-Alanib-Ticlaan Road (Aglayan - Basak), Bgy. Cosina, Sta, 21+750 - Sta. 21+800, Talakag, Bukldnon",
+      "label": "Construction of Baylanan - San Miguel Bridge along Jct. Cagayan de Oro City - Dominorog - Camp Kibaritan Road to Jct SH-Aglayan-Alanib-Ticlaan Road (Aglayan - Basak), Bgy. Cosina, Sta, 21+750, Talakag, Bukldnon",
+      "count": 1,
+      "samples": [
+        {
+          "page": 449,
+          "row": 16
+        }
+      ],
+      "pages": [
+        449
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "weird_punct"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction of Bridge connecting Lacuben-Gabut Sur, Badoc, !locos Norte",
+      "label": "Construction of Bridge connecting Lacuben-Gabut Sur, Badoc, Ilocos Norte",
+      "count": 1,
+      "samples": [
+        {
+          "page": 434,
+          "row": 14
+        }
+      ],
+      "pages": [
+        434
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "bang_as_I"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction of Bridge, Barangay San Isidro, Carmen, Davao del Norte· Sta. 2+600 - Sta. 2+670",
+      "label": "Construction of Bridge, Barangay San Isidro, Carmen, Davao del Norte",
+      "count": 1,
+      "samples": [
+        {
+          "page": 452,
+          "row": 9
+        }
+      ],
+      "pages": [
+        452
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "weird_punct"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction of DPWH Regional Office XI Building, Magsaysay Avenue cor. Chavez, St., Davao City",
+      "label": "Construction of DPWH Regional Office XI Building, Magsaysay Avenu Cor. Chavez, St., Davao City",
+      "count": 1,
+      "samples": [
+        {
+          "page": 679,
+          "row": 11
+        }
+      ],
+      "pages": [
+        679
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "possible_split:Avenue cor"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction of Daquioag-Tabucbuc Bridge, Marcos, !locos Norte",
+      "label": "Construction of Daquioag-Tabucbuc Bridge, Marcos, Ilocos Norte",
+      "count": 1,
+      "samples": [
+        {
+          "page": 434,
+          "row": 16
+        }
+      ],
+      "pages": [
+        434
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "bang_as_I"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction of Datag-Dampig Bridge, Barangay San Isidro, Dumalneg, !locos Norte",
+      "label": "Construction of Datag-Dampig Bridge, Barangay San Isidro, Dumalneg, Ilocos Norte",
+      "count": 1,
+      "samples": [
+        {
+          "page": 434,
+          "row": 17
+        }
+      ],
+      "pages": [
+        434
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "bang_as_I"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction of Drainage Canal from High Way to Sitio Pagkakaisa, Sta O + 000- Sta O + 250, Baranqay Lucio Laurel, Gloria, Oriental Mindoro",
+      "label": "Construction of Drainage Canal from Highway to Sitio Pagkakaisa, Baranqay Lucio Laurel, Gloria, Oriental Mindoro",
+      "count": 1,
+      "samples": [
+        {
+          "page": 385,
+          "row": 16
+        }
+      ],
+      "pages": [
+        385
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "known_word_split"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction of Flood Control Structure, Barangay Salsalamagui, Vintar, !locos Norte",
+      "label": "Construction of Flood Control Structure, Barangay Salsalamagui, Vintar, Ilocos Norte",
+      "count": 1,
+      "samples": [
+        {
+          "page": 370,
+          "row": 14
+        }
+      ],
+      "pages": [
+        370
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "bang_as_I"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction of Flood Mitigating Structure along Bacarra-Vintar River (Principal River), Baranqay Alsem, Vintar, !locos Norte",
+      "label": "Construction of Flood Mitigating Structure along Bacarra-Vintar River (Principal River), Baranqay Alsem, Vintar, Ilocos Norte",
+      "count": 1,
+      "samples": [
+        {
+          "page": 370,
+          "row": 15
+        }
+      ],
+      "pages": [
+        370
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "bang_as_I"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction of Integrated Drainage System including Appurtenances, San Nicolas, !locos Norte",
+      "label": "Construction of Integrated Drainage System including Appurtenances, San Nicolas, Ilocos Norte",
+      "count": 1,
+      "samples": [
+        {
+          "page": 370,
+          "row": 17
+        }
+      ],
+      "pages": [
+        370
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "bang_as_I"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction of Mawab·Maragusan-Caraga Road, Barangay Sobrecarey, Sta. 1676+785.00 · 1680+785.00, Caraga, Davao Oriental",
+      "label": "Construction of Mawab-Maragusan-Caraga Road, Barangay Sobrecarey, Caraga, Davao Oriental",
+      "count": 1,
+      "samples": [
+        {
+          "page": 452,
+          "row": 12
+        }
+      ],
+      "pages": [
+        452
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "weird_punct"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction of Multi-Purpose Building (Barangay Hall and Covered Court) Barangay San Francisco, Dinqras, !locos Norte",
+      "label": "Construction of Multi-Purpose Building (Barangay Hall and Covered Court) Barangay San Francisco, Dinqras, Ilocos Norte",
+      "count": 1,
+      "samples": [
+        {
+          "page": 575,
+          "row": 27
+        }
+      ],
+      "pages": [
+        575
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "bang_as_I"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction of Multi-Purpose Building (Covered Court), Barangay 5agkahan, Jara, Leyte (11.182853, 124.810772)",
+      "label": "Construction of Multi-Purpose Building (Covered Court), Barangay Sagkahan, Jara, Leyte",
+      "count": 1,
+      "samples": [
+        {
+          "page": 649,
+          "row": 11
+        }
+      ],
+      "pages": [
+        649
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "letter_digit:5agkahan"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction of Multi-Purpose Building (Covered Court), Barangay Sta. Rita, Paoay, !locos Norte",
+      "label": "Construction of Multi-Purpose Building (Covered Court), Barangay Sta. Rita, Paoay, Ilocos Norte",
+      "count": 1,
+      "samples": [
+        {
+          "page": 576,
+          "row": 23
+        }
+      ],
+      "pages": [
+        576
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "bang_as_I"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction of Multi-Purpose Building, Barangay Poblacion, Nueva Era, !locos Norte",
+      "label": "Construction of Multi-Purpose Building, Barangay Poblacion, Nueva Era, Ilocos Norte",
+      "count": 1,
+      "samples": [
+        {
+          "page": 577,
+          "row": 3
+        }
+      ],
+      "pages": [
+        577
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "bang_as_I"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction of Multi-Purpose Building, Naval Station Leovigildo Gantioqui (NSLG) (Multi· Purpose Hall), San Miguel, San Antonio, Zambales 14.959169, 120.069629",
+      "label": "Construction of Multi-Purpose Building, Naval Station Leovigildo Gantioqui (NSLG) (Multi- Purpose Hall), San Miguel, San Antonio, Zambales",
+      "count": 1,
+      "samples": [
+        {
+          "page": 565,
+          "row": 12
+        }
+      ],
+      "pages": [
+        565
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "weird_punct"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction of Multi-Purpose Building, Paraiso ti Caribquib, Barangay Caribquib, Banna, !locos Norte",
+      "label": "Construction of Multi-Purpose Building, Paraiso ti Caribquib, Barangay Caribquib, Banna, Ilocos Norte",
+      "count": 1,
+      "samples": [
+        {
+          "page": 577,
+          "row": 4
+        }
+      ],
+      "pages": [
+        577
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "bang_as_I"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction of NRJ Tagum - Panabo Circum Road, Barangay Datu Balang · Barangay Gupitan, Sta. 1505+440.000 - Sta. 1517+440.000, Kapalong Section, to Loreto (Agusan del Sur), Davao del Norte",
+      "label": "Construction of NRJ Tagum - Panabo Circum Road, Barangay Datu Balang - Barangay Gupitan, Kapalong Section, to Loreto (Agusan del Sur), Davao del Norte",
+      "count": 1,
+      "samples": [
+        {
+          "page": 452,
+          "row": 16
+        }
+      ],
+      "pages": [
+        452
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "weird_punct"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction of PNP Multi-purpose Building, Bato·alatbang, Mayoyao, Ifugao",
+      "label": "Construction of PNP Multi-purpose Building, Bato-alatbang, Mayoyao, Ifugao",
+      "count": 1,
+      "samples": [
+        {
+          "page": 582,
+          "row": 26
+        }
+      ],
+      "pages": [
+        582
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "weird_punct"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction of Quiaoit Diversion Canal, Paoay Section, Paoay, !locos Norte",
+      "label": "Construction of Quiaoit Diversion Canal, Paoay Section, Paoay, Ilocos Norte",
+      "count": 1,
+      "samples": [
+        {
+          "page": 350,
+          "row": 19
+        }
+      ],
+      "pages": [
+        350
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "bang_as_I"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction of Quiaoit River Diversion Canal, Batac Section, Batac City, !locos Norte",
+      "label": "Construction of Quiaoit River Diversion Canal, Batac Section, Batac City, Ilocos Norte",
+      "count": 1,
+      "samples": [
+        {
+          "page": 350,
+          "row": 20
+        }
+      ],
+      "pages": [
+        350
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "bang_as_I"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction of Road, Barangay Matictic to Bangkal, Norzagaray, Bulacan, Sta. 00+000 · Sta. 04+860 (121.081933, 14.921938)",
+      "label": "Construction of Road, Barangay Matictic to Bangkal, Norzagaray, Bulacan",
+      "count": 1,
+      "samples": [
+        {
+          "page": 491,
+          "row": 15
+        }
+      ],
+      "pages": [
+        491
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "weird_punct"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction of Road, Sabang-Daclapan Road, Cabugao, !locos Sur",
+      "label": "Construction of Road, Sabang-Daclapan Road, Cabugao, Ilocos Sur",
+      "count": 1,
+      "samples": [
+        {
+          "page": 464,
+          "row": 14
+        }
+      ],
+      "pages": [
+        464
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "bang_as_I"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction of Slope Protection Works ar Magdaong Creek, Muntinlupa City",
+      "label": "Construction of Slope Protection Works at Magdaong Creek, Muntinlupa City",
+      "count": 1,
+      "samples": [
+        {
+          "page": 364,
+          "row": 25
+        }
+      ],
+      "pages": [
+        364
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "possible_split:Works ar"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction of Solar Water System, Poblacion Sur, Salcedo, !locos Sur",
+      "label": "Construction of Solar Water System, Poblacion Sur, Salcedo, Ilocos Sur",
+      "count": 1,
+      "samples": [
+        {
+          "page": 405,
+          "row": 5
+        }
+      ],
+      "pages": [
+        405
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "bang_as_I"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction ·of NRJ Tagum - Panabo Circum Road, Barangay Datu Balong, Kapalong Section, to Loreto (Agusan del Sur), Davao del Norte",
+      "label": "Construction -of NRJ Tagum - Panabo Circum Road, Barangay Datu Balong, Kapalong Section, to Loreto (Agusan del Sur), Davao del Norte",
+      "count": 1,
+      "samples": [
+        {
+          "page": 452,
+          "row": 17
+        }
+      ],
+      "pages": [
+        452
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "weird_punct"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Construction/ Rehabilitation of Water Supply / 5eptage and Sewerage / Rainwater Collector System",
+      "label": "Construction/ Rehabilitation of Water Supply / Septage and Sewerage / Rainwater Collector System",
+      "count": 1,
+      "samples": [
+        {
+          "page": 79,
+          "row": 6
+        }
+      ],
+      "pages": [
+        79
+      ],
+      "kinds": {
+        "A": 1
+      },
+      "reasons": [
+        "letter_digit:5eptage"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Cotabato 3rd District Engineering Offi ce",
+      "label": "Cotabato 3rd District Engineering Office",
+      "count": 1,
+      "samples": [
+        {
+          "page": 77,
+          "row": 7
+        }
+      ],
+      "pages": [
+        77
+      ],
+      "kinds": {
+        "A": 1
+      },
+      "reasons": [
+        "possible_split:Offi ce"
+      ],
+      "fix_source": "dsc:standard_exact",
+      "fix_sources": {
+        "dsc:standard_exact": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Daang Maharlika (Alternate Route) (NRJ - Mayor Democrito D. Plaza II Avenue - Las Nieves - Sibagat), Florida - Bilay Section,, Sta. 13+067 - Sta. 13+187.8, Sta. 24+119 - Sta. 24+548.31, Butuan City",
+      "label": "Daang Maharlika (Alternate Route) (NRJ - Mayor Democrito D. Plaza II Avenue - Las Nieves - Sibagat), Florida - Bilay Section, Butuan City",
+      "count": 1,
+      "samples": [
+        {
+          "page": 289,
+          "row": 13
+        }
+      ],
+      "pages": [
+        289
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "weird_punct"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Danao br. 1 (B00647CB) along Cebu North Hagnaya Wharf Rd",
+      "label": "Danao Br. 1 (B00647CB) along Cebu North Hagnaya Wharf Rd",
+      "count": 1,
+      "samples": [
+        {
+          "page": 330,
+          "row": 34
+        }
+      ],
+      "pages": [
+        330
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "possible_split:Danao br"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Davao-Sarangani Coastal Rd (Malalag-Malita-JA5-G) - K1713 + 230 - K1713 + 410",
+      "label": "Davao-Sarangani Coastal Rd (Malalag-Malita-JAS-G)",
+      "count": 1,
+      "samples": [
+        {
+          "page": 246,
+          "row": 13
+        }
+      ],
+      "pages": [
+        246
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "letter_digit:JA5"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Dinagat Islands District Engineering Off ice",
+      "label": "Dinagat Islands District Engineering Office",
+      "count": 1,
+      "samples": [
+        {
+          "page": 83,
+          "row": 9
+        }
+      ],
+      "pages": [
+        83
+      ],
+      "kinds": {
+        "A": 1
+      },
+      "reasons": [
+        "possible_split:Off ice"
+      ],
+      "fix_source": "dsc:standard_exact",
+      "fix_sources": {
+        "dsc:standard_exact": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Dumaguete North Rd (Jct Bais-Kabankalan-Negros 0cc Bdry) - K0069 + 539 - K0070 + 873",
+      "label": "Dumaguete North Rd (Jct Bais-Kabankalan-Negros Occ Bdry)",
+      "count": 1,
+      "samples": [
+        {
+          "page": 203,
+          "row": 10
+        }
+      ],
+      "pages": [
+        203
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "letter_digit:0cc"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Dumaguete North Rd (Jct Bais-Kabankalan-Negros 0cc Bdry) - K0140 + 000 - K0141 + 000",
+      "label": "Dumaguete North Rd (Jct Bais-Kabankalan-Negros Occ Bdry)",
+      "count": 1,
+      "samples": [
+        {
+          "page": 262,
+          "row": 24
+        }
+      ],
+      "pages": [
+        262
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "letter_digit:0cc"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Habag Br. (B00460NR) along Dumaguete North Rd (Jct Bais-Kabankalan-Negros 0cc Bdry)",
+      "label": "Habag Br. (B00460NR) along Dumaguete North Rd (Jct Bais-Kabankalan-Negros Occ Bdry)",
+      "count": 1,
+      "samples": [
+        {
+          "page": 341,
+          "row": 8
+        }
+      ],
+      "pages": [
+        341
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "letter_digit:0cc"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Hilaitan Br. (B00137NR) along Dumaguete North Rd (Jct Bais-Kabankalan-Negros 0cc Bdry)",
+      "label": "Hilaitan Br. (B00137NR) along Dumaguete North Rd (Jct Bais-Kabankalan-Negros Occ Bdry)",
+      "count": 1,
+      "samples": [
+        {
+          "page": 341,
+          "row": 9
+        }
+      ],
+      "pages": [
+        341
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "letter_digit:0cc"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Jimalalod Br. (B00119NR) along Dumaguete North Rd (Jct Bais-Kabankalan-Negros 0cc Bdry)",
+      "label": "Jimalalod Br. (B00119NR) along Dumaguete North Rd (Jct Bais-Kabankalan-Negros Occ Bdry)",
+      "count": 1,
+      "samples": [
+        {
+          "page": 337,
+          "row": 3
+        }
+      ],
+      "pages": [
+        337
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "letter_digit:0cc"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "La-Libertad Br. (B00513NR) along Dumaguete North Rd (Jct Bais-Kabankalan-Negros 0cc Bdry)",
+      "label": "La-Libertad Br. (B00513NR) along Dumaguete North Rd (Jct Bais-Kabankalan-Negros Occ Bdry)",
+      "count": 1,
+      "samples": [
+        {
+          "page": 337,
+          "row": 4
+        }
+      ],
+      "pages": [
+        337
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "letter_digit:0cc"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Leyte 2nd District Engineer ing Office",
+      "label": "Leyte 2nd District Engineering Office",
+      "count": 1,
+      "samples": [
+        {
+          "page": 29,
+          "row": 24
+        }
+      ],
+      "pages": [
+        29
+      ],
+      "kinds": {
+        "A": 1
+      },
+      "reasons": [
+        "known_word_split"
+      ],
+      "fix_source": "dsc:standard_exact",
+      "fix_sources": {
+        "dsc:standard_exact": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "Ligao-Tabaco Rd - K0515 + 000 - K0SlS + 149",
+      "label": "Ligao-Tabaco Rd",
+      "count": 1,
+      "samples": [
+        {
+          "page": 207,
+          "row": 14
+        }
+      ],
+      "pages": [
+        207
+      ],
+      "kinds": {
+        "B": 1
+      },
+      "reasons": [
+        "letter_digit:K0SlS"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    },
+    {
+      "status": "fixed",
+      "label_ocr": "MIMAROPA Regional Offi ce",
+      "label": "MIMAROPA Regional Office",
+      "count": 1,
+      "samples": [
+        {
+          "page": 26,
+          "row": 15
+        }
+      ],
+      "pages": [
+        26
+      ],
+      "kinds": {
+        "A": 1
+      },
+      "reasons": [
+        "possible_split:Offi ce"
+      ],
+      "fix_source": "normalize_or_strip",
+      "fix_sources": {
+        "normalize_or_strip": 1
+      }
+    }
+  ],
+  "near_dup_groups_head": [
+    {
+      "compact": "rehabilitationreconstructionupgradingofdamagedpavedroadstert",
+      "forms": [
+        {
+          "label": "Rehabilitation/ Reconstruction/ Upgrading of Damaged Paved Roads - Tertiary Roads",
+          "count": 2
+        },
+        {
+          "label": "Rehabilitation / Reconstruction / Upgrading of Damaged Paved Roads Tertiary Roads",
+          "count": 1
+        },
+        {
+          "label": "Rehabilitation / Reconstruction Upgrading of Damaged Paved Roads Tertiary Roads",
+          "count": 1
+        }
+      ],
+      "n_forms": 3,
+      "total": 4
+    },
+    {
+      "compact": "constructionofmissinglinksnewroads",
+      "forms": [
+        {
+          "label": "Construction of Missing Links / New Roads",
+          "count": 2
+        },
+        {
+          "label": "Construction of Missing Links/ New Roads",
+          "count": 1
+        },
+        {
+          "label": "Construction of Missing Links/New Roads",
+          "count": 1
+        }
+      ],
+      "n_forms": 3,
+      "total": 4
+    },
+    {
+      "compact": "rehabilitationreconstructionofroadswithslipsslopecollapseand",
+      "forms": [
+        {
+          "label": "Rehabilitation / Reconstruction of Roads with Slips, Slope Collapse and Landslide Secondary Roads",
+          "count": 1
+        },
+        {
+          "label": "Rehabilitation Reconstruction of Roads with Slips, Slope Collapse and Landslide Secondary Roads",
+          "count": 1
+        },
+        {
+          "label": "Rehabilitation/ Reconstruction of Roads with Slips. Slope Collapse. and Landslide - Secondary Roads",
+          "count": 1
+        }
+      ],
+      "n_forms": 3,
+      "total": 3
+    },
+    {
+      "compact": "retrofittingstrengtheningofpermanentbridges",
+      "forms": [
+        {
+          "label": "Retrofitti ng / Strengthening of Permanent Bridges",
+          "count": 1
+        },
+        {
+          "label": "Retrofitting / Strengthening of Permanent Bridges",
+          "count": 1
+        },
+        {
+          "label": "Retrofitting/ Strengthening of Permanent Bridges",
+          "count": 1
+        }
+      ],
+      "n_forms": 3,
+      "total": 3
+    },
+    {
+      "compact": "rehabilitationmajorrepairofpermanentbridges",
+      "forms": [
+        {
+          "label": "Rehabili tation Major Repair of Permanent Bridges",
+          "count": 1
+        },
+        {
+          "label": "Rehabilitation / Major Repair of Permanent Bridges",
+          "count": 1
+        },
+        {
+          "label": "Rehabilitation/Major Repair of Permanent Bridges",
+          "count": 1
+        }
+      ],
+      "n_forms": 3,
+      "total": 3
+    },
+    {
+      "compact": "masbatecatainganplacerrd",
+      "forms": [
+        {
+          "label": "Masbate-Cataingan-Placer Rd",
+          "count": 27
+        },
+        {
+          "label": "Masbate-cataingan-Placer Rd",
+          "count": 1
+        }
+      ],
+      "n_forms": 2,
+      "total": 28
+    },
+    {
+      "compact": "calapansouthrd",
+      "forms": [
+        {
+          "label": "Calapan South Rd",
+          "count": 18
+        },
+        {
+          "label": "calapan South Rd",
+          "count": 1
+        }
+      ],
+      "n_forms": 2,
+      "total": 19
+    },
+    {
+      "compact": "cavite1stdistrictengineeringoffice",
+      "forms": [
+        {
+          "label": "Cavite 1st District Engineering Office",
+          "count": 17
+        },
+        {
+          "label": "cavite 1st District Engineering Office",
+          "count": 1
+        }
+      ],
+      "n_forms": 2,
+      "total": 18
+    },
+    {
+      "compact": "maharlikahighwaylanaopagadianzamboangacityrd",
+      "forms": [
+        {
+          "label": "Maharlika Highway( Lanao-Pagadian-Zamboanga City Rd)",
+          "count": 14
+        },
+        {
+          "label": "Maharlika Highway (Lanao-Pagadian-Zamboanga City Rd)",
+          "count": 3
+        }
+      ],
+      "n_forms": 2,
+      "total": 17
+    },
+    {
+      "compact": "palocarigaraormocrd",
+      "forms": [
+        {
+          "label": "Palo-Carigara-Ormoc Rd",
+          "count": 11
+        },
+        {
+          "label": "Palo-carigara-Ormoc Rd",
+          "count": 1
+        }
+      ],
+      "n_forms": 2,
+      "total": 12
+    },
+    {
+      "compact": "butuancitycagayandeorocityiligancityrd",
+      "forms": [
+        {
+          "label": "Butuan City-Cagayan de Oro City-Iligan City Rd",
+          "count": 8
+        },
+        {
+          "label": "Butuan City - Cagayan de Oro City - Iligan City Rd",
+          "count": 3
+        }
+      ],
+      "n_forms": 2,
+      "total": 11
+    },
+    {
+      "compact": "joseabadsantosavejasa",
+      "forms": [
+        {
+          "label": "Jose Abad Santos Ave (JASA)",
+          "count": 7
+        },
+        {
+          "label": "Jose Abad Santos Ave (Jasa)",
+          "count": 1
+        }
+      ],
+      "n_forms": 2,
+      "total": 8
+    },
+    {
+      "compact": "lipacityalaminosrd",
+      "forms": [
+        {
+          "label": "Lipa City - Alaminos Rd",
+          "count": 6
+        },
+        {
+          "label": "Lipa City- Alaminos Rd",
+          "count": 2
+        }
+      ],
+      "n_forms": 2,
+      "total": 8
+    },
+    {
+      "compact": "kabugaopudtollunacagayanbdryrd",
+      "forms": [
+        {
+          "label": "Kabugao-Pudtol-Luna-Cagayan Bdry Rd",
+          "count": 7
+        },
+        {
+          "label": "Kabugao-Pudtol-Luna-cagayan Bdry Rd",
+          "count": 1
+        }
+      ],
+      "n_forms": 2,
+      "total": 8
+    },
+    {
+      "compact": "butuancitycagayandeorocityiligancityrdroadsafetyroadwaylight",
+      "forms": [
+        {
+          "label": "Butuan City-Cagayan de Oro City-Iligan City Rd, (Road Safety: Roadway Lighting)",
+          "count": 5
+        },
+        {
+          "label": "Butuan City-Cagayan de Oro City-Iligan City Rd - (Road Safety: Roadway Lighting)",
+          "count": 3
+        }
+      ],
+      "n_forms": 2,
+      "total": 8
+    },
+    {
+      "compact": "camarinesnortesubdistrictengineeringoffice",
+      "forms": [
+        {
+          "label": "Camarines Norte Sub-District Engineering Office",
+          "count": 4
+        },
+        {
+          "label": "Camarines Norte Sub District Engineering Office",
+          "count": 3
+        }
+      ],
+      "n_forms": 2,
+      "total": 7
+    },
+    {
+      "compact": "maharlikahighwaydigosmakarrd",
+      "forms": [
+        {
+          "label": "Maharlika Highway (Digos-Makar Rd)",
+          "count": 5
+        },
+        {
+          "label": "Maharlika Highway( Digos-Makar Rd)",
+          "count": 2
+        }
+      ],
+      "n_forms": 2,
+      "total": 7
+    },
+    {
+      "compact": "isaac0tolentinoave",
+      "forms": [
+        {
+          "label": "Isaac 0. Tolentino Ave.",
+          "count": 6
+        },
+        {
+          "label": "Isaac 0 . Tolentino Ave.",
+          "count": 1
+        }
+      ],
+      "n_forms": 2,
+      "total": 7
+    },
+    {
+      "compact": "pangasinanzambalesrd",
+      "forms": [
+        {
+          "label": "Pangasinan - Zambales Rd",
+          "count": 4
+        },
+        {
+          "label": "Pangasinan-Zambales Rd",
+          "count": 2
+        }
+      ],
+      "n_forms": 2,
+      "total": 6
+    },
+    {
+      "compact": "catarmancalbayogrd",
+      "forms": [
+        {
+          "label": "Catarman-Calbayog Rd",
+          "count": 5
+        },
+        {
+          "label": "catarman-calbayog Rd",
+          "count": 1
+        }
+      ],
+      "n_forms": 2,
+      "total": 6
+    },
+    {
+      "compact": "surallahlakesebumaitumrd",
+      "forms": [
+        {
+          "label": "Surallah-Lake Sebu-Maitum Rd",
+          "count": 4
+        },
+        {
+          "label": "Surallah-lake Sebu-Maitum Rd",
+          "count": 2
+        }
+      ],
+      "n_forms": 2,
+      "total": 6
+    },
+    {
+      "compact": "assetpreservationprogram",
+      "forms": [
+        {
+          "label": "ASSET PRESERVATION PROGRAM",
+          "count": 4
+        },
+        {
+          "label": "Asset Preservation Program",
+          "count": 1
+        }
+      ],
+      "n_forms": 2,
+      "total": 5
+    },
+    {
+      "compact": "networkdevelopmentprogram",
+      "forms": [
+        {
+          "label": "NETWORK DEVELOPMENT PROGRAM",
+          "count": 4
+        },
+        {
+          "label": "Network Development Program",
+          "count": 1
+        }
+      ],
+      "n_forms": 2,
+      "total": 5
+    },
+    {
+      "compact": "bridgeprogram",
+      "forms": [
+        {
+          "label": "BRIDGE PROGRAM",
+          "count": 4
+        },
+        {
+          "label": "Bridge Program",
+          "count": 1
+        }
+      ],
+      "n_forms": 2,
+      "total": 5
+    },
+    {
+      "compact": "floodmanagementprogram",
+      "forms": [
+        {
+          "label": "FLOOD MANAGEMENT PROGRAM",
+          "count": 4
+        },
+        {
+          "label": "Flood Management Program",
+          "count": 1
+        }
+      ],
+      "n_forms": 2,
+      "total": 5
+    },
+    {
+      "compact": "alaminosbolinaord",
+      "forms": [
+        {
+          "label": "Alaminos-Bolinao Rd",
+          "count": 3
+        },
+        {
+          "label": "Alaminos - Bolinao Rd",
+          "count": 2
+        }
+      ],
+      "n_forms": 2,
+      "total": 5
+    },
+    {
+      "compact": "mtprovincebdrycalananpinukpukabbutrdcagaluancalanansect",
+      "forms": [
+        {
+          "label": "Mt Province Bdry-Calanan-Pinukpuk-Abbut Rd (Cagaluan-Calanan Sect)",
+          "count": 4
+        },
+        {
+          "label": "Mt Province Bdry-Calanan-Pinukpuk-Abbut Rd (Cagaluan-calanan Sect)",
+          "count": 1
+        }
+      ],
+      "n_forms": 2,
+      "total": 5
+    },
+    {
+      "compact": "cavitebatangasrd",
+      "forms": [
+        {
+          "label": "Cavite-Batangas Rd",
+          "count": 4
+        },
+        {
+          "label": "cavite-Batangas Rd",
+          "count": 1
+        }
+      ],
+      "n_forms": 2,
+      "total": 5
+    },
+    {
+      "compact": "mtprovincebdrycalananpinukpukabbutrd",
+      "forms": [
+        {
+          "label": "Mt Province Bdry-Calanan-Pinukpuk-Abbut Rd",
+          "count": 4
+        },
+        {
+          "label": "Mt Province Bdry-calanan-Pinukpuk-Abbut Rd",
+          "count": 1
+        }
+      ],
+      "n_forms": 2,
+      "total": 5
+    },
+    {
+      "compact": "officeofthesecretary",
+      "forms": [
+        {
+          "label": "Office of the Secretary",
+          "count": 3
+        },
+        {
+          "label": "OFFICE OF THE SECRETARY",
+          "count": 1
+        }
+      ],
+      "n_forms": 2,
+      "total": 4
+    },
+    {
+      "compact": "supporttooperations",
+      "forms": [
+        {
+          "label": "SUPPORT TO OPERATIONS",
+          "count": 2
+        },
+        {
+          "label": "Support to Operations",
+          "count": 2
+        }
+      ],
+      "n_forms": 2,
+      "total": 4
+    },
+    {
+      "compact": "preventivemaintenanceprimaryroads",
+      "forms": [
+        {
+          "label": "Preventive Maintenance - Primary Roads",
+          "count": 2
+        },
+        {
+          "label": "Preventive Maintenance Primary Roads",
+          "count": 2
+        }
+      ],
+      "n_forms": 2,
+      "total": 4
+    },
+    {
+      "compact": "sagbatpililladivrd",
+      "forms": [
+        {
+          "label": "Sagbat-Pililla Div Rd",
+          "count": 3
+        },
+        {
+          "label": "Sagbat-Pililla Div Rd - +",
+          "count": 1
+        }
+      ],
+      "n_forms": 2,
+      "total": 4
+    },
+    {
+      "compact": "capizaklanrd",
+      "forms": [
+        {
+          "label": "Capiz-Aklan Rd",
+          "count": 3
+        },
+        {
+          "label": "capiz-Aklan Rd",
+          "count": 1
+        }
+      ],
+      "n_forms": 2,
+      "total": 4
+    },
+    {
+      "compact": "navalcaibirancrosscountryrd",
+      "forms": [
+        {
+          "label": "Naval-Caibiran Cross Country Rd",
+          "count": 3
+        },
+        {
+          "label": "Naval-caibiran Cross Country Rd",
+          "count": 1
+        }
+      ],
+      "n_forms": 2,
+      "total": 4
+    },
+    {
+      "compact": "constructionofesperanzalebakbypassroadesperanzasultankudarat",
+      "forms": [
+        {
+          "label": "Construction of Esperanza-Lebak Bypass Road, Esperanza, Sultan Kudarat",
+          "count": 3
+        },
+        {
+          "label": "Construction of Esperanza - Lebak Bypass Road, Esperanza, Sultan Kudarat",
+          "count": 1
+        }
+      ],
+      "n_forms": 2,
+      "total": 4
+    },
+    {
+      "compact": "operations",
+      "forms": [
+        {
+          "label": "Operations",
+          "count": 2
+        },
+        {
+          "label": "OPERATIONS",
+          "count": 1
+        }
+      ],
+      "n_forms": 2,
+      "total": 3
+    },
+    {
+      "compact": "locallyfundedprojects",
+      "forms": [
+        {
+          "label": "Locally-Funded Project(s)",
+          "count": 2
+        },
+        {
+          "label": "LOCALLY-FUNDED PROJECTS",
+          "count": 1
+        }
+      ],
+      "n_forms": 2,
+      "total": 3
+    },
+    {
+      "compact": "foreignassistedprojects",
+      "forms": [
+        {
+          "label": "Foreign-Assisted Project(s)",
+          "count": 2
+        },
+        {
+          "label": "FOREIGN-ASSISTED PROJECTS",
+          "count": 1
+        }
+      ],
+      "n_forms": 2,
+      "total": 3
+    },
+    {
+      "compact": "regionalofficeixproper",
+      "forms": [
+        {
+          "label": "Regional Office IX - Proper",
+          "count": 2
+        },
+        {
+          "label": "Regional Office IX Proper",
+          "count": 1
+        }
+      ],
+      "n_forms": 2,
+      "total": 3
+    }
+  ]
+}

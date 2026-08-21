@@ -1,0 +1,61 @@
+{
+  "name": "v2b-full",
+  "volume": "VOLUME-2B",
+  "source_dir": "pdf_ocr/output/v2b-full",
+  "index_pdf": "/mnt/6E9A84429A8408B3/WORK/BetterGovPH/Budget-NEP/NEP_PDF_DATA/pdfs/NEP-2027-VOLUME-2B_OCR.pdf",
+  "pdf_url_gz": "pdfs/NEP-2027-VOLUME-2B_OCR.pdf.gz",
+  "pdf_url": "pdfs/NEP-2027-VOLUME-2B_OCR.pdf",
+  "page_count": 722,
+  "n_source_pages": 722,
+  "densified": true,
+  "include_rows": true,
+  "gzip": true,
+  "max_mb": 45.0,
+  "coord_space": "pdf",
+  "datalab_to_pdf": {
+    "x": 1.0,
+    "y": 1.0
+  },
+  "taxonomy": {
+    "present": true,
+    "table_count": 730,
+    "kinds": {
+      "A": 97,
+      "B": 576,
+      "C": 1,
+      "D": 1,
+      "E": 1,
+      "F": 4,
+      "G": 1,
+      "H": 5,
+      "P": 42,
+      "U": 2
+    }
+  },
+  "shards": [
+    {
+      "id": 0,
+      "file": "pages-000.json.gz",
+      "bytes": 3048056,
+      "raw_bytes": 22404889,
+      "page_from": 0,
+      "page_to": 721,
+      "pdf_page_from": 1,
+      "pdf_page_to": 722,
+      "n_pages": 722
+    }
+  ],
+  "data_shards": [
+    {
+      "id": 0,
+      "file": "data-000.json.gz",
+      "bytes": 2920362,
+      "raw_bytes": 28216322,
+      "page_from": 0,
+      "page_to": 721,
+      "pdf_page_from": 1,
+      "pdf_page_to": 722,
+      "n_pages": 722
+    }
+  ]
+}

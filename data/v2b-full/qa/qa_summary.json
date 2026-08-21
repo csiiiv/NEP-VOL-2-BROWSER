@@ -1,0 +1,136 @@
+{
+  "dir": "/mnt/6E9A84429A8408B3/WORK/BetterGovPH/Budget-NEP/NEP_PDF_DATA/pdf_ocr/output/v2b-full",
+  "n_pages": 722,
+  "kind_counts": {
+    "U": 2,
+    "P": 39,
+    "F": 2,
+    "G": 1,
+    "D": 1,
+    "A": 96,
+    "H": 5,
+    "B": 576
+  },
+  "zone_kind_counts": {
+    "U": 2,
+    "P": 42,
+    "F": 4,
+    "G": 1,
+    "C": 1,
+    "D": 1,
+    "A": 97,
+    "H": 5,
+    "E": 1,
+    "B": 576
+  },
+  "span_issues": {
+    "front_F_G": [],
+    "byou_A": [],
+    "bridge_108_114": [],
+    "pap_B": [],
+    "provisions_P": []
+  },
+  "row_sum_failures": [],
+  "multi_zone": [
+    {
+      "page": 8,
+      "zones": [
+        "F",
+        "P",
+        "C",
+        "D"
+      ]
+    },
+    {
+      "page": 108,
+      "zones": [
+        "A",
+        "F"
+      ]
+    },
+    {
+      "page": 109,
+      "zones": [
+        "F",
+        "P",
+        "H"
+      ]
+    },
+    {
+      "page": 111,
+      "zones": [
+        "P",
+        "H"
+      ]
+    },
+    {
+      "page": 114,
+      "zones": [
+        "E",
+        "A"
+      ]
+    }
+  ],
+  "empty_pages": [
+    2,
+    4,
+    722
+  ],
+  "kind_transitions": [
+    {
+      "page": 3,
+      "from": "U",
+      "to": "P"
+    },
+    {
+      "page": 6,
+      "from": "P",
+      "to": "F"
+    },
+    {
+      "page": 7,
+      "from": "F",
+      "to": "G"
+    },
+    {
+      "page": 8,
+      "from": "G",
+      "to": "D"
+    },
+    {
+      "page": 9,
+      "from": "D",
+      "to": "P"
+    },
+    {
+      "page": 13,
+      "from": "P",
+      "to": "A"
+    },
+    {
+      "page": 108,
+      "from": "A",
+      "to": "F"
+    },
+    {
+      "page": 109,
+      "from": "F",
+      "to": "H"
+    },
+    {
+      "page": 114,
+      "from": "H",
+      "to": "A"
+    },
+    {
+      "page": 115,
+      "from": "A",
+      "to": "B"
+    },
+    {
+      "page": 691,
+      "from": "B",
+      "to": "P"
+    }
+  ]
+}

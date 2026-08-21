@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Redirecting to QA…</title>
+<script>
+  const p = new URLSearchParams(location.search);
+  const run = p.get("run") || p.get("pack") || "v2b-full";
+  const report = p.get("report") || "overview";
+  const pack = p.get("pack");
+  const q = new URLSearchParams();
+  if (pack) q.set("pack", pack);
+  else q.set("run", run);
+  q.set("page", p.get("page") || "1");
+  location.replace(`./index.html?${q.toString()}#/qa/${encodeURIComponent(report)}`);
+</script>
+</head>
+<body>
+<p>QA now lives in the viewer modal. Redirecting to
+  <a id="a" href="./index.html?run=v2b-full#/qa/overview">pdf-ocr-live.html#/qa</a>…
+</p>
+</body>
+</html>

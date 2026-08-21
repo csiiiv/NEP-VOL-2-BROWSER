@@ -1,0 +1,332 @@
+# Label QA — `v2b-full`
+
+- Pages: **722**
+- Rows: **19567** (labeled 19567)
+- Unique labels: **11688**
+- Unfixed suspects: **26** (prose skipped: 653)
+- Fixed (OCR caught, label clean): **108**
+- Near-duplicate compact groups: **89**
+- Rows with label_ocr rewrite: **5863**
+
+## Unfixed reason counts
+
+- `rare_spaced_sibling`: 22
+- `possible_split`: 3
+- `weird_punct`: 1
+
+## Unfixed suspects (still on `label`)
+
+- **3×** p.199#4, p.199#5, p.199#6 · rare_spaced_sibling
+  - `Maharlika Highway (Lanao-Pagadian-Zamboanga City Rd)`
+- **2×** p.205#21, p.212#21 · rare_spaced_sibling
+  - `Lipa City- Alaminos Rd`
+- **1×** p.688#5 · rare_spaced_sibling
+  - `Asset Preservation Program`
+- **1×** p.689#6 · rare_spaced_sibling
+  - `Bridge Program`
+- **1×** p.453#4 · rare_spaced_sibling
+  - `Construction of Esperanza - Lebak Bypass Road, Esperanza, Sultan Kudarat`
+- **1×** p.450#20 · possible_split:Aya aya
+  - `Construction of Laguindingan-Iligan City Alternate Road, Barangay Aya aya Section, Lugait, Misamis Oriental`
+- **1×** p.178#6 · possible_split:height dams
+  - `Consultancy Services for the conduct of Feasibility Study of low height dams along Pagsangahan River Watershed`
+- **1×** p.347#2 · rare_spaced_sibling
+  - `Flood Management Program`
+- **1×** p.211#4 · rare_spaced_sibling
+  - `Isaac 0 . Tolentino Ave.`
+- **1×** p.243#27 · rare_spaced_sibling
+  - `Jose Abad Santos Ave (Jasa)`
+- **1×** p.247#4 · rare_spaced_sibling
+  - `Kabugao-Pudtol-Luna-cagayan Bdry Rd`
+- **1×** p.259#18 · rare_spaced_sibling
+  - `Masbate-cataingan-Placer Rd`
+- **1×** p.247#16 · rare_spaced_sibling
+  - `Mt Province Bdry-Calanan-Pinukpuk-Abbut Rd (Cagaluan-calanan Sect)`
+- **1×** p.258#34 · rare_spaced_sibling
+  - `Mt Province Bdry-calanan-Pinukpuk-Abbut Rd`
+- **1×** p.259#35 · rare_spaced_sibling
+  - `Naval-caibiran Cross Country Rd`
+- **1×** p.688#10 · rare_spaced_sibling
+  - `Network Development Program`
+- **1×** p.6#1 · rare_spaced_sibling
+  - `OFFICE OF THE SECRETARY`
+- **1×** p.229#7 · rare_spaced_sibling
+  - `Palo-carigara-Ormoc Rd`
+- **1×** p.674#16 · weird_punct
+  - `Rehabilitation of Multi-Purpose Building (Covered Court) barangay Libertad, General Luna, , Siarqao Island,Suriqao Del Norte`
+- **1×** p.461#21 · possible_split:Camia st
+  - `Rehabilitation of Roads and Drainages along Camia st., Barangay 188, Caloocan City`
+- **1×** p.228#7 · rare_spaced_sibling
+  - `Sagbat-Pililla Div Rd - +`
+- **1×** p.259#15 · rare_spaced_sibling
+  - `calapan South Rd`
+- **1×** p.207#17 · rare_spaced_sibling
+  - `capiz-Aklan Rd`
+- **1×** p.259#39 · rare_spaced_sibling
+  - `catarman-calbayog Rd`
+- **1×** p.403#4 · rare_spaced_sibling
+  - `cavite 1st District Engineering Office`
+- **1×** p.210#23 · rare_spaced_sibling
+  - `cavite-Batangas Rd`
+
+## Fixed reason counts
+
+- `bang_as_I`: 38
+- `letter_digit`: 30
+- `weird_punct`: 19
+- `possible_split`: 17
+- `known_word_split`: 7
+
+## Fixed (bad `label_ocr` → clean `label`, e.g. DSC)
+
+- **8×** p.28#17, p.65#12, p.68#23, p.115#25, p.201#2 · bang_as_I · `dsc:standard_exact`
+  - OCR: `!locos Norte 1st District Engineering Office`
+  - now: `Ilocos Norte 1st District Engineering Office`
+- **8×** p.28#18, p.79#10, p.115#28, p.201#7, p.231#15 · bang_as_I · `dsc:standard_exact`
+  - OCR: `!locos Sur 2nd District Engineering Office`
+  - now: `Ilocos Sur 2nd District Engineering Office`
+- **8×** p.8#4, p.24#21, p.45#16, p.58#5, p.68#22 · bang_as_I · `dsc:standard_exact`
+  - OCR: `Region I - !locos`
+  - now: `Region I - Ilocos`
+- **3×** p.147#11, p.179#20, p.186#2 · bang_as_I · `dsc:standard_exact`
+  - OCR: `1. !locos Norte 1st District Engineering Office`
+  - now: `Ilocos Norte 1st District Engineering Office`
+- **3×** p.160#6, p.179#21, p.186#3 · bang_as_I · `dsc:standard_exact`
+  - OCR: `2. !locos Norte 2nd District Engineering Office`
+  - now: `Ilocos Norte 2nd District Engineering Office`
+- **3×** p.160#7, p.179#22, p.186#4 · bang_as_I · `dsc:standard_exact`
+  - OCR: `3. !locos Sur 1st District Engineering Office`
+  - now: `Ilocos Sur 1st District Engineering Office`
+- **3×** p.23#9, p.34#3, p.105#2 · known_word_split · `dsc:standard_exact`
+  - OCR: `National Capital Regi on (NCR)`
+  - now: `National Capital Region (NCR)`
+- **2×** p.115#26, p.575#26 · bang_as_I · `dsc:standard_exact`
+  - OCR: `!locos Norte 2nd District Engineering Office`
+  - now: `Ilocos Norte 2nd District Engineering Office`
+- **2×** p.115#27, p.682#21 · bang_as_I · `dsc:standard_exact`
+  - OCR: `!locos Sur 1st District Engineering Office`
+  - now: `Ilocos Sur 1st District Engineering Office`
+- **2×** p.147#14, p.160#8 · bang_as_I · `dsc:symspell_compact_distance_1`
+  - OCR: `!locos Sur 2nd District Engineering Office 4.`
+  - now: `Ilocos Sur 2nd District Engineering Office`
+- **2×** p.179#23, p.186#5 · bang_as_I · `dsc:standard_exact`
+  - OCR: `4. !locos Sur 2nd District Engineering Office`
+  - now: `Ilocos Sur 2nd District Engineering Office`
+- **2×** p.63#14, p.65#14 · possible_split:Offi ce · `dsc:standard_exact`
+  - OCR: `Apayao 2nd District Engineering Offi ce`
+  - now: `Apayao 2nd District Engineering Office`
+- **2×** p.16#27, p.34#25 · possible_split:Off ice · `normalize_or_strip`
+  - OCR: `Engineering Off ice`
+  - now: `Engineering Office`
+- **2×** p.23#12, p.65#6 · known_word_split, possible_split:Nati onal · `dsc:standard_exact`
+  - OCR: `Nati onal Capital Region (NCR)`
+  - now: `National Capital Region (NCR)`
+- **2×** p.8#9, p.100#9 · bang_as_I · `dsc:standard_exact`
+  - OCR: `Region !VB - MIMAROPA`
+  - now: `Region IVB - MIMAROPA`
+- **1×** p.160#5 · bang_as_I · `dsc:symspell_compact_distance_1`
+  - OCR: `!locos Norte 1st District Engineering Office 1.`
+  - now: `Ilocos Norte 1st District Engineering Office`
+- **1×** p.147#12 · bang_as_I · `dsc:symspell_compact_distance_1`
+  - OCR: `!locos Norte 2nd District Engineering Office 2.`
+  - now: `Ilocos Norte 2nd District Engineering Office`
+- **1×** p.153#27 · bang_as_I · `dsc:symspell_compact_distance_1`
+  - OCR: `!locos Sur 1st District Engineering Office 3.`
+  - now: `Ilocos Sur 1st District Engineering Office`
+- **1×** p.143#13 · letter_digit:0KB · `normalize_or_strip`
+  - OCR: `1. Desilting, Dredging, and Cleaning of Waterways - Oplan Kontra Baha (0KB)`
+  - now: `Desilting, Dredging, and Cleaning of Waterways - Oplan Kontra Baha (OKB)`
+- **1×** p.147#13 · bang_as_I · `dsc:symspell_compact_distance_1`
+  - OCR: `3. ! locos Sur 1st District Engineering Office`
+  - now: `Ilocos Sur 1st District Engineering Office`
+- **1×** p.274#9 · letter_digit:5arangani · `normalize_or_strip`
+  - OCR: `5arangani-Sultan Kudarat Coastal Rd - K1725 + 030 - K1726 + 512`
+  - now: `Sarangani-Sultan Kudarat Coastal Rd`
+- **1×** p.75#2 · possible_split:Distri ct · `dsc:standard_exact`
+  - OCR: `Albay 1st Distri ct Engineering Office`
+  - now: `Albay 1st District Engineering Office`
+- **1×** p.17#7 · possible_split:Offi ce · `dsc:standard_exact`
+  - OCR: `Albay 1st District Engineering Offi ce`
+  - now: `Albay 1st District Engineering Office`
+- **1×** p.17#8 · possible_split:Offi ce · `dsc:standard_exact`
+  - OCR: `Albay 2nd District Engineering Offi ce`
+  - now: `Albay 2nd District Engineering Office`
+- **1×** p.298#10 · letter_digit:S0 · `normalize_or_strip`
+  - OCR: `Albuera - Burauen Rd (Albuera Section) - Sta. 7+463.S0 - Sta. 7+584.73, Barangay San Pedro, Albuera, Leyte`
+  - now: `Albuera - Burauen Rd (Albuera Section), Barangay San Pedro, Albuera, Leyte`
+- **1×** p.676#8 · weird_punct · `normalize_or_strip`
+  - OCR: `BIP • Local Ports and Boat Landing`
+  - now: `BIP - Local Ports and Boat Landing`
+- **1×** p.218#8 · letter_digit:5ilang · `normalize_or_strip`
+  - OCR: `Bagong 5ilang-Capalonga Rd - K0324 + 573 - K0327 + 986`
+  - now: `Bagong Silang-Capalonga Rd`
+- **1×** p.337#1 · letter_digit:0cc · `normalize_or_strip`
+  - OCR: `Bateria Br. (B00515NR) along Dumaguete North Rd (Jct Bais-Kabankalan-Negros 0cc Bdry)`
+  - now: `Bateria Br. (B00515NR) along Dumaguete North Rd (Jct Bais-Kabankalan-Negros Occ Bdry)`
+- **1×** p.341#7 · letter_digit:0cc · `normalize_or_strip`
+  - OCR: `Bitoclan Br. (B00132NR) along Dumaguete North Rd (Jct Bais-Kabankalan-Negros 0cc Bdry)`
+  - now: `Bitoclan Br. (B00132NR) along Dumaguete North Rd (Jct Bais-Kabankalan-Negros Occ Bdry)`
+- **1×** p.206#11 · weird_punct · `normalize_or_strip`
+  - OCR: `Bongabong-Sagana-Roxas-Sn Aquilino Rd - K0122 + 000 - K0122 + 421, K0124 + 000 · K0125 + 721`
+  - now: `Bongabong-Sagana-Roxas-Sn Aquilino Rd`
+- **1×** p.285#11 · weird_punct · `normalize_or_strip`
+  - OCR: `Cagayan de Oro Diversion Road Extension (Jct. Sayre Highway (Balubal)-Manolo Fortich· Malitbog-Claveria-Eureka, Gingoog `
+  - now: `Cagayan de Oro Diversion Road Extension (Jct. Sayre Highway (Balubal)-Manolo Fortich- Malitbog-Claveria-Eureka, Gingoog `
+- **1×** p.213#9 · letter_digit:K0lSS · `normalize_or_strip`
+  - OCR: `Calapan South Rd - K0153 + 493 - K0153 + 860, K0154 + 1037 - K0lSS + 207, K0157 + 662 - K0158 + 000`
+  - now: `Calapan South Rd`
+- **1×** p.294#10 · bang_as_I · `normalize_or_strip`
+  - OCR: `Cervantes (!locos Sur) - Besao-Sagada (Mt. Province) Road via Laylaya, Sta. 12+980 - Sta 14+760`
+  - now: `Cervantes (Ilocos Sur) - Besao-Sagada (Mt. Province) Road via Laylaya`
+- **1×** p.682#20 · bang_as_I · `normalize_or_strip`
+  - OCR: `Construction (Completion) of Multi-Purpose Building (DPWH Building), Laoag City, !locos Norte`
+  - now: `Construction (Completion) of Multi-Purpose Building (DPWH Building), Laoag City, Ilocos Norte`
+- **1×** p.617#2 · letter_digit:ca1amba · `normalize_or_strip`
+  - OCR: `Construction (Completion) of Multi-Purpose Building, Barangay Banlic, City of ca1amba, Laguna`
+  - now: `Construction (Completion) of Multi-Purpose Building, Barangay Banlic, City of Calamba, Laguna`
+- **1×** p.682#22 · bang_as_I · `normalize_or_strip`
+  - OCR: `Construction (Completion) of Office Building, DPWH !locos Sur 1st DEO, Zone VI, Bantay, !locos Sur (17.579266, 120.38586`
+  - now: `Construction (Completion) of Office Building, DPWH Ilocos Sur 1st DEO, Zone VI, Bantay, Ilocos Sur`
+- **1×** p.46#15 · known_word_split, possible_split:Nati onal · `normalize_or_strip`
+  - OCR: `Construction I Upgrading / Rehabilitation of Drainage along Nati onal Roads`
+  - now: `Construction I Upgrading / Rehabilitation of Drainage along National Roads`
+- **1×** p.449#14 · letter_digit:8arangay · `normalize_or_strip`
+  - OCR: `Construction of 8arangay Ranao-ranao to Barangay Banga Pantar Road, Marantao, Lanao del Sur`
+  - now: `Construction of Barangay Ranao-ranao to Barangay Banga Pantar Road, Marantao, Lanao del Sur`
+- **1×** p.474#21 · letter_digit:S0G · `normalize_or_strip`
+  - OCR: `Construction of Access Road leading to Mt. Chumanchil, Sta. 1 +S0G.S - Sta. 2+006.S, Kalinga`
+  - now: `Construction of Access Road leading to Mt. Chumanchil, Kalinga`
+- **1×** p.449#16 · weird_punct · `normalize_or_strip`
+  - OCR: `Construction of Baylanan - San Miguel Bridge along Jct. Cagayan de Oro City - Dominorog • Camp Kibaritan Road to Jct SH-`
+  - now: `Construction of Baylanan - San Miguel Bridge along Jct. Cagayan de Oro City - Dominorog - Camp Kibaritan Road to Jct SH-`
+
+## Near-duplicate groups (spacing/punct variants)
+
+- compact=`rehabilitationreconstructionupgradingofd…` (3 forms, 4 rows)
+  - 2× `Rehabilitation/ Reconstruction/ Upgrading of Damaged Paved Roads - Tertiary Roads`
+  - 1× `Rehabilitation / Reconstruction / Upgrading of Damaged Paved Roads Tertiary Roads`
+  - 1× `Rehabilitation / Reconstruction Upgrading of Damaged Paved Roads Tertiary Roads`
+- compact=`constructionofmissinglinksnewroads…` (3 forms, 4 rows)
+  - 2× `Construction of Missing Links / New Roads`
+  - 1× `Construction of Missing Links/ New Roads`
+  - 1× `Construction of Missing Links/New Roads`
+- compact=`rehabilitationreconstructionofroadswiths…` (3 forms, 3 rows)
+  - 1× `Rehabilitation / Reconstruction of Roads with Slips, Slope Collapse and Landslide Secondary Roads`
+  - 1× `Rehabilitation Reconstruction of Roads with Slips, Slope Collapse and Landslide Secondary Roads`
+  - 1× `Rehabilitation/ Reconstruction of Roads with Slips. Slope Collapse. and Landslide - Secondary Roads`
+- compact=`retrofittingstrengtheningofpermanentbrid…` (3 forms, 3 rows)
+  - 1× `Retrofitti ng / Strengthening of Permanent Bridges`
+  - 1× `Retrofitting / Strengthening of Permanent Bridges`
+  - 1× `Retrofitting/ Strengthening of Permanent Bridges`
+- compact=`rehabilitationmajorrepairofpermanentbrid…` (3 forms, 3 rows)
+  - 1× `Rehabili tation Major Repair of Permanent Bridges`
+  - 1× `Rehabilitation / Major Repair of Permanent Bridges`
+  - 1× `Rehabilitation/Major Repair of Permanent Bridges`
+- compact=`masbatecatainganplacerrd…` (2 forms, 28 rows)
+  - 27× `Masbate-Cataingan-Placer Rd`
+  - 1× `Masbate-cataingan-Placer Rd`
+- compact=`calapansouthrd…` (2 forms, 19 rows)
+  - 18× `Calapan South Rd`
+  - 1× `calapan South Rd`
+- compact=`cavite1stdistrictengineeringoffice…` (2 forms, 18 rows)
+  - 17× `Cavite 1st District Engineering Office`
+  - 1× `cavite 1st District Engineering Office`
+- compact=`maharlikahighwaylanaopagadianzamboangaci…` (2 forms, 17 rows)
+  - 14× `Maharlika Highway( Lanao-Pagadian-Zamboanga City Rd)`
+  - 3× `Maharlika Highway (Lanao-Pagadian-Zamboanga City Rd)`
+- compact=`palocarigaraormocrd…` (2 forms, 12 rows)
+  - 11× `Palo-Carigara-Ormoc Rd`
+  - 1× `Palo-carigara-Ormoc Rd`
+- compact=`butuancitycagayandeorocityiligancityrd…` (2 forms, 11 rows)
+  - 8× `Butuan City-Cagayan de Oro City-Iligan City Rd`
+  - 3× `Butuan City - Cagayan de Oro City - Iligan City Rd`
+- compact=`joseabadsantosavejasa…` (2 forms, 8 rows)
+  - 7× `Jose Abad Santos Ave (JASA)`
+  - 1× `Jose Abad Santos Ave (Jasa)`
+- compact=`lipacityalaminosrd…` (2 forms, 8 rows)
+  - 6× `Lipa City - Alaminos Rd`
+  - 2× `Lipa City- Alaminos Rd`
+- compact=`kabugaopudtollunacagayanbdryrd…` (2 forms, 8 rows)
+  - 7× `Kabugao-Pudtol-Luna-Cagayan Bdry Rd`
+  - 1× `Kabugao-Pudtol-Luna-cagayan Bdry Rd`
+- compact=`butuancitycagayandeorocityiligancityrdro…` (2 forms, 8 rows)
+  - 5× `Butuan City-Cagayan de Oro City-Iligan City Rd, (Road Safety: Roadway Lighting)`
+  - 3× `Butuan City-Cagayan de Oro City-Iligan City Rd - (Road Safety: Roadway Lighting)`
+- compact=`camarinesnortesubdistrictengineeringoffi…` (2 forms, 7 rows)
+  - 4× `Camarines Norte Sub-District Engineering Office`
+  - 3× `Camarines Norte Sub District Engineering Office`
+- compact=`maharlikahighwaydigosmakarrd…` (2 forms, 7 rows)
+  - 5× `Maharlika Highway (Digos-Makar Rd)`
+  - 2× `Maharlika Highway( Digos-Makar Rd)`
+- compact=`isaac0tolentinoave…` (2 forms, 7 rows)
+  - 6× `Isaac 0. Tolentino Ave.`
+  - 1× `Isaac 0 . Tolentino Ave.`
+- compact=`pangasinanzambalesrd…` (2 forms, 6 rows)
+  - 4× `Pangasinan - Zambales Rd`
+  - 2× `Pangasinan-Zambales Rd`
+- compact=`catarmancalbayogrd…` (2 forms, 6 rows)
+  - 5× `Catarman-Calbayog Rd`
+  - 1× `catarman-calbayog Rd`
+- compact=`surallahlakesebumaitumrd…` (2 forms, 6 rows)
+  - 4× `Surallah-Lake Sebu-Maitum Rd`
+  - 2× `Surallah-lake Sebu-Maitum Rd`
+- compact=`assetpreservationprogram…` (2 forms, 5 rows)
+  - 4× `ASSET PRESERVATION PROGRAM`
+  - 1× `Asset Preservation Program`
+- compact=`networkdevelopmentprogram…` (2 forms, 5 rows)
+  - 4× `NETWORK DEVELOPMENT PROGRAM`
+  - 1× `Network Development Program`
+- compact=`bridgeprogram…` (2 forms, 5 rows)
+  - 4× `BRIDGE PROGRAM`
+  - 1× `Bridge Program`
+- compact=`floodmanagementprogram…` (2 forms, 5 rows)
+  - 4× `FLOOD MANAGEMENT PROGRAM`
+  - 1× `Flood Management Program`
+- compact=`alaminosbolinaord…` (2 forms, 5 rows)
+  - 3× `Alaminos-Bolinao Rd`
+  - 2× `Alaminos - Bolinao Rd`
+- compact=`mtprovincebdrycalananpinukpukabbutrdcaga…` (2 forms, 5 rows)
+  - 4× `Mt Province Bdry-Calanan-Pinukpuk-Abbut Rd (Cagaluan-Calanan Sect)`
+  - 1× `Mt Province Bdry-Calanan-Pinukpuk-Abbut Rd (Cagaluan-calanan Sect)`
+- compact=`cavitebatangasrd…` (2 forms, 5 rows)
+  - 4× `Cavite-Batangas Rd`
+  - 1× `cavite-Batangas Rd`
+- compact=`mtprovincebdrycalananpinukpukabbutrd…` (2 forms, 5 rows)
+  - 4× `Mt Province Bdry-Calanan-Pinukpuk-Abbut Rd`
+  - 1× `Mt Province Bdry-calanan-Pinukpuk-Abbut Rd`
+- compact=`officeofthesecretary…` (2 forms, 4 rows)
+  - 3× `Office of the Secretary`
+  - 1× `OFFICE OF THE SECRETARY`
+
+## Most common labels
+
+- 140× `Central Office`
+- 93× `National Capital Region`
+- 89× `National Capital Region (NCR)`
+- 85× `Region VIII`
+- 80× `Region XIII`
+- 78× `Region IV-A`
+- 77× `Region III`
+- 77× `Region VII`
+- 76× `Region XII`
+- 75× `Region IX`
+- 72× `Region VI`
+- 70× `Region II`
+- 69× `Region X`
+- 67× `Cordillera Administrative Region`
+- 67× `Region XI`
+- 63× `Region V`
+- 58× `MIMAROPA Region`
+- 56× `Region I`
+- 55× `Negros Island Region`
+- 53× `Engineering Office`
+- 52× `Maharlika Highway (LZ)`
+- 41× `Leyte 4th District Engineering Office`
+- 40× `Nueva Ecija 1st District Engineering Office`
+- 39× `Apayao 2nd District Engineering Office`
+- 38× `Laguna 3rd District Engineering Office`
+- 37× `Batangas 2nd District Engineering Office`
+- 35× `Negros Occidental 3rd District Engineering Office`
+- 33× `Batangas 4th District Engineering Office`
+- 33× `Capiz 2nd District Engineering Office`
+- 33× `Cotabato 1st District Engineering Office`

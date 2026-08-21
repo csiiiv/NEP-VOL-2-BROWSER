@@ -1,0 +1,2901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NEP 2027 Volume II-B</title>
+<style>
+:root {
+  --bg: #1e222a; --panel: #262b36; --panel2: #2d3340;
+  --text: #dfe4ee; --muted: #8b93a7; --accent: #4d8fd6;
+  --border: #3a4150; --sel: #ffd35d; --col: #6ecf8e;
+  --page-min-h: 85vh;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  background: var(--bg); color: var(--text);
+  font: 13px/1.45 "Segoe UI", Tahoma, sans-serif;
+  display: flex; flex-direction: column; overflow: hidden;
+}
+button, select, input {
+  font: inherit; color: var(--text); background: var(--panel2);
+  border: 1px solid var(--border); border-radius: 4px; padding: 4px 8px;
+}
+button { cursor: pointer; }
+button:hover { border-color: var(--accent); }
+button.active {
+  border-color: var(--sel); background: #3a3420; color: var(--sel);
+}
+input[type="text"] { min-width: 140px; }
+
+#topbar {
+  display: flex; align-items: center; gap: 8px; padding: 8px 12px;
+  background: linear-gradient(180deg, #2a303c 0%, var(--panel) 100%);
+  border-bottom: 1px solid var(--border);
+  flex: 0 0 auto; flex-wrap: wrap;
+}
+#topbar .brand {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-weight: 700; letter-spacing: .02em; color: var(--text);
+  margin-right: 4px;
+}
+#topbar .brand .mark {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px; border-radius: 5px;
+  background: var(--accent); color: #fff; font-size: 11px; font-weight: 800;
+}
+#topbar .brand .sub { color: var(--muted); font-weight: 500; font-size: 12px; }
+#topbar .cluster {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 3px 6px; border-radius: 6px;
+  background: rgba(0,0,0,.18); border: 1px solid var(--border);
+}
+#topbar .cluster .lbl {
+  color: var(--muted); font-size: 10px; text-transform: uppercase;
+  letter-spacing: .06em; padding: 0 2px;
+}
+#topbar .spacer { flex: 1; min-width: 8px; }
+#topbar .btn-qa {
+  background: #3a2f18; border-color: #c9a227; color: #ffd35d;
+  font-weight: 700; padding: 5px 12px;
+}
+#topbar .btn-qa:hover, #topbar .btn-qa.active {
+  background: #4a3c1c; border-color: #ffd35d; color: #fff3c4;
+}
+#topbar .btn-qa .kbd {
+  opacity: .7; font-weight: 500; font-size: 10px; margin-left: 6px;
+}
+a.link { color: var(--muted); text-decoration: none; font-size: 12px; padding: 4px 6px; }
+a.link:hover { color: var(--accent); text-decoration: underline; }
+
+#footer {
+  flex: 0 0 auto; display: flex; align-items: center; gap: 10px;
+  padding: 7px 12px; background: var(--panel); border-top: 1px solid var(--border);
+  flex-wrap: wrap; min-height: 40px;
+}
+#footer .foot-status {
+  display: flex; flex-direction: column; gap: 1px; min-width: 160px; max-width: 42%;
+}
+#footer #status { color: var(--muted); font-size: 11px; line-height: 1.3; }
+#footer #sel-status {
+  color: var(--sel); font-size: 11px; font-weight: 600; line-height: 1.3;
+}
+#footer .spacer { flex: 1; }
+#footer .foot-tools {
+  display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap;
+}
+#footer label.opt {
+  display: flex; align-items: center; gap: 5px;
+  color: var(--muted); font-size: 11px; white-space: nowrap;
+  padding: 2px 6px; border-radius: 4px; border: 1px solid transparent;
+}
+#footer label.opt:hover { border-color: var(--border); background: var(--panel2); }
+
+/* QA modal */
+#qa-backdrop {
+  display: none; position: fixed; inset: 0; z-index: 80;
+  background: rgba(8, 10, 14, .62); backdrop-filter: blur(2px);
+  align-items: stretch; justify-content: center; padding: 24px 18px;
+}
+#qa-backdrop.open { display: flex; }
+#qa-panel {
+  display: flex; width: min(1100px, 100%); max-height: calc(100vh - 48px);
+  background: var(--bg); border: 1px solid var(--border); border-radius: 10px;
+  box-shadow: 0 18px 50px rgba(0,0,0,.45); overflow: hidden;
+}
+#qa-panel .qa-nav {
+  flex: 0 0 180px; overflow: auto; background: var(--panel);
+  border-right: 1px solid var(--border); padding: 10px 8px;
+}
+#qa-panel .qa-nav-g {
+  font-size: 10px; text-transform: uppercase; letter-spacing: .05em;
+  color: var(--muted); margin: 10px 6px 4px;
+}
+#qa-panel .qa-nav button {
+  display: block; width: 100%; text-align: left; margin: 2px 0;
+  background: transparent; border-color: transparent;
+}
+#qa-panel .qa-nav button:hover, #qa-panel .qa-nav button.active {
+  background: var(--panel2); border-color: var(--border);
+}
+#qa-panel .qa-body { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+#qa-panel .qa-toolbar {
+  display: flex; align-items: center; gap: 10px; padding: 10px 14px;
+  border-bottom: 1px solid var(--border); background: var(--panel); flex: 0 0 auto;
+}
+#qa-panel .qa-title { color: var(--sel); }
+#qa-panel .qa-spacer { flex: 1; }
+#qa-panel .qa-main { flex: 1; overflow: auto; padding: 14px 18px 28px; }
+#qa-panel .qa-foot {
+  padding: 6px 14px; border-top: 1px solid var(--border);
+  background: var(--panel); font-size: 11px; flex: 0 0 auto;
+}
+#qa-panel h1 { font-size: 17px; margin: 0 0 6px; }
+#qa-panel h2 {
+  font-size: 14px; margin: 16px 0 8px; padding-bottom: 4px;
+  border-bottom: 1px solid var(--border);
+}
+#qa-panel .qa-cards { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 14px; }
+#qa-panel .qa-card {
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: 6px; padding: 8px 12px; min-width: 100px;
+}
+#qa-panel .qa-card .n { font-size: 20px; font-weight: 650; }
+#qa-panel .qa-card .l { color: var(--muted); font-size: 11px; }
+#qa-panel .qa-card.warn .n { color: #d4a017; }
+#qa-panel .qa-card.bad .n { color: #d66a6a; }
+#qa-panel .qa-card.ok .n { color: #56b877; }
+#qa-panel .qa-data {
+  width: 100%; border-collapse: collapse; font-size: 12px; margin: 6px 0 12px;
+}
+#qa-panel .qa-data th, #qa-panel .qa-data td {
+  border-bottom: 1px solid var(--border); padding: 5px 7px;
+  text-align: left; vertical-align: top;
+}
+#qa-panel .qa-data th { color: var(--muted); position: sticky; top: 0; background: var(--bg); }
+#qa-panel .qa-data tr:hover td { background: var(--panel); }
+#qa-panel .mono { font-family: ui-monospace, Consolas, monospace; font-size: 11px; }
+#qa-panel .qa-chip {
+  display: inline-block; padding: 1px 6px; border-radius: 3px; margin: 0 2px 2px 0;
+  background: var(--panel2); border: 1px solid var(--border); font-size: 11px;
+}
+#qa-panel .qa-pagelink {
+  background: transparent; border: none; color: var(--accent);
+  padding: 0 2px; cursor: pointer; font: inherit;
+}
+#qa-panel .qa-pagelink:hover { text-decoration: underline; color: var(--sel); }
+#qa-panel .qa-md, #qa-panel .qa-raw {
+  background: var(--panel); border: 1px solid var(--border); border-radius: 6px;
+  padding: 10px 12px; overflow: auto; white-space: pre-wrap; word-break: break-word;
+  font: 12px/1.45 ui-monospace, Consolas, monospace; max-height: 50vh;
+}
+#qa-panel .qa-filters { display: flex; gap: 8px; margin: 8px 0; flex-wrap: wrap; }
+#qa-panel .qa-muted, #qa-panel .muted { color: var(--muted); font-size: 12px; }
+#qa-panel .qa-empty { color: var(--muted); padding: 20px; }
+#qa-panel .qa-error { color: #d66a6a; padding: 10px; background: var(--panel); border-radius: 6px; }
+
+#load-modal {
+  display: none; position: fixed; inset: 0; background: rgba(0,0,0,.55);
+  z-index: 50; align-items: center; justify-content: center;
+}
+#load-modal.on { display: flex; }
+.load-box {
+  background: var(--panel); border: 1px solid var(--border); border-radius: 8px;
+  padding: 20px 28px; min-width: 260px; text-align: center;
+}
+.load-spinner {
+  width: 28px; height: 28px; margin: 0 auto 12px;
+  border: 3px solid var(--border); border-top-color: var(--accent);
+  border-radius: 50%; animation: spin .7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+#toast {
+  position: fixed; right: 16px; bottom: 52px; z-index: 90;
+  background: var(--panel2); border: 1px solid var(--border);
+  padding: 8px 12px; border-radius: 6px; display: none; max-width: 360px;
+}
+#toast.on { display: block; }
+
+.muted { color: var(--muted); font-size: 12px; }
+.zoomctl { display: inline-flex; gap: 6px; align-items: center; }
+.zoomctl input { width: 58px; text-align: center; }
+
+#calibbar {
+  display: none; align-items: center; gap: 12px; flex-wrap: wrap;
+  padding: 8px 14px; background: #2a3140; border-top: 1px solid var(--accent);
+  flex: 0 0 auto;
+}
+#calibbar.open { display: flex; }
+#calibbar .ctl {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--muted); font-size: 12px; white-space: nowrap;
+}
+#calibbar .ctl input[type="number"] { width: 64px; }
+#calibbar .ctl input[type="range"] { width: 110px; vertical-align: middle; }
+#calibbar .nudge { display: inline-flex; gap: 2px; }
+#calibbar .nudge button { padding: 2px 6px; font-size: 11px; }
+#calibbar .opt {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--muted); font-size: 12px; white-space: nowrap;
+}
+#calibbar .title-cal { font-weight: 600; color: var(--sel); font-size: 12px; }
+
+#main { flex: 1; display: flex; min-height: 0; }
+#pdfpane {
+  flex: 0 0 45%; width: 45%; min-width: 160px;
+  overflow: auto; background: #171a20; padding: 12px;
+}
+#splitbar {
+  flex: 0 0 6px; cursor: col-resize; background: var(--border);
+  position: relative; z-index: 4;
+}
+#splitbar::after { content: ""; position: absolute; inset: 0 -4px; }
+#splitbar:hover, #splitbar.dragging { background: var(--accent); }
+body.split-dragging { cursor: col-resize; user-select: none; }
+
+#pdfpane .zoom-wrap { position: relative; width: fit-content; margin: 0 auto; }
+#pdfcanvas { display: block; border-radius: 2px; box-shadow: 0 0 0 1px #000; }
+#boxes {
+  position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+  z-index: 2; pointer-events: none;
+}
+.tbox {
+  position: absolute; border: 2px dashed rgba(77,143,214,.85); cursor: pointer;
+  background: rgba(77,143,214,.12); pointer-events: auto;
+}
+.tbox:hover, .tbox.sel { border-color: var(--sel); background: rgba(255,211,93,.15); }
+.tbox .n {
+  position: absolute; top: -8px; left: -8px; background: var(--sel); color: #222;
+  font-size: 10px; font-weight: 700; padding: 0 5px; border-radius: 8px;
+}
+.bbox-hl {
+  position: absolute; pointer-events: none;
+  border: 2px solid var(--sel); background: rgba(255, 211, 93, 0.18);
+}
+.bbox-hl.col {
+  border-color: var(--col); background: rgba(110, 207, 142, 0.16);
+}
+.bbox-hl.cell-all {
+  border: 1px solid rgba(255, 180, 100, 0.75);
+  background: rgba(255, 180, 100, 0.06);
+}
+.bbox-hl.col-all {
+  border: 1px solid rgba(110, 207, 142, 0.85);
+  background: rgba(110, 207, 142, 0.08);
+}
+
+#row-detail {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--text);
+  padding: 0;
+  max-width: min(720px, 92vw);
+  max-height: min(80vh, 900px);
+  width: 92vw;
+}
+#row-detail::backdrop { background: rgba(0, 0, 0, 0.55); }
+#row-detail .rd-head {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 14px; border-bottom: 1px solid var(--border);
+  background: var(--panel2);
+}
+#row-detail .rd-head strong { color: var(--accent); }
+#row-detail .rd-head .spacer { flex: 1; }
+#row-detail .rd-body {
+  padding: 12px 14px 16px; overflow: auto; max-height: calc(80vh - 52px);
+}
+#row-detail .rd-section { margin: 0 0 14px; }
+#row-detail .rd-section h4 {
+  margin: 0 0 6px; font-size: 11px; text-transform: uppercase;
+  letter-spacing: 0.04em; color: var(--muted); font-weight: 600;
+}
+#row-detail .rd-section pre {
+  margin: 0; padding: 8px 10px; background: #1a1e26; border: 1px solid var(--border);
+  border-radius: 4px; white-space: pre-wrap; word-break: break-word;
+  font: 12px/1.4 Consolas, "Cascadia Mono", monospace; color: #dfe4ee;
+}
+#row-detail .rd-kv {
+  display: grid; grid-template-columns: 110px 1fr; gap: 4px 10px;
+  font-size: 12px;
+}
+#row-detail .rd-kv .k { color: var(--muted); }
+#row-detail .rd-kv .v { word-break: break-word; }
+
+#right { flex: 1 1 auto; display: flex; flex-direction: column; min-width: 280px; }
+#docpane {
+  flex: 1; overflow: auto; padding: 12px 14px 24px; outline: none; background: var(--bg);
+}
+.scroll-loader {
+  display: none; text-align: center; padding: 12px 0; color: var(--muted); font-size: 11px;
+}
+.scroll-loader.on { display: block; }
+
+.page-section {
+  margin: 0 0 28px; padding: 0 0 20px;
+  border-bottom: 1px solid var(--border);
+  /* Match ~one PDF page so short tables don't collapse scroll focus */
+  min-height: var(--page-min-h);
+}
+.page-section.focus { border-left: 3px solid var(--accent); padding-left: 10px; }
+.page-section .page-label {
+  color: var(--muted); font-size: 11px; letter-spacing: .3px;
+  margin: 0 0 10px; user-select: none;
+}
+.page-section.focus .page-label { color: var(--accent); }
+.page-section .colbar {
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+  margin: 0 0 10px;
+}
+.page-section .colbar .hint { color: var(--muted); font-size: 11px; margin-right: 4px; }
+.page-section .colbar button {
+  font-size: 11px; padding: 2px 7px;
+}
+.page-section .colbar button.active {
+  border-color: var(--col); background: #1e3328; color: var(--col);
+}
+.page-section.missing .page-body {
+  color: var(--muted); font-style: italic; padding: 8px 0;
+}
+
+table {
+  border-collapse: collapse; width: 100%; margin: 8px 0 14px;
+  background: #222733;
+}
+td, th {
+  border: 1px solid #454c5c; padding: 4px 7px; vertical-align: top;
+}
+th { background: #333a49; font-weight: 600; text-align: left; }
+table.sel-table { outline: 2px solid var(--accent); outline-offset: 2px; }
+td[data-bbox], th[data-bbox] { cursor: pointer; }
+td[data-bbox]:hover, th[data-bbox]:hover {
+  outline: 1px solid var(--accent); outline-offset: -1px;
+}
+td.cell-sel, th.cell-sel {
+  outline: 2px solid var(--sel) !important; outline-offset: -2px;
+  background: rgba(255, 211, 93, 0.12);
+}
+td.col-sel, th.col-sel {
+  box-shadow: inset 0 0 0 2px var(--col);
+  background: rgba(110, 207, 142, 0.08);
+}
+
+.hdr { color: #a8b3c7; font-size: 12px; margin: 0 0 10px; }
+.page-body .meta { color: var(--muted); font-size: 12px; margin: 0 0 6px; }
+td.amt { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.label { min-width: 280px; }
+td.label .label-chips {
+  display: inline; 
+}
+.chip {
+  display: inline-block;
+  vertical-align: baseline;
+  margin: 1px 0 1px 4px;
+  padding: 0 6px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.55;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  max-width: 22em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.chip-prexc {
+  color: #e8e0c8;
+  background: rgba(168, 174, 188, 0.2);
+  border: 1px solid rgba(168, 174, 188, 0.45);
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.chip-ch {
+  color: #d8ecff;
+  background: rgba(77, 143, 214, 0.22);
+  border: 1px solid rgba(77, 143, 214, 0.45);
+}
+.chip-ch.incomplete {
+  border-style: dashed;
+  color: #f0d9a8;
+  background: rgba(232, 196, 122, 0.18);
+  border-color: rgba(232, 196, 122, 0.5);
+}
+.chip-gps {
+  color: #d4f0e0;
+  background: rgba(110, 207, 142, 0.18);
+  border: 1px solid rgba(110, 207, 142, 0.45);
+}
+.chip-gps.incomplete {
+  border-style: dashed;
+  color: #f0d9a8;
+  background: rgba(232, 196, 122, 0.18);
+  border-color: rgba(232, 196, 122, 0.5);
+}
+.chip-qa {
+  color: #ffd0d0;
+  background: rgba(224, 96, 96, 0.22);
+  border: 1px solid rgba(224, 96, 96, 0.55);
+  text-transform: none;
+  font-weight: 600;
+}
+tr.qa-unfixed td.label {
+  box-shadow: inset 3px 0 0 rgba(224, 96, 96, 0.85);
+  background: rgba(224, 96, 96, 0.07);
+}
+tr.qa-unfixed td.label .label-main {
+  text-decoration: underline dotted rgba(255, 160, 160, 0.7);
+  text-underline-offset: 2px;
+}
+body.hide-qa-marks .chip-qa,
+body.hide-qa-marks tr.qa-unfixed td.label {
+  box-shadow: none;
+  background: transparent;
+}
+body.hide-qa-marks tr.qa-unfixed td.label .label-main {
+  text-decoration: none;
+}
+body.hide-qa-marks .chip-qa { display: none; }
+td.ln {
+  width: 2.5em; text-align: right; color: var(--muted); font-size: 11px;
+  font-variant-numeric: tabular-nums; user-select: all; white-space: nowrap;
+}
+td.ln[data-bbox] { color: var(--accent); font-weight: 600; }
+th.ln { width: 2.5em; text-align: right; color: var(--muted); font-weight: 600; }
+.prexc { color: var(--muted); font-size: 11px; }
+.fix { color: var(--muted); font-size: 10px; }
+.desc {
+  display: block; margin-top: 2px; color: var(--muted);
+  font-size: 11px; font-weight: 400; line-height: 1.35; max-width: 52em;
+}
+tr[data-level="0"] td.label { font-weight: 600; }
+tr[data-level="1"] td.label { color: #c5d4e8; }
+tr[data-level="2"] td.label { color: #b8c0d0; }
+tr.funding td.label {
+  text-align: right; color: var(--muted); font-weight: 400; font-size: 12px;
+}
+tr.funding td.ln { color: transparent; user-select: none; }
+tr.funding td.amt { color: #c5d4e8; }
+
+.table-wrap { margin: 8px 0 14px; }
+.table-wrap > table { margin: 0; }
+.kind-badge {
+  display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .02em;
+  padding: 2px 7px; border-radius: 3px; margin: 0 0 4px; color: #1a1e26;
+  background: #8b93a7;
+}
+.kind-badge.kind-A { background: #6ecf8e; }
+.kind-badge.kind-B { background: #7eb6f0; }
+.kind-badge.kind-F, .kind-badge.kind-G { background: #c9a0e8; }
+.kind-badge.kind-H { background: #e8c47a; }
+.kind-badge.kind-D, .kind-badge.kind-E, .kind-badge.kind-C { background: #9fd4c2; }
+.kind-badge.kind-J, .kind-badge.kind-P { background: #a8aebc; }
+.kind-badge.kind-U { background: #e88a8a; }
+.table-wrap.kind-dimmed { opacity: .22; }
+
+
+#footer .spacer { flex: 1; }
+#footer label.opt {
+  display: flex; align-items: center; gap: 6px;
+  color: var(--muted); font-size: 11px; white-space: nowrap;
+}
+
+#load-modal {
+  display: none; position: fixed; inset: 0; background: rgba(0,0,0,.55);
+  z-index: 50; align-items: center; justify-content: center;
+}
+#load-modal.on { display: flex; }
+.load-box {
+  background: var(--panel); border: 1px solid var(--border); border-radius: 8px;
+  padding: 20px 28px; min-width: 260px; text-align: center;
+}
+.load-spinner {
+  width: 28px; height: 28px; margin: 0 auto 12px;
+  border: 3px solid var(--border); border-top-color: var(--accent);
+  border-radius: 50%; animation: spin .7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+#toast {
+  position: fixed; right: 16px; bottom: 48px; z-index: 60;
+  background: var(--panel2); border: 1px solid var(--border);
+  padding: 8px 12px; border-radius: 6px; display: none; max-width: 360px;
+}
+#toast.on { display: block; }
+</style>
+</head>
+<body>
+<div id="topbar">
+  <span class="brand">
+    <span class="mark">N</span>
+    <span>NEP pdf_ocr</span>
+    <span class="sub">Vol II-B</span>
+  </span>
+
+  <div class="cluster" title="Output run dir, or pack name when using ?pack=">
+    <span class="lbl">Source</span>
+    <input id="run" type="text" list="run-list" value="v2b-full" spellcheck="false" style="min-width:120px">
+    <datalist id="run-list">
+      <option value="v2b-full"></option>
+      <option value="byou-13-108"></option>
+      <option value="byou-13-108-dsc"></option>
+      <option value="pap-115-690"></option>
+      <option value="pap-115-200"></option>
+      <option value="taxonomy-fixtures"></option>
+    </datalist>
+    <button id="reload" title="Reload source">Load</button>
+  </div>
+
+  <div class="cluster">
+    <span class="lbl">Page</span>
+    <input id="pageno" type="number" min="1" value="1" style="width:64px">
+    <button id="go-page">Go</button>
+    <button id="prev-avail" title="Previous page">◀</button>
+    <button id="next-avail" title="Next page">▶</button>
+  </div>
+
+  <div class="cluster">
+    <span class="lbl">Kind</span>
+    <select id="kind-filter"><option value="">All</option></select>
+  </div>
+
+  <button type="button" id="btn-qa" class="btn-qa" title="Open QA reports (hash #/qa)">
+    QA reports<span class="kbd">#/qa</span>
+  </button>
+
+  <span class="spacer"></span>
+
+  <span class="zoomctl cluster">
+    <span class="lbl">Zoom</span>
+    <button id="z-fitw" title="Fit page width">Fit W</button>
+    <button id="z-fith" title="Fit page height">Fit H</button>
+    <button id="z-out">−</button>
+    <input id="z-pct" type="number" min="10" max="400" step="5" value="100">
+    <button id="z-in">+</button>
+    <button id="z-rot" title="Rotate 90°">↻</button>
+  </span>
+  </div>
+
+<div id="main">
+  <div id="pdfpane">
+    <div class="zoom-wrap">
+      <canvas id="pdfcanvas"></canvas>
+      <div id="boxes"></div>
+    </div>
+  </div>
+  <div id="splitbar" role="separator" aria-orientation="vertical"></div>
+  <div id="right">
+    <div id="docpane" tabindex="-1"></div>
+  </div>
+</div>
+
+<div id="footer">
+  <div class="foot-status">
+    <span id="status" class="muted">Idle</span>
+    <span id="sel-status">No cell/col selection</span>
+  </div>
+  <span class="spacer"></span>
+  <div class="foot-tools">
+    <label class="opt" title="Show every cell bbox on the focused PDF page">
+      <input id="show-cells" type="checkbox"> Cells
+    </label>
+    <label class="opt" title="Show every column strip on the focused PDF page">
+      <input id="show-cols" type="checkbox"> Cols
+    </label>
+    <label class="opt" title="When on, scrolling the HTML pane updates the PDF page">
+      <input id="auto-pdf-sync" type="checkbox" checked>
+      Sync PDF
+    </label>
+    <label class="opt" title="Highlight unfixed label OCR suspects">
+      <input id="show-qa" type="checkbox" checked>
+      QA marks
+    </label>
+    <button type="button" id="toggle-calib" title="Show bbox offset controls">Offset</button>
+    <button type="button" id="clear-sel">Clear</button>
+  </div>
+</div>
+
+<div id="qa-backdrop" aria-hidden="true">
+  <div id="qa-panel" role="dialog" aria-modal="true" aria-label="QA reports"></div>
+</div>
+
+<dialog id="row-detail">
+  <div class="rd-head">
+    <strong id="rd-title">Row detail</strong>
+    <span class="spacer"></span>
+    <button type="button" id="rd-copy" title="Copy JSON">Copy JSON</button>
+    <button type="button" id="rd-close">Close</button>
+  </div>
+  <div class="rd-body" id="rd-body"></div>
+</dialog>
+
+<div id="calibbar">
+  <span class="title-cal">BBox offset</span>
+  <span class="muted" title="Cropbox is applied automatically from the PDF view box">auto crop</span>
+  <label class="opt" title="PyMuPDF top-left → PDF.js bottom-left">
+    <input id="cal-flip-y" type="checkbox" checked> flip Y
+  </label>
+  <label class="ctl">scale
+    <input id="cal-scale" type="number" step="0.005" min="0.5" max="1.5" value="1">
+    <input id="cal-scale-range" type="range" min="0.85" max="1.15" step="0.005" value="1">
+  </label>
+  <label class="ctl" title="Shift in PDF page points (before zoom)">ox (pt)
+    <input id="cal-ox" type="number" step="1" value="0">
+    <input id="cal-ox-range" type="range" min="-80" max="80" step="1" value="0">
+    <span class="nudge">
+      <button type="button" data-nudge="ox,-5">−5</button>
+      <button type="button" data-nudge="ox,-1">−1</button>
+      <button type="button" data-nudge="ox,1">+1</button>
+      <button type="button" data-nudge="ox,5">+5</button>
+    </span>
+  </label>
+  <label class="ctl" title="Shift in PDF page points (before zoom)">oy (pt)
+    <input id="cal-oy" type="number" step="1" value="0">
+    <input id="cal-oy-range" type="range" min="-80" max="80" step="1" value="0">
+    <span class="nudge">
+      <button type="button" data-nudge="oy,-5">−5</button>
+      <button type="button" data-nudge="oy,-1">−1</button>
+      <button type="button" data-nudge="oy,1">+1</button>
+      <button type="button" data-nudge="oy,5">+5</button>
+    </span>
+  </label>
+  <label class="ctl" title="Extra shift in overlay pixels (after zoom) — use for a fixed screen offset">vx (px)
+    <input id="cal-vx" type="number" step="1" value="0">
+    <input id="cal-vx-range" type="range" min="-80" max="80" step="1" value="0">
+  </label>
+  <label class="ctl" title="Extra shift in overlay pixels (after zoom)">vy (px)
+    <input id="cal-vy" type="number" step="1" value="0">
+    <input id="cal-vy-range" type="range" min="-80" max="80" step="1" value="0">
+  </label>
+  <button type="button" id="cal-reset">Reset</button>
+  <span class="muted" id="cal-readout"></span>
+</div>
+
+<div id="load-modal" class="on">
+  <div class="load-box">
+    <div class="load-spinner"></div>
+    <div id="load-msg">Starting…</div>
+  </div>
+</div>
+<div id="toast"></div>
+
+<script>
+window.__NEP_VIEWER__ = {
+  outputBase: null,
+  packBase: "data",
+  pdfBase: "pdfs",
+  defaultPack: "v2b-full",
+  defaultRun: "v2b-full",
+  defaultPage: 1,
+};
+</script>
+<script type="module">
+import * as pdfjsLib from "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs";
+import { createQaPanel, QA_REPORT_IDS } from "./qa-panel.js";
+
+pdfjsLib.GlobalWorkerOptions.workerSrc =
+  "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs";
+
+const $ = (s) => document.querySelector(s);
+
+/**
+ * Path layout. Monorepo raw-viewer/static defaults below.
+ * NEP-VOL-2-BROWSER sync overwrites window.__NEP_VIEWER__ before this runs.
+ */
+const SITE = Object.assign(
+  {
+    outputBase: "../../pdf_ocr/output",
+    packBase: "../data/pdf_ocr",
+    pdfBase: "../../pdfs",
+    /** Prefer pack shards when set (GH Pages). */
+    defaultPack: null,
+    defaultRun: "v2b-full",
+    defaultPage: 1,
+  },
+  typeof window !== "undefined" && window.__NEP_VIEWER__ ? window.__NEP_VIEWER__ : {}
+);
+
+const OUTPUT_BASE = SITE.outputBase;
+const PACK_BASE = SITE.packBase;
+const PDF_GZ_URL = (vol) => `${SITE.pdfBase}/NEP-2027-${vol}_OCR.pdf.gz`;
+const PDF_URL = (vol) => `${SITE.pdfBase}/NEP-2027-${vol}_OCR.pdf`;
+const PACK_MANIFEST_URL = (name) => `${PACK_BASE}/${name}/manifest.json`;
+const PACK_SHARD_URL = (name, file) => `${PACK_BASE}/${name}/${file}`;
+const PACK_QA_URL = (name, file) => `${PACK_BASE}/${name}/qa/${file}`;
+
+const SCROLL_BUFFER = 2;
+const SCROLL_EDGE = 1;
+const SCROLL_EXPAND = 2;
+const SCROLL_MAX_SPAN = 11;
+
+const KIND_NAMES = {
+  A: "By-OU expense grid", B: "PAP", C: "Operations by program",
+  D: "Regional allocation", E: "Current operating expenditures",
+  F: "Multi-year trend", G: "GAS/STO/OPS year slices",
+  H: "OO / PI performance", I: "Project list", J: "Misc",
+  K: "Headerless", P: "Prose", U: "Unknown",
+};
+const DEFAULT_ROLES = ["PS", "MOOE", "CO", "Total"];
+
+function parseRoute() {
+  const params = new URLSearchParams(location.search);
+  const pack = params.get("pack") || SITE.defaultPack || "";
+  const run = params.get("run") || params.get("dir") || SITE.defaultRun || "v2b-full";
+  const page1 = parseInt(params.get("page") || String(SITE.defaultPage || 1), 10);
+  return {
+    /** "pack" = data-*.json.gz shards; "live" = per-page json under pdf_ocr/output */
+    mode: pack ? "pack" : "live",
+    pack,
+    run: pack || run,
+    page: Number.isFinite(page1) && page1 >= 1 ? page1 - 1 : 0,
+  };
+}
+
+const boot = parseRoute();
+const state = {
+  mode: boot.mode,
+  packName: boot.pack || null,
+  run: boot.run,
+  volume: "VOLUME-2B",
+  page: boot.page,
+  index: null,
+  manifest: null,
+  /** data shard id → { byPage0: Map } */
+  dataShardCache: new Map(),
+  /** Map pdf_page (1-based) → index entry */
+  byPdf: new Map(),
+  /** 0-based page → viewer page object (lazy) */
+  pages: [],
+  pageCount: 0,
+  selectedBlockId: null,
+  kindFilter: "",
+  selection: null, // { kind: "cell"|"col", pdf_rect, label, page0, colKey? }
+  show: { cells: false, cols: false },
+  zoom: { mode: "fitw", pct: 100 },
+  rotateExtra: 0,
+  pdfDoc: null,
+  pdfViewport: null,
+  /** PDF media/crop view box [xMin,yMin,xMax,yMax] in PDF user space. */
+  pdfPageSize: null,
+  pdfView: null, // [x0, y0, x1, y1] — cropbox; PyMuPDF origin is top-left of this
+  /**
+   * Optional manual nudge on top of automatic cropbox mapping.
+   * V2B OCR pages typically have cropbox origin (33,33) — handled via pdfView.
+   */
+  bboxCalib: { flipY: true, scale: 1, ox: 0, oy: 0, vx: 0, vy: 0 },
+  pdfSplitPct: 45,
+  scroll: {
+    mountedPages: new Set(),
+    observer: null,
+    pdfFocusPage: null,
+    suppressObserver: false,
+    expanding: false,
+    autoPdfSync: true,
+    renderToken: 0,
+    renderTask: null,
+  },
+  inflight: new Map(),
+  /** Unfixed label QA (from qa/labels_suspect.json + live heuristics). */
+  qa: {
+    show: true,
+    loaded: false,
+    /** Map label → { reasons, count } from unfixed suspects */
+    byLabel: new Map(),
+    nUnfixed: 0,
+    nFixed: 0,
+  },
+};
+
+function setLoad(msg) {
+  const modal = $("#load-modal");
+  if (msg == null) {
+    modal.classList.remove("on");
+    return;
+  }
+  $("#load-msg").textContent = msg;
+  modal.classList.add("on");
+}
+
+function toast(msg) {
+  const el = $("#toast");
+  el.textContent = msg;
+  el.classList.add("on");
+  clearTimeout(toast._t);
+  toast._t = setTimeout(() => el.classList.remove("on"), 3500);
+}
+
+function setStatus(msg) {
+  $("#status").textContent = msg;
+}
+
+function escapeHtml(s) {
+  return String(s ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function runDirUrl(run) {
+  if (!OUTPUT_BASE) throw new Error("Live outputBase not configured");
+  return `${OUTPUT_BASE}/${encodeURIComponent(run)}`;
+}
+
+function pageJsonUrl(run, pdfPage) {
+  const stem = `page-${String(pdfPage).padStart(4, "0")}.json`;
+  // Prefer path from index.json (json/page-NNNN.json); else nested layout
+  const entry = state.byPdf?.get(pdfPage);
+  if (entry?.json && typeof entry.json === "string") {
+    return `${runDirUrl(run)}/${entry.json.replace(/^\/+/, "")}`;
+  }
+  return `${runDirUrl(run)}/json/${stem}`;
+}
+
+function pageJsonUrlFallback(run, pdfPage) {
+  const stem = `page-${String(pdfPage).padStart(4, "0")}.json`;
+  return `${runDirUrl(run)}/${stem}`;
+}
+
+function inferVolume(pdfPath) {
+  const m = String(pdfPath || "").replace(/\\/g, "/").match(/(VOLUME-[0-9A-Z]+)/i);
+  return m ? m[1].toUpperCase() : "VOLUME-2B";
+}
+
+async function fetchGzipArrayBuffer(url) {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`${res.status} ${url}`);
+  if (!res.body || typeof DecompressionStream === "undefined") {
+    throw new Error("DecompressionStream required");
+  }
+  const stream = res.body.pipeThrough(new DecompressionStream("gzip"));
+  return new Response(stream).arrayBuffer();
+}
+
+async function fetchGzipJson(url) {
+  const ab = await fetchGzipArrayBuffer(url);
+  return JSON.parse(new TextDecoder().decode(ab));
+}
+
+async function fetchJsonMaybeGzip(url) {
+  if (url.endsWith(".gz")) return fetchGzipJson(url);
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`${res.status} ${url}`);
+  return res.json();
+}
+
+async function loadPdfBytes(volume, indexPdf, manifest) {
+  const leaf = indexPdf
+    ? String(indexPdf).replace(/\\/g, "/").split("/").pop()
+    : null;
+  const gzCandidates = [];
+  const plainCandidates = [];
+  if (manifest?.pdf_url_gz) gzCandidates.push(manifest.pdf_url_gz);
+  if (manifest?.pdf_url) plainCandidates.push(manifest.pdf_url);
+  if (leaf && leaf.endsWith(".pdf")) {
+    gzCandidates.push(`${SITE.pdfBase}/${leaf}.gz`);
+    plainCandidates.push(`${SITE.pdfBase}/${leaf}`);
+  }
+  gzCandidates.push(PDF_GZ_URL(volume));
+  plainCandidates.push(PDF_URL(volume));
+
+  let lastErr = null;
+  for (const gz of gzCandidates) {
+    try {
+      setLoad("Downloading PDF (gzip)…");
+      return await fetchGzipArrayBuffer(gz);
+    } catch (err) {
+      lastErr = err;
+    }
+  }
+  for (const url of plainCandidates) {
+    try {
+      setLoad("Downloading PDF…");
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`${res.status} ${url}`);
+      return res.arrayBuffer();
+    } catch (err) {
+      lastErr = err;
+    }
+  }
+  throw lastErr || new Error("PDF missing");
+}
+
+function zonePdfRect(pageMeta, zoneMeta) {
+  const y0 = zoneMeta?.zone_y0;
+  const y1 = zoneMeta?.zone_y1;
+  if (y0 == null || y1 == null) return null;
+  const w = (pageMeta?.page_size || [720, 864])[0];
+  return [0, Number(y0), Number(w), Number(y1)];
+}
+
+function bboxAttr(bb) {
+  if (!bb || bb.length < 4 || bb.some((n) => n == null || Number.isNaN(Number(n)))) {
+    return "";
+  }
+  return ` data-bbox="${bb.map(Number).join(" ")}"`;
+}
+
+function parseBboxAttr(attr) {
+  if (!attr) return null;
+  const parts = attr.trim().split(/\s+/).map(Number);
+  if (parts.length < 4 || parts.some((n) => Number.isNaN(n))) return null;
+  return parts.slice(0, 4);
+}
+
+function unionBboxes(list) {
+  const bbs = list.filter((b) => b && b.length >= 4);
+  if (!bbs.length) return null;
+  return [
+    Math.min(...bbs.map((b) => b[0])),
+    Math.min(...bbs.map((b) => b[1])),
+    Math.max(...bbs.map((b) => b[2])),
+    Math.max(...bbs.map((b) => b[3])),
+  ];
+}
+
+/**
+ * Derive row bbox from all cell boxes in the row (no stored row_bbox):
+ * top-left = (min x0, min y0), bottom-right = (max x1, max y1)
+ * across label_bbox + amount_bboxes.
+ */
+function rowBbox(row) {
+  if (!row) return null;
+  return unionBboxes([row.label_bbox, ...(row.amount_bboxes || [])]);
+}
+
+/** Build label + amount column strips (PDF space) from row bboxes / col_centers. */
+function buildColumnRects(table, pageMeta) {
+  const zmeta = table.meta || {};
+  const rows = table.rows || [];
+  const roles = zmeta.col_roles || pageMeta.col_roles || DEFAULT_ROLES;
+  const centers = zmeta.col_centers || pageMeta.col_centers || [];
+  const y0 = Number(zmeta.zone_y0 ?? 0);
+  const y1 = Number(zmeta.zone_y1 ?? (pageMeta.page_size || [720, 864])[1]);
+  const pageW = Number((pageMeta.page_size || [720, 864])[0]);
+
+  const labelUnion = unionBboxes(rows.map((r) => r.label_bbox));
+  const cols = [];
+
+  // Label column
+  let labelRect = labelUnion;
+  if (labelRect) {
+    labelRect = [labelRect[0], y0, labelRect[2], y1];
+  } else if (centers.length) {
+    const right = Math.min(...centers.map(Number)) - 8;
+    labelRect = [40, y0, Math.max(80, right), y1];
+  } else {
+    labelRect = [40, y0, pageW * 0.45, y1];
+  }
+  cols.push({ key: "label", name: "Label", pdf_rect: labelRect });
+
+  for (let i = 0; i < roles.length; i++) {
+    const amtBbs = rows
+      .map((r) => (r.amount_bboxes || [])[i])
+      .filter((b) => b && b.length >= 4);
+    let rect = unionBboxes(amtBbs);
+    if (rect) {
+      const pad = 6;
+      rect = [rect[0] - pad, y0, rect[2] + pad, y1];
+    } else if (centers[i] != null) {
+      const cx = Number(centers[i]);
+      const half = 36;
+      rect = [cx - half, y0, cx + half, y1];
+    } else {
+      continue;
+    }
+    cols.push({ key: `amt-${i}`, name: String(roles[i]), pdf_rect: rect, index: i });
+  }
+  return cols;
+}
+
+function collectCellRects(table) {
+  const out = [];
+  for (const r of table.rows || []) {
+    if (r.label_bbox) {
+      out.push({
+        pdf_rect: r.label_bbox,
+        label: (r.label || "").slice(0, 80) || "(label)",
+      });
+    }
+    (r.amount_bboxes || []).forEach((bb, i) => {
+      if (!bb || bb.length < 4) return;
+      out.push({
+        pdf_rect: bb,
+        label: String((r.amounts || [])[i] || `(amt ${i})`),
+      });
+    });
+  }
+  return out;
+}
+
+function formatChainageChip(c) {
+  if (!c || typeof c !== "object") return "";
+  const kind = String(c.kind || "").trim();
+  const fr = String(c.from ?? "").trim();
+  const to = c.to != null && String(c.to).trim() !== "" ? String(c.to).trim() : null;
+  let text;
+  if (kind === "K") {
+    text = to ? `K${fr}–K${to}` : `K${fr}`;
+  } else if (kind === "C") {
+    // `from`/`to` already include the C prefix (e.g. C0+000)
+    text = to ? `${fr}–${to}` : fr;
+  } else if (kind === "KM") {
+    text = to ? `KM ${fr}–${to}` : `KM ${fr}`;
+  } else if (kind === "Sta") {
+    text = to ? `Sta. ${fr}–${to}` : `Sta. ${fr}`;
+  } else if (kind === "Chainage") {
+    text = to ? `Ch ${fr}–${to}` : `Ch ${fr}`;
+  } else {
+    text = to ? `${kind} ${fr}–${to}` : `${kind} ${fr}`.trim();
+  }
+  if (c.incomplete) text += "…";
+  return text;
+}
+
+function formatGpsChip(c) {
+  if (!c || typeof c !== "object") return "";
+  const role = c.role ? `${c.role} ` : "";
+  if (c.lat != null && c.lon != null) {
+    const lat = Number(c.lat);
+    const lon = Number(c.lon);
+    const latS = Number.isFinite(lat) ? lat.toFixed(5) : String(c.lat);
+    const lonS = Number.isFinite(lon) ? lon.toFixed(5) : String(c.lon);
+    return `${role}${latS}, ${lonS}${c.incomplete ? "…" : ""}`;
+  }
+  const raw = String(c.raw || "").trim();
+  return raw ? `${role}${raw}${c.incomplete ? "…" : ""}` : "";
+}
+
+/** Mid-word OCR splits catalogued in qa_labels.py (keep in sync). */
+const KNOWN_SPLIT_RE = /\b(nati\s+onal|regi\s+on|engineer\s+ing|constructi\s+on|rehabilitati\s+on|administrati\s+on|operati\s+ons?|impro\s+vement|mainten\s+ance|infrastruc\s+ture|allocati\s+on|appropriati\s+ons?|obligati\s+ons?|depart\s+ment|govern\s+ment|equip\s+ment|manage\s+ment|develop\s+ment|environ\s+ment|capital\s+iz|nation\s+al|region\s+al|distr\s+ict|offic\s+e|brid\s+ge|flo\s+od|high\s+way|rail\s+way|air\s+port|sea\s+port|pro\s+gram|pro\s+ject|acti\s+vity|acti\s+vities|serv\s+ices?|facili\s+ties|facilit\s+y|personnel\s+|bene\s+fits|supervi\s+sion|preparati\s+on|manuals?\s+for)\b/i;
+const GENERIC_SPLIT_RE = /(?<![A-Za-z])([A-Za-z]{2,6})\s+([a-z]{2,5})(?![a-z])/g;
+const BANG_OCR_RE = /!\s*(?:locos|vb|v\b|locos)|region\s*!/i;
+const LETTER_DIGIT_RE = /\b[A-Za-z]*\d[A-Za-z]+\b|\b[A-Za-z]+\d[A-Za-z]*\b/gi;
+const LEADER_DOT_RE = /(?:\.\s*){4,}|\.{4,}/;
+const CURRENCY_JUNK_RE = /\bP\s*[\d,]{4,}/i;
+const WEIRD_PUNCT_RE = /[·•]|,\s*,|\/\s*\//;
+const CTRL_CHARS_RE = /[\x00-\x08\x0b\x0c\x0e-\x1f]/;
+const PREXC_LIKE = /^\d{10,}$/;
+const ORDINAL_OK = /^\d+(?:st|nd|rd|th)$/i;
+const OK_SECOND = new Set([
+  "and","or","of","the","to","in","on","for","by","at","as","with","from","into","per","via","vs",
+  "de","del","la","las","los","ng","sa","na","no","i","ii","iii","iv","v","vi","vii","viii","ix","x",
+  "xi","xii","xiii","iva","ivb","ncr","car","nir","proper","along","under","over","near","including",
+  "excluding","phase","package","section","cluster","component","shall","must","may","will","been",
+  "have","has","are","was","were","its","said","such","this","that","these","those","when","where",
+  "which","while","after","before","above","below","other","than","also","only","more","less","most",
+  "area","areas","length","total","number","percent","reduction","decrease","increase","leading",
+  "prone","selected","major","within","access","roads","time","plan","master","send","submit",
+  "written","notice","reports","subject","funds","release","agency","agencies","concerned",
+  "violation","requirement","requirements","implementation","likewise","post","website",
+  "quarterly","financial","physical","income","expenditure","through","void",
+]);
+const OK_FIRST = new Set([
+  "region","district","office","barangay","brgy","city","municipality","province","road","bridge",
+  "river","flood","along","sta","km",
+]);
+const TRUNC_ENDS = new Set([
+  "ti","si","ci","gi","ni","ri","li","mi","pi","vi","di","bi","fi","hi","ki","wi","yi","zi",
+  "ct","st","nt","rt","lt","pt","ft","ff",
+]);
+
+/**
+ * Live heuristics mirroring pdf_ocr/scripts/qa_labels.py ``flag_label``.
+ * Does not include corpus-level ``rare_spaced_sibling`` (that comes from QA JSON).
+ */
+function flagLabel(label, kind) {
+  const reasons = [];
+  if (!label) return ["empty"];
+  if (CTRL_CHARS_RE.test(label)) reasons.push("control_chars");
+  if (BANG_OCR_RE.test(label)) reasons.push("bang_as_I");
+  if (LEADER_DOT_RE.test(label)) reasons.push("leader_dots");
+  if (CURRENCY_JUNK_RE.test(label) && label.length < 80) reasons.push("currency_in_label");
+  if (WEIRD_PUNCT_RE.test(label)) reasons.push("weird_punct");
+  if (KNOWN_SPLIT_RE.test(label)) reasons.push("known_word_split");
+
+  const looksProse =
+    kind === "P" ||
+    label.length > 110 ||
+    label.endsWith(".") ||
+    /\b(shall|pursuant|herein|provided\s+that)\b/i.test(label);
+
+  if (!looksProse) {
+    GENERIC_SPLIT_RE.lastIndex = 0;
+    let m;
+    while ((m = GENERIC_SPLIT_RE.exec(label)) !== null) {
+      const a = m[1];
+      const b = m[2];
+      if (OK_SECOND.has(b.toLowerCase())) continue;
+      if (OK_SECOND.has(a.toLowerCase()) || OK_FIRST.has(a.toLowerCase())) continue;
+      const joined = (a + b).toLowerCase();
+      if (joined.length >= 6 && b[0] === b[0].toLowerCase()) {
+        if (/^[A-Z]{1,2}$/.test(a.slice(-1)) && a.length <= 2) continue;
+        if (a[0] === a[0].toUpperCase() && b[0] === b[0].toLowerCase() && a.length >= 4 && b.length >= 4) {
+          if (TRUNC_ENDS.has(a.toLowerCase().slice(-2))) {
+            reasons.push(`possible_split:${a} ${b}`);
+            break;
+          }
+          continue;
+        }
+        if (a.length <= 2 && /[A-Z]/.test(a.slice(-1))) continue;
+        reasons.push(`possible_split:${a} ${b}`);
+        break;
+      }
+    }
+  }
+
+  if (!looksProse) {
+    LETTER_DIGIT_RE.lastIndex = 0;
+    let m;
+    while ((m = LETTER_DIGIT_RE.exec(label)) !== null) {
+      const tok = m[0];
+      if (PREXC_LIKE.test(tok) || ORDINAL_OK.test(tok)) continue;
+      if (/^ra\.?\s*no\.?\s*\d+$/i.test(tok)) continue;
+      if (/\d/.test(tok) && /[A-Za-z]/.test(tok) && tok.length <= 12) {
+        if (/^(fy\d{4}|20\d{2}[a-z]?|[ivx]+\-?[a-d]|\d+[a-d]|l\d+|p\d+|m\d+|n\d+|km\d*)$/i.test(tok)) {
+          continue;
+        }
+        if (/^(c[0o]\+?|co\+?|ph\d+|s\d{4,6}[a-z]{0,3}|k\d{2,5})$/i.test(tok)) continue;
+        reasons.push(`letter_digit:${tok}`);
+        break;
+      }
+    }
+  }
+  return reasons;
+}
+
+async function loadQaSuspects(runOrPack) {
+  state.qa.byLabel = new Map();
+  state.qa.loaded = false;
+  state.qa.nUnfixed = 0;
+  state.qa.nFixed = 0;
+  const candidates = [];
+  if (OUTPUT_BASE) {
+    candidates.push(`${runDirUrl(runOrPack)}/qa/labels_suspect.json`);
+  }
+  candidates.push(PACK_QA_URL(runOrPack, "labels_suspect.json"));
+  for (const url of candidates) {
+    try {
+      const res = await fetch(url);
+      if (!res.ok) continue;
+      const data = await res.json();
+      const unfixed = data.suspects_unfixed || data.suspects || [];
+      for (const s of unfixed) {
+        const lab = String(s.label || "").trim();
+        if (!lab) continue;
+        state.qa.byLabel.set(lab, {
+          reasons: Array.isArray(s.reasons) ? s.reasons : [],
+          count: s.count || 1,
+        });
+      }
+      state.qa.nUnfixed = unfixed.length;
+      state.qa.nFixed = (data.suspects_fixed || []).length;
+      state.qa.loaded = true;
+      return;
+    } catch (_) {
+      /* try next */
+    }
+  }
+}
+
+/** Unfixed reasons for a row's current ``label`` (not label_ocr). */
+function unfixedReasonsForRow(r, kind) {
+  const lab = String(r.label || "").trim();
+  if (!lab) return [];
+  if (kind === "P") return [];
+  const live = flagLabel(lab, kind);
+  const fromQa = state.qa.byLabel.get(lab);
+  const reasons = [...live];
+  if (fromQa) {
+    for (const rsn of fromQa.reasons || []) {
+      if (!reasons.includes(rsn)) reasons.push(rsn);
+    }
+  }
+  return reasons;
+}
+
+function qaReasonShort(rsn) {
+  const base = String(rsn).split(":")[0];
+  const map = {
+    bang_as_I: "bang!",
+    known_word_split: "split",
+    possible_split: "split?",
+    letter_digit: "A/1",
+    rare_spaced_sibling: "sibling",
+    weird_punct: "punct",
+    leader_dots: "····",
+    currency_in_label: "₱",
+    control_chars: "ctrl",
+  };
+  return map[base] || base;
+}
+
+function renderLabelCellHtml(r) {
+  const kind = r._zone_kind || null;
+  const hasEnrich =
+    (Array.isArray(r.chainages) && r.chainages.length > 0) ||
+    (Array.isArray(r.coordinates) && r.coordinates.length > 0) ||
+    (r.label_title != null && String(r.label_title).trim() !== "");
+  const mainText = hasEnrich
+    ? String(r.label_title != null && String(r.label_title).trim() !== ""
+        ? r.label_title
+        : r.label || "")
+    : String(r.label || "");
+
+  const chips = [];
+  if (r.prexc) {
+    const code = String(r.prexc);
+    chips.push(
+      `<span class="chip chip-prexc" title="PREXC / UACS code">${escapeHtml(code)}</span>`
+    );
+  }
+  for (const c of r.chainages || []) {
+    const text = formatChainageChip(c);
+    if (!text) continue;
+    const title = escapeHtml(JSON.stringify(c));
+    const cls = c.incomplete ? "chip chip-ch incomplete" : "chip chip-ch";
+    chips.push(
+      `<span class="${cls}" title="${title}">${escapeHtml(text)}</span>`
+    );
+  }
+  for (const c of r.coordinates || []) {
+    const text = formatGpsChip(c);
+    if (!text) continue;
+    const titleBits = [
+      c.raw ? `raw: ${c.raw}` : null,
+      c.kind ? `kind: ${c.kind}` : null,
+      c.swapped ? "swapped lon→lat" : null,
+      c.incomplete ? "incomplete" : null,
+    ].filter(Boolean);
+    const cls = c.incomplete ? "chip chip-gps incomplete" : "chip chip-gps";
+    chips.push(
+      `<span class="${cls}" title="${escapeHtml(titleBits.join(" · "))}">${escapeHtml(text)}</span>`
+    );
+  }
+
+  const qaReasons = state.qa.show ? unfixedReasonsForRow(r, kind) : [];
+  for (const rsn of qaReasons) {
+    chips.push(
+      `<span class="chip chip-qa" title="Unfixed label QA: ${escapeHtml(rsn)}">${escapeHtml(qaReasonShort(rsn))}</span>`
+    );
+  }
+
+  const main = `<span class="label-main">${escapeHtml(mainText)}</span>`;
+  const chipWrap = chips.length
+    ? ` <span class="label-chips">${chips.join("")}</span>`
+    : "";
+  return { html: main + chipWrap, qaReasons };
+}
+
+function renderZoneHtml(pdfPage, zoneIndex, table, pageMeta) {
+  const zmeta = table.meta || {};
+  const rows = table.rows || [];
+  const roles = zmeta.col_roles || pageMeta.col_roles || DEFAULT_ROLES;
+  const kind = String(zmeta.table_kind || pageMeta.table_kind || "U");
+  const kindName = String(
+    zmeta.table_kind_name || pageMeta.table_kind_name || KIND_NAMES[kind] || kind
+  );
+  const kindSource = String(
+    zmeta.table_kind_reason || pageMeta.table_kind_reason || ""
+  );
+  const bid = `p${pdfPage}-z${zoneIndex}`;
+  const columns = buildColumnRects(table, pageMeta);
+  const head =
+    `<th class="ln">#</th>` +
+    ["Label", ...roles].map((c) => `<th>${escapeHtml(c)}</th>`).join("");
+  const bodyRows = rows.map((r, idx) => {
+    const level = Number(r.level || 0);
+    const ri = r.row_index != null ? Number(r.row_index) : idx + 1;
+    const pad = "&nbsp;".repeat(level * 4);
+    let note = "";
+    if (r.dsc_match && r.label_ocr && r.label_ocr !== r.label) {
+      const method = r.dsc_match.method || r.dsc_match.score;
+      note = ` <span class="fix" title="OCR: ${escapeHtml(r.label_ocr)}">≈${escapeHtml(method)}</span>`;
+    }
+    if (r.stitched_from_page) {
+      note += ` <span class="fix">↕p.${escapeHtml(r.stitched_from_page)}</span>`;
+    }
+    const desc = r.description
+      ? `<span class="desc">${escapeHtml(r.description)}</span>`
+      : "";
+    const amounts = r.amounts || [];
+    const amtBbs = r.amount_bboxes || [];
+    let amts = "";
+    if (roles.length) {
+      amts = roles.map((_, i) => {
+        const a = amounts[i];
+        const bb = amtBbs[i];
+        return `<td class="amt" data-col="amt-${i}"${bboxAttr(bb)}>${a ? escapeHtml(a) : ""}</td>`;
+      }).join("");
+    }
+    const attrs = [`data-level="${level}"`, `data-row="${ri}"`];
+    if (r.indent_x != null) attrs.push(`data-indent-x="${escapeHtml(r.indent_x)}"`);
+    if (r.parent_label) attrs.push(`data-parent="${escapeHtml(r.parent_label)}"`);
+    r._zone_kind = kind;
+    const labelRendered = renderLabelCellHtml(r);
+    const qaReasons = labelRendered.qaReasons || [];
+    if (qaReasons.length) {
+      attrs.push(`class="qa-unfixed"`);
+      attrs.push(`data-qa="${escapeHtml(qaReasons.join("|"))}"`);
+    }
+    const rowBb = rowBbox(r);
+    const lnTitle = `p.${pdfPage} z${zoneIndex} #${ri}` + (rowBb ? " · click for row bbox" : "");
+    const labelHtml = labelRendered.html;
+    const labelTitle =
+      r.label && (r.label_title || r.chainages?.length || r.coordinates?.length || r.prexc || qaReasons.length)
+        ? ` title="${escapeHtml(
+            (qaReasons.length ? `QA: ${qaReasons.join(", ")} · ` : "") +
+              "raw: " +
+              String(r.label).slice(0, 240)
+          )}"`
+        : "";
+    const mainRow =
+      `<tr ${attrs.join(" ")}>` +
+      `<td class="ln"${bboxAttr(rowBb)} title="${escapeHtml(lnTitle)}">${ri}</td>` +
+      `<td class="label" data-col="label"${bboxAttr(r.label_bbox)}${labelTitle}>${pad}${labelHtml}${note}${desc}</td>${amts}</tr>`;
+    const fundRows = (r.funding || []).map((f, fi) => {
+      const src = escapeHtml(f.source || "");
+      const a = f.amount && f.amount !== "-" ? escapeHtml(String(f.amount)) : "";
+      const abb = f.amount_bbox;
+      const empty = roles.length > 1
+        ? roles.slice(1).map(() => `<td class="amt"></td>`).join("")
+        : "";
+      return (
+        `<tr class="funding" data-funding-of="${ri}" data-funding-i="${fi}">` +
+        `<td class="ln"></td>` +
+        `<td class="label">${src}</td>` +
+        `<td class="amt" data-col="amt-0"${bboxAttr(abb)}>${a}</td>${empty}</tr>`
+      );
+    });
+    return [mainRow, ...fundRows].join("\n");
+  });
+
+  const title = kindSource ? `${kind} — ${kindName} (${kindSource})` : `${kind} — ${kindName}`;
+  const badge =
+    `<div class="kind-badge kind-${escapeHtml(kind)}" title="${escapeHtml(title)}">` +
+    `${escapeHtml(kind)} — ${escapeHtml(kindName)}</div>`;
+  let caption =
+    `<div class="meta">zone ${zoneIndex} · kind=${escapeHtml(kind)}` +
+    ` · rows=${rows.length} · cols=${escapeHtml(JSON.stringify(roles))}` +
+    ` · click # / cell / col chip for PDF bbox · Alt+click for full row data`;
+  if (zmeta.zone_fence) {
+    caption += ` · fence=${escapeHtml(String(zmeta.zone_fence).slice(0, 60))}`;
+  }
+  caption += "</div>";
+
+  const colChips = columns.map((c) => {
+    const bb = c.pdf_rect;
+    return (
+      `<button type="button" data-col-key="${escapeHtml(c.key)}" ` +
+      `data-bbox="${bb.map(Number).join(" ")}">${escapeHtml(c.name)}</button>`
+    );
+  }).join("");
+  const colbar =
+    `<div class="colbar"><span class="hint">Cols</span>${colChips}</div>`;
+
+  const html =
+    `<div class="table-wrap" data-table-kind="${escapeHtml(kind)}" ` +
+    `data-kind-source="${escapeHtml(kindSource)}" data-kind-name="${escapeHtml(kindName)}" ` +
+    `data-zone-id="${escapeHtml(bid)}">` +
+    `${badge}${caption}${colbar}` +
+    `<table data-block-id="${escapeHtml(bid)}" data-table-kind="${escapeHtml(kind)}">` +
+    `<thead><tr>${head}</tr></thead><tbody>\n${bodyRows.join("\n")}\n</tbody></table></div>`;
+
+  return {
+    html,
+    table: {
+      block_id: bid,
+      pdf_rect: zonePdfRect(pageMeta, zmeta),
+      kind,
+      kind_name: kindName,
+      kind_source: kindSource || null,
+      columns,
+      cells: collectCellRects(table),
+    },
+  };
+}
+
+function pageFromJson(data, pdfPage) {
+  const meta = data.meta || {};
+  const tablesIn = data.tables || [];
+  const parts = [];
+  const tables = [];
+  const texts = meta.header_zone?.texts || [];
+  if (texts.length) {
+    parts.push(`<div class="hdr">${texts.slice(0, 3).map(escapeHtml).join(" · ")}</div>`);
+  }
+  tablesIn.forEach((t, zi) => {
+    const { html, table } = renderZoneHtml(pdfPage, zi, t, meta);
+    parts.push(html);
+    tables.push(table);
+  });
+  return {
+    page: pdfPage - 1,
+    pdf_page: pdfPage,
+    html: parts.join("\n") || '<div class="meta">No tables on this page.</div>',
+    tables,
+    meta,
+    kind: meta.table_kind,
+    missing: false,
+    // Keep raw extractor rows for Alt+click detail (label_title, chainages, …)
+    rawTables: tablesIn,
+  };
+}
+
+function stubPage(pdfPage, reason) {
+  return {
+    page: pdfPage - 1,
+    pdf_page: pdfPage,
+    html: `<div class="meta">${escapeHtml(reason)}</div>`,
+    tables: [],
+    meta: { page: pdfPage, missing: true },
+    missing: true,
+  };
+}
+
+async function loadDataShard(shardMeta) {
+  const id = shardMeta.id;
+  if (state.dataShardCache.has(id)) return state.dataShardCache.get(id);
+  const name = state.packName;
+  const url = PACK_SHARD_URL(name, shardMeta.file);
+  setLoad(`Loading data shard ${shardMeta.file}…`);
+  const payload = await fetchJsonMaybeGzip(url);
+  const byPage0 = new Map();
+  for (const pg of payload.pages || []) {
+    const idx =
+      typeof pg.page === "number"
+        ? pg.page
+        : typeof pg.pdf_page === "number"
+          ? pg.pdf_page - 1
+          : null;
+    if (idx == null || idx < 0) continue;
+    byPage0.set(idx, pg);
+  }
+  const entry = { meta: shardMeta, byPage0 };
+  state.dataShardCache.set(id, entry);
+  return entry;
+}
+
+function dataShardForPage(page0) {
+  const shards = state.manifest?.data_shards || [];
+  for (const s of shards) {
+    if (page0 >= s.page_from && page0 <= s.page_to) return s;
+  }
+  // Fallback: single shard covering all
+  if (shards.length === 1) return shards[0];
+  return null;
+}
+
+async function ensurePage(page0) {
+  if (page0 < 0 || page0 >= state.pageCount) return null;
+  const existing = state.pages[page0];
+  // Cached real page (not a pending placeholder)
+  if (existing && !existing._pending && !existing._fetchFailed) {
+    return existing;
+  }
+  const pdfPage = page0 + 1;
+  if (state.inflight.has(pdfPage)) return state.inflight.get(pdfPage);
+
+  const promise = (async () => {
+    try {
+      let data = null;
+      if (state.mode === "pack") {
+        const shard = dataShardForPage(page0);
+        if (!shard) {
+          const stub = stubPage(pdfPage, `No data shard for page ${pdfPage}`);
+          stub._fetchFailed = true;
+          state.pages[page0] = stub;
+          return stub;
+        }
+        const cached = await loadDataShard(shard);
+        data = cached.byPage0.get(page0);
+        if (!data) {
+          const stub = stubPage(pdfPage, `Page ${pdfPage} missing from ${shard.file}`);
+          stub._fetchFailed = true;
+          state.pages[page0] = stub;
+          return stub;
+        }
+      } else {
+        let url = pageJsonUrl(state.run, pdfPage);
+        let res = await fetch(url);
+        if (res.status === 404) {
+          const flat = pageJsonUrlFallback(state.run, pdfPage);
+          const res2 = await fetch(flat);
+          if (res2.ok) {
+            url = flat;
+            res = res2;
+          }
+        }
+        if (!res.ok) {
+          const stub = stubPage(
+            pdfPage,
+            res.status === 404
+              ? `No page-${String(pdfPage).padStart(4, "0")}.json in run ${state.run}`
+              : `Failed to load ${url} (${res.status})`
+          );
+          stub._fetchFailed = true;
+          state.pages[page0] = stub;
+          state.byPdf.delete(pdfPage);
+          return stub;
+        }
+        data = await res.json();
+      }
+      const page = pageFromJson(data, pdfPage);
+      if (page.meta?.page_size) {
+        page.page_size = page.meta.page_size;
+      }
+      state.pages[page0] = page;
+      if (!state.byPdf.has(pdfPage)) {
+        state.byPdf.set(pdfPage, {
+          page: pdfPage,
+          table_kind: page.kind,
+          inferred: true,
+        });
+      } else if (!state.byPdf.get(pdfPage).table_kind && page.kind) {
+        state.byPdf.get(pdfPage).table_kind = page.kind;
+      }
+      return page;
+    } catch (err) {
+      const stub = stubPage(pdfPage, `Fetch error: ${err.message || err}`);
+      stub._fetchFailed = true;
+      state.pages[page0] = stub;
+      return stub;
+    }
+  })().finally(() => state.inflight.delete(pdfPage));
+
+  state.inflight.set(pdfPage, promise);
+  state.pages[page0] = { _pending: true, page: page0, pdf_page: pdfPage, html: "", tables: [] };
+  return promise;
+}
+
+function pageData(page0) {
+  return state.pages[page0] || null;
+}
+
+function applyKindFilter(root) {
+  const filter = state.kindFilter || "";
+  (root || document).querySelectorAll(".table-wrap[data-table-kind]").forEach((el) => {
+    const kind = el.getAttribute("data-table-kind") || "";
+    el.classList.toggle("kind-dimmed", Boolean(filter) && kind !== filter);
+  });
+}
+
+function populateKindFilter() {
+  const sel = $("#kind-filter");
+  const prev = state.kindFilter;
+  const counts = {};
+  for (const entry of state.byPdf.values()) {
+    const k = entry.table_kind;
+    if (!k) continue;
+    counts[k] = (counts[k] || 0) + 1;
+  }
+  sel.replaceChildren();
+  const all = document.createElement("option");
+  all.value = "";
+  all.textContent = "All";
+  sel.appendChild(all);
+  for (const k of Object.keys(counts).sort()) {
+    const opt = document.createElement("option");
+    opt.value = k;
+    opt.textContent = `${k} · ${KIND_NAMES[k] || k} (${counts[k]})`;
+    sel.appendChild(opt);
+  }
+  sel.value = prev && counts[prev] ? prev : "";
+  state.kindFilter = sel.value;
+  sel.disabled = !Object.keys(counts).length;
+}
+
+async function renderPageSection(page0, isFocus) {
+  const data = await ensurePage(page0);
+  const sec = document.createElement("section");
+  sec.className = "page-section" + (isFocus ? " focus" : "") + (data?.missing ? " missing" : "");
+  sec.dataset.page = String(page0);
+  const label = document.createElement("div");
+  label.className = "page-label";
+  const kind = data?.kind ? ` · ${data.kind}` : "";
+  label.textContent = `PDF p.${page0 + 1}${kind}${isFocus ? " · focus" : ""}`;
+  sec.appendChild(label);
+  const body = document.createElement("div");
+  body.className = "page-body";
+  if (data?._pending) {
+    body.innerHTML = '<div class="meta">Loading…</div>';
+  } else {
+    body.innerHTML = data?.html || '<div class="meta">No content.</div>';
+  }
+  sec.appendChild(body);
+  applyKindFilter(sec);
+  return sec;
+}
+
+function wirePageClicks(root) {
+  root.querySelectorAll("td[data-bbox], th[data-bbox]").forEach((el) => {
+    el.addEventListener("click", (ev) => {
+      ev.stopPropagation();
+      const page0 = parseInt(el.closest(".page-section")?.dataset.page || "", 10);
+      if (ev.altKey) {
+        showRowDetail(el, page0);
+        return;
+      }
+      const bb = parseBboxAttr(el.getAttribute("data-bbox"));
+      if (!bb) return;
+      let text = (el.textContent || "").replace(/\s+/g, " ").trim().slice(0, 80);
+      if (el.classList.contains("ln")) {
+        const row = el.closest("tr")?.getAttribute("data-row") || text;
+        text = `row #${row}`;
+      }
+      selectCell(bb, text || "(empty)", el, page0);
+    });
+  });
+  // Label cells without bbox still get Alt+click detail
+  root.querySelectorAll("td.label, td.ln, tr.funding td").forEach((el) => {
+    if (el.hasAttribute("data-bbox")) return;
+    el.addEventListener("click", (ev) => {
+      if (!ev.altKey) return;
+      ev.stopPropagation();
+      const page0 = parseInt(el.closest(".page-section")?.dataset.page || "", 10);
+      showRowDetail(el, page0);
+    });
+  });
+  root.querySelectorAll(".colbar button[data-bbox]").forEach((btn) => {
+    btn.addEventListener("click", (ev) => {
+      ev.stopPropagation();
+      const bb = parseBboxAttr(btn.getAttribute("data-bbox"));
+      if (!bb) return;
+      const wrap = btn.closest(".table-wrap");
+      const page0 = parseInt(btn.closest(".page-section")?.dataset.page || "", 10);
+      const key = btn.getAttribute("data-col-key") || "";
+      selectCol(bb, btn.textContent.trim(), key, wrap, page0);
+    });
+  });
+  root.querySelectorAll("table[data-block-id]").forEach((el) => {
+    el.addEventListener("click", (ev) => {
+      if (ev.target.closest("td[data-bbox], th[data-bbox]")) return;
+      if (ev.altKey && ev.target.closest("td")) {
+        ev.stopPropagation();
+        const page0 = parseInt(el.closest(".page-section")?.dataset.page || "", 10);
+        showRowDetail(ev.target.closest("td"), page0);
+        return;
+      }
+      ev.stopPropagation();
+      state.selectedBlockId = el.getAttribute("data-block-id");
+      state.selection = null;
+      clearCellColHighlights();
+      $("#sel-status").textContent = "No cell/col selection";
+      highlightSelection();
+      renderBoxes();
+      const page = parseInt(el.closest(".page-section")?.dataset.page || "", 10);
+      if (Number.isFinite(page)) {
+        state.page = page;
+        $("#pageno").value = String(page + 1);
+        if (state.scroll.autoPdfSync) renderPdfPage(page);
+        else if (state.scroll.pdfFocusPage !== page) {
+          // Still jump PDF when user explicitly clicks a table
+          renderPdfPage(page);
+        }
+      }
+    });
+  });
+}
+
+function lookupRawRow(el, page0) {
+  const page = pageData(page0);
+  if (!page?.rawTables?.length) return null;
+  const wrap = el?.closest(".table-wrap");
+  const zoneId = wrap?.getAttribute("data-zone-id") || "";
+  const m = /z(\d+)$/.exec(zoneId);
+  const zi = m ? parseInt(m[1], 10) : 0;
+  const table = page.rawTables[zi];
+  if (!table) return null;
+  const tr = el?.closest("tr");
+  if (!tr) return { table, row: null, zoneIndex: zi, funding: null };
+  const fundingOf = tr.getAttribute("data-funding-of");
+  const fundingI = tr.getAttribute("data-funding-i");
+  const rowNum = fundingOf || tr.getAttribute("data-row");
+  const rows = table.rows || [];
+  const row =
+    rows.find((r) => String(r.row_index) === String(rowNum)) ||
+    rows[Number(rowNum) - 1] ||
+    null;
+  let funding = null;
+  if (row && fundingOf != null && fundingI != null) {
+    funding = (row.funding || [])[Number(fundingI)] || null;
+  }
+  return { table, row, zoneIndex: zi, funding, rowIndex: rowNum };
+}
+
+function showRowDetail(el, page0) {
+  const hit = lookupRawRow(el, page0);
+  const dlg = $("#row-detail");
+  const body = $("#rd-body");
+  if (!hit?.row) {
+    body.innerHTML =
+      '<div class="meta">No raw row JSON for this cell (missing page data or row_index).</div>';
+    $("#rd-title").textContent = "Row detail";
+    state._detailJson = null;
+    if (typeof dlg.showModal === "function") dlg.showModal();
+    else dlg.setAttribute("open", "");
+    return;
+  }
+  const { row, zoneIndex, funding, rowIndex } = hit;
+  const pdfPage = page0 + 1;
+  $("#rd-title").textContent = `p.${pdfPage} z${zoneIndex} #${rowIndex}`;
+
+  const sections = [];
+  const kv = (pairs) =>
+    `<div class="rd-kv">${pairs
+      .filter(([, v]) => v != null && v !== "")
+      .map(
+        ([k, v]) =>
+          `<div class="k">${escapeHtml(k)}</div><div class="v">${escapeHtml(String(v))}</div>`
+      )
+      .join("")}</div>`;
+
+  sections.push(
+    `<div class="rd-section"><h4>Label</h4>${kv([
+      ["raw label", row.label],
+      ["label_title", row.label_title],
+      ["label_ocr", row.label_ocr],
+      ["prexc", row.prexc],
+      ["level", row.level],
+      ["parent", row.parent_label],
+      ["description", row.description],
+    ])}</div>`
+  );
+
+  {
+    const kind = hit.table?.meta?.table_kind || null;
+    row._zone_kind = kind;
+    const qa = unfixedReasonsForRow(row, kind);
+    if (qa.length) {
+      sections.push(
+        `<div class="rd-section"><h4>Unfixed label QA</h4>${kv(
+          qa.map((r) => ["flag", r])
+        )}</div>`
+      );
+    }
+  }
+
+  if (row.chainages?.length) {
+    sections.push(
+      `<div class="rd-section"><h4>Chainages (${row.chainages.length})</h4>` +
+        `<pre>${escapeHtml(JSON.stringify(row.chainages, null, 2))}</pre></div>`
+    );
+  }
+  if (row.coordinates?.length) {
+    sections.push(
+      `<div class="rd-section"><h4>Coordinates (${row.coordinates.length})</h4>` +
+        `<pre>${escapeHtml(JSON.stringify(row.coordinates, null, 2))}</pre></div>`
+    );
+  }
+  if (row.funding?.length) {
+    sections.push(
+      `<div class="rd-section"><h4>Funding (${row.funding.length})</h4>` +
+        `<pre>${escapeHtml(JSON.stringify(row.funding, null, 2))}</pre></div>`
+    );
+  }
+  if (funding) {
+    sections.push(
+      `<div class="rd-section"><h4>This funding sub-row</h4>` +
+        `<pre>${escapeHtml(JSON.stringify(funding, null, 2))}</pre></div>`
+    );
+  }
+  sections.push(
+    `<div class="rd-section"><h4>Amounts</h4>` +
+      `<pre>${escapeHtml(JSON.stringify(row.amounts || [], null, 2))}</pre></div>`
+  );
+  if (row.dsc_match) {
+    sections.push(
+      `<div class="rd-section"><h4>DSC match</h4>` +
+        `<pre>${escapeHtml(JSON.stringify(row.dsc_match, null, 2))}</pre></div>`
+    );
+  }
+  sections.push(
+    `<div class="rd-section"><h4>Full row JSON</h4>` +
+      `<pre>${escapeHtml(JSON.stringify(row, null, 2))}</pre></div>`
+  );
+
+  body.innerHTML = sections.join("");
+  state._detailJson = row;
+  $("#sel-status").textContent =
+    `detail · p.${pdfPage} #${rowIndex}` +
+    (row.label_title ? ` · title set` : "") +
+    (row.chainages?.length ? ` · ${row.chainages.length} chainage` : "") +
+    (row.coordinates?.length ? ` · ${row.coordinates.length} GPS` : "");
+  if (typeof dlg.showModal === "function") dlg.showModal();
+  else dlg.setAttribute("open", "");
+}
+
+function clearCellColHighlights() {
+  document.querySelectorAll(".cell-sel, .col-sel").forEach((el) => {
+    el.classList.remove("cell-sel", "col-sel");
+  });
+  document.querySelectorAll(".colbar button.active").forEach((el) => {
+    el.classList.remove("active");
+  });
+}
+
+function selectCell(pdfRect, label, el, page0) {
+  clearCellColHighlights();
+  state.selectedBlockId = null;
+  state.selection = {
+    kind: "cell",
+    pdf_rect: pdfRect,
+    label,
+    page0,
+  };
+  if (el) el.classList.add("cell-sel");
+  $("#sel-status").textContent =
+    `cell · ${label} · [${pdfRect.map((n) => n.toFixed(1)).join(", ")}]`;
+  highlightSelection();
+  if (Number.isFinite(page0)) {
+    state.page = page0;
+    $("#pageno").value = String(page0 + 1);
+    renderPdfPage(page0);
+  } else {
+    renderBoxes();
+  }
+}
+
+function selectCol(pdfRect, label, colKey, wrap, page0) {
+  clearCellColHighlights();
+  state.selectedBlockId = null;
+  state.selection = {
+    kind: "col",
+    pdf_rect: pdfRect,
+    label,
+    page0,
+    colKey,
+  };
+  if (wrap) {
+    wrap.querySelectorAll(`.colbar button[data-col-key="${CSS.escape(colKey)}"]`)
+      .forEach((b) => b.classList.add("active"));
+    wrap.querySelectorAll(`[data-col="${CSS.escape(colKey)}"]`).forEach((el) => {
+      el.classList.add("col-sel");
+    });
+  }
+  $("#sel-status").textContent =
+    `col · ${label} · [${pdfRect.map((n) => n.toFixed(1)).join(", ")}]`;
+  highlightSelection();
+  if (Number.isFinite(page0)) {
+    state.page = page0;
+    $("#pageno").value = String(page0 + 1);
+    renderPdfPage(page0);
+  } else {
+    renderBoxes();
+  }
+}
+
+function selectNone() {
+  state.selection = null;
+  clearCellColHighlights();
+  $("#sel-status").textContent = "No cell/col selection";
+  renderBoxes();
+}
+
+function ensureLoader() {
+  let el = $("#scroll-loader");
+  if (!el) {
+    el = document.createElement("div");
+    el.id = "scroll-loader";
+    el.className = "scroll-loader";
+    el.textContent = "Loading more pages…";
+    $("#docpane").appendChild(el);
+  }
+  return el;
+}
+
+async function remountWindow(focusPage) {
+  const pane = $("#docpane");
+  state.scroll.suppressObserver = true;
+  if (state.scroll.observer) state.scroll.observer.disconnect();
+  pane.replaceChildren();
+  state.scroll.mountedPages = new Set();
+
+  const max = state.pageCount - 1;
+  const lo = Math.max(0, focusPage - SCROLL_BUFFER);
+  const hi = Math.min(max, focusPage + SCROLL_BUFFER);
+  for (let p = lo; p <= hi; p++) {
+    const sec = await renderPageSection(p, p === focusPage);
+    pane.appendChild(sec);
+    wirePageClicks(sec);
+    state.scroll.mountedPages.add(p);
+  }
+  ensureLoader();
+  setupObserver();
+  highlightSelection();
+  scrollToFocusSection("instant");
+  requestAnimationFrame(() => {
+    state.scroll.suppressObserver = false;
+  });
+}
+
+function scrollToFocusSection(behavior) {
+  const sec = $(`.page-section[data-page="${state.page}"]`);
+  if (sec) sec.scrollIntoView({ behavior: behavior || "instant", block: "start" });
+}
+
+async function expandEdges() {
+  if (state.scroll.expanding || !state.pageCount) return;
+  const mounted = [...state.scroll.mountedPages].sort((a, b) => a - b);
+  if (!mounted.length) return;
+  const pane = $("#docpane");
+  const sections = [...pane.querySelectorAll(".page-section")];
+  let best = null;
+  let bestRatio = 0;
+  for (const sec of sections) {
+    const r = sec.getBoundingClientRect();
+    const pr = pane.getBoundingClientRect();
+    const visible = Math.max(0, Math.min(r.bottom, pr.bottom) - Math.max(r.top, pr.top));
+    const ratio = visible / Math.max(1, r.height);
+    if (ratio > bestRatio) {
+      bestRatio = ratio;
+      best = parseInt(sec.dataset.page, 10);
+    }
+  }
+  if (best == null) return;
+
+  const minM = mounted[0];
+  const maxM = mounted[mounted.length - 1];
+  const maxPage = state.pageCount - 1;
+  const needPrev = best - minM <= SCROLL_EDGE && minM > 0;
+  const needNext = maxM - best <= SCROLL_EDGE && maxM < maxPage;
+  if (!needPrev && !needNext) return;
+
+  state.scroll.expanding = true;
+  ensureLoader().classList.add("on");
+  try {
+    if (needPrev) {
+      const scrollTopBefore = pane.scrollTop;
+      const heightBefore = pane.scrollHeight;
+      const from = Math.max(0, minM - SCROLL_EXPAND);
+      for (let p = minM - 1; p >= from; p--) {
+        if (state.scroll.mountedPages.has(p)) continue;
+        const sec = await renderPageSection(p, false);
+        pane.insertBefore(sec, pane.firstChild);
+        wirePageClicks(sec);
+        state.scroll.mountedPages.add(p);
+        if (state.scroll.observer) state.scroll.observer.observe(sec);
+      }
+      pane.scrollTop = scrollTopBefore + (pane.scrollHeight - heightBefore);
+    }
+    if (needNext) {
+      const to = Math.min(maxPage, maxM + SCROLL_EXPAND);
+      const loader = ensureLoader();
+      for (let p = maxM + 1; p <= to; p++) {
+        if (state.scroll.mountedPages.has(p)) continue;
+        const sec = await renderPageSection(p, false);
+        pane.insertBefore(sec, loader);
+        wirePageClicks(sec);
+        state.scroll.mountedPages.add(p);
+        if (state.scroll.observer) state.scroll.observer.observe(sec);
+      }
+    }
+    trimMounted(best);
+  } finally {
+    ensureLoader().classList.remove("on");
+    state.scroll.expanding = false;
+  }
+}
+
+function trimMounted(anchor) {
+  const mounted = [...state.scroll.mountedPages].sort((a, b) => a - b);
+  if (mounted.length <= SCROLL_MAX_SPAN) return;
+  const pane = $("#docpane");
+  for (const p of mounted) {
+    if (Math.abs(p - anchor) <= Math.floor(SCROLL_MAX_SPAN / 2)) continue;
+    if (p === state.page) continue;
+    const sec = pane.querySelector(`.page-section[data-page="${p}"]`);
+    if (!sec) continue;
+    if (state.scroll.observer) state.scroll.observer.unobserve(sec);
+    sec.remove();
+    state.scroll.mountedPages.delete(p);
+  }
+}
+
+function setupObserver() {
+  if (state.scroll.observer) state.scroll.observer.disconnect();
+  state.scroll.observer = new IntersectionObserver((entries) => {
+    if (state.scroll.suppressObserver) return;
+    let best = null;
+    let bestRatio = 0;
+    for (const e of entries) {
+      if (!e.isIntersecting) continue;
+      if (e.intersectionRatio >= bestRatio) {
+        bestRatio = e.intersectionRatio;
+        best = parseInt(e.target.dataset.page, 10);
+      }
+    }
+    if (best == null || Number.isNaN(best)) return;
+
+    document.querySelectorAll(".page-section.focus").forEach((el) => el.classList.remove("focus"));
+    const sec = $(`.page-section[data-page="${best}"]`);
+    if (sec) sec.classList.add("focus");
+
+    if (state.scroll.autoPdfSync && best !== state.scroll.pdfFocusPage) {
+      renderPdfPage(best);
+    }
+    // Only retarget "focus page" from scroll when auto-sync is on OR the
+    // section is clearly dominant — avoids tiny pages flipping focus.
+    if (best !== state.page && (state.scroll.autoPdfSync || bestRatio >= 0.45)) {
+      state.page = best;
+      $("#pageno").value = String(best + 1);
+      syncRoute(false);
+    }
+  }, {
+    root: $("#docpane"),
+    threshold: [0.1, 0.25, 0.5, 0.75],
+  });
+  for (const sec of $("#docpane").querySelectorAll(".page-section")) {
+    state.scroll.observer.observe(sec);
+  }
+}
+
+$("#docpane").addEventListener("scroll", () => {
+  if (state.scroll.expanding || state.scroll.suppressObserver) return;
+  clearTimeout($("#docpane")._edgeT);
+  $("#docpane")._edgeT = setTimeout(() => expandEdges(), 80);
+});
+
+function highlightSelection() {
+  document.querySelectorAll("table.sel-table").forEach((el) => el.classList.remove("sel-table"));
+  if (!state.selectedBlockId) return;
+  const el = document.querySelector(
+    `table[data-block-id="${CSS.escape(state.selectedBlockId)}"]`
+  );
+  if (el) el.classList.add("sel-table");
+}
+
+function currentPageTables() {
+  const data = pageData(state.scroll.pdfFocusPage ?? state.page);
+  return data?.tables || [];
+}
+
+function currentPageSize() {
+  const data = pageData(state.scroll.pdfFocusPage ?? state.page);
+  const fromJson = data?.page_size || data?.meta?.page_size;
+  if (fromJson && fromJson.length >= 2) return [Number(fromJson[0]), Number(fromJson[1])];
+  return state.pdfPageSize || [720, 864];
+}
+
+function addPdfBox(boxes, viewport, topLeftRect, className, title) {
+  if (!topLeftRect || topLeftRect.length < 4 || !viewport) return;
+  const mapped = mapOcrRectToOverlay(topLeftRect, viewport, currentPageSize());
+  if (!mapped) return;
+  const div = document.createElement("div");
+  div.className = className;
+  div.style.left = `${mapped.left}px`;
+  div.style.top = `${mapped.top}px`;
+  div.style.width = `${mapped.width}px`;
+  div.style.height = `${mapped.height}px`;
+  if (title) div.title = title;
+  boxes.appendChild(div);
+}
+
+/**
+ * Map pdf_ocr / PyMuPDF top-left rect (cropbox page space) onto the PDF.js canvas.
+ *
+ * PyMuPDF page.rect / text bboxes are relative to the cropbox top-left.
+ * PDF.js convertToViewportPoint wants absolute PDF user space (mediabox),
+ * where V2B OCR cropbox often starts at (33,33) — that was the manual ox=33 oy=-33.
+ */
+function mapOcrRectToOverlay(rect, viewport, pageSize) {
+  const c = state.bboxCalib;
+  let [x0, y0, x1, y1] = rect.map(Number);
+  const s = c.scale || 1;
+  const ox = c.ox || 0;
+  const oy = c.oy || 0;
+  x0 = x0 * s + ox;
+  y0 = y0 * s + oy;
+  x1 = x1 * s + ox;
+  y1 = y1 * s + oy;
+
+  const view = state.pdfView;
+  let corners;
+  if (view && view.length >= 4 && c.flipY) {
+    // crop origin: PDF (view[0], view[3]) == PyMuPDF (0, 0)
+    const vx0 = view[0];
+    const vyTop = view[3];
+    corners = [
+      [vx0 + x0, vyTop - y0],
+      [vx0 + x1, vyTop - y0],
+      [vx0 + x0, vyTop - y1],
+      [vx0 + x1, vyTop - y1],
+    ];
+  } else {
+    const [, ph] = pageSize || [720, 864];
+    if (!ph) return null;
+    corners = c.flipY
+      ? [
+          [x0, ph - y0],
+          [x1, ph - y0],
+          [x0, ph - y1],
+          [x1, ph - y1],
+        ]
+      : [
+          [x0, y0],
+          [x1, y0],
+          [x0, y1],
+          [x1, y1],
+        ];
+  }
+
+  const pts = corners.map(([x, y]) => viewport.convertToViewportPoint(x, y));
+  const xs = pts.map((p) => p[0]);
+  const ys = pts.map((p) => p[1]);
+  const left = Math.min(...xs) + (c.vx || 0);
+  const top = Math.min(...ys) + (c.vy || 0);
+  return {
+    left,
+    top,
+    width: Math.max(...xs) - Math.min(...xs),
+    height: Math.max(...ys) - Math.min(...ys),
+  };
+}
+
+function syncCalibUi() {
+  const c = state.bboxCalib;
+  $("#cal-flip-y").checked = Boolean(c.flipY);
+  $("#cal-scale").value = String(c.scale);
+  $("#cal-scale-range").value = String(c.scale);
+  $("#cal-ox").value = String(c.ox);
+  $("#cal-ox-range").value = String(c.ox);
+  $("#cal-oy").value = String(c.oy);
+  $("#cal-oy-range").value = String(c.oy);
+  $("#cal-vx").value = String(c.vx || 0);
+  $("#cal-vx-range").value = String(c.vx || 0);
+  $("#cal-vy").value = String(c.vy || 0);
+  $("#cal-vy-range").value = String(c.vy || 0);
+  const sz = currentPageSize();
+  const view = state.pdfView;
+  const cropNote = view
+    ? ` · crop@(${Number(view[0]).toFixed(0)},${Number(view[1]).toFixed(0)})`
+    : "";
+  $("#cal-readout").textContent =
+    `${sz.map((n) => n.toFixed(0)).join("×")}pt${cropNote}` +
+    ` · s=${Number(c.scale).toFixed(3)} ox=${c.ox} oy=${c.oy}` +
+    ` · vx=${c.vx || 0} vy=${c.vy || 0}` +
+    ` · flipY=${c.flipY ? "on" : "off"}`;
+}
+
+function readCalibFromUi() {
+  state.bboxCalib = {
+    flipY: $("#cal-flip-y").checked,
+    scale: Math.min(1.5, Math.max(0.5, parseFloat($("#cal-scale").value) || 1)),
+    ox: parseFloat($("#cal-ox").value) || 0,
+    oy: parseFloat($("#cal-oy").value) || 0,
+    vx: parseFloat($("#cal-vx").value) || 0,
+    vy: parseFloat($("#cal-vy").value) || 0,
+  };
+  try {
+    localStorage.setItem("pdf-ocr-live-bbox-calib-v4", JSON.stringify(state.bboxCalib));
+  } catch (_) { /* ignore */ }
+  syncCalibUi();
+  renderBoxes();
+}
+
+function loadCalib() {
+  try {
+    // v3 often stored ox=33 oy=-33 (cropbox); crop is automatic now
+    localStorage.removeItem("pdf-ocr-live-bbox-calib");
+    localStorage.removeItem("pdf-ocr-live-bbox-calib-v2");
+    localStorage.removeItem("pdf-ocr-live-bbox-calib-v3");
+    const raw = localStorage.getItem("pdf-ocr-live-bbox-calib-v4");
+    if (raw) {
+      state.bboxCalib = {
+        flipY: true, scale: 1, ox: 0, oy: 0, vx: 0, vy: 0,
+        ...JSON.parse(raw),
+      };
+    }
+  } catch (_) { /* ignore */ }
+  syncCalibUi();
+}
+
+function renderBoxes() {
+  const boxes = $("#boxes");
+  boxes.replaceChildren();
+  const viewport = state.pdfViewport;
+  if (!viewport) return;
+  const focusPage = state.scroll.pdfFocusPage ?? state.page;
+  const tables = currentPageTables();
+
+  if (state.show.cols) {
+    for (const t of tables) {
+      for (const c of t.columns || []) {
+        addPdfBox(boxes, viewport, c.pdf_rect, "bbox-hl col-all", c.name);
+      }
+    }
+  }
+  if (state.show.cells) {
+    for (const t of tables) {
+      for (const c of t.cells || []) {
+        addPdfBox(boxes, viewport, c.pdf_rect, "bbox-hl cell-all", c.label);
+      }
+    }
+  }
+
+  let i = 0;
+  for (const t of tables) {
+    const r = t.pdf_rect;
+    if (!r || r.length < 4) continue;
+    i += 1;
+    const mapped = mapOcrRectToOverlay(r, viewport, currentPageSize());
+    if (!mapped) continue;
+    const div = document.createElement("div");
+    div.className = "tbox" + (t.block_id === state.selectedBlockId ? " sel" : "");
+    div.style.left = `${mapped.left}px`;
+    div.style.top = `${mapped.top}px`;
+    div.style.width = `${mapped.width}px`;
+    div.style.height = `${mapped.height}px`;
+    const badge = document.createElement("span");
+    badge.className = "n";
+    badge.textContent = t.kind ? String(t.kind) : String(i);
+    div.appendChild(badge);
+    div.title = t.kind
+      ? `${t.kind}${t.kind_name ? ` · ${t.kind_name}` : ""}\n${t.block_id || ""}`
+      : (t.block_id || "");
+    if (state.kindFilter && t.kind && t.kind !== state.kindFilter) {
+      div.style.opacity = "0.25";
+    }
+    div.addEventListener("click", (ev) => {
+      ev.stopPropagation();
+      state.selectedBlockId = t.block_id || null;
+      state.selection = null;
+      clearCellColHighlights();
+      $("#sel-status").textContent = "No cell/col selection";
+      highlightSelection();
+      const target = document.querySelector(
+        `table[data-block-id="${CSS.escape(state.selectedBlockId)}"]`
+      );
+      if (target) target.scrollIntoView({ behavior: "smooth", block: "center" });
+      renderBoxes();
+    });
+    boxes.appendChild(div);
+  }
+
+  const sel = state.selection;
+  if (sel && sel.page0 === focusPage && sel.pdf_rect) {
+    addPdfBox(
+      boxes,
+      viewport,
+      sel.pdf_rect,
+      sel.kind === "col" ? "bbox-hl col" : "bbox-hl",
+      sel.label
+    );
+  }
+}
+
+function updatePageMinHeight(canvasHeight) {
+  const h = Math.max(420, Math.round(canvasHeight || 0));
+  document.documentElement.style.setProperty("--page-min-h", `${h}px`);
+}
+
+function computeScale(pageWidthPt, pageHeightPt) {
+  const pane = $("#pdfpane");
+  const availW = Math.max(120, pane.clientWidth - 24);
+  const availH = Math.max(120, pane.clientHeight - 24);
+  if (state.zoom.mode === "fitw") return availW / pageWidthPt;
+  if (state.zoom.mode === "fith") return availH / Math.max(1, pageHeightPt);
+  return (state.zoom.pct / 100) * (availW / pageWidthPt);
+}
+
+function syncZoomUi() {
+  $("#z-fitw")?.classList.toggle("active", state.zoom.mode === "fitw");
+  $("#z-fith")?.classList.toggle("active", state.zoom.mode === "fith");
+  if (state.zoom.mode === "custom") {
+    $("#z-pct").value = String(state.zoom.pct);
+  }
+}
+
+function isCancelError(err) {
+  if (!err) return false;
+  const name = err.name || "";
+  const msg = String(err.message || err);
+  return name === "RenderingCancelledException"
+    || name === "AbortException"
+    || /cancel/i.test(msg);
+}
+
+async function cancelActiveRender() {
+  const task = state.scroll.renderTask;
+  if (!task) return;
+  state.scroll.renderTask = null;
+  try { task.cancel(); } catch (_) { /* ignore */ }
+  try { await task.promise; } catch (err) {
+    if (!isCancelError(err)) console.warn(err);
+  }
+}
+
+async function renderPdfPage(page0) {
+  if (!state.pdfDoc) return;
+  const token = ++state.scroll.renderToken;
+  state.scroll.pdfFocusPage = page0;
+  await cancelActiveRender();
+  if (token !== state.scroll.renderToken) return;
+
+  try {
+    const page = await state.pdfDoc.getPage(page0 + 1);
+    if (token !== state.scroll.renderToken) return;
+
+    // Unrotated media size (PDF points). OCR JSON page_size should match this.
+    const baseUnrot = page.getViewport({ scale: 1, rotation: 0 });
+    state.pdfPageSize = [baseUnrot.width, baseUnrot.height];
+    // Crop/view box in PDF user space — PyMuPDF coords are relative to its top-left.
+    state.pdfView = Array.isArray(page.view) ? page.view.slice(0, 4).map(Number) : null;
+    syncCalibUi();
+
+    const rotation = ((page.rotate || 0) + (state.rotateExtra || 0)) % 360;
+    const base = page.getViewport({ scale: 1, rotation });
+    const scale = computeScale(base.width, base.height);
+    const viewport = page.getViewport({ scale, rotation });
+    // Reflect effective zoom % vs fit-width baseline (UI feedback)
+    const availW = Math.max(120, $("#pdfpane").clientWidth - 24);
+    const fitW = availW / Math.max(1, base.width);
+    $("#z-pct").value = String(Math.max(1, Math.round((scale / fitW) * 100)));
+    syncZoomUi();
+
+    const canvas = $("#pdfcanvas");
+    const ctx = canvas.getContext("2d", { alpha: false });
+    canvas.width = Math.floor(viewport.width);
+    canvas.height = Math.floor(viewport.height);
+    // Keep CSS size == attribute size so overlay px match viewport coords
+    canvas.style.width = `${canvas.width}px`;
+    canvas.style.height = `${canvas.height}px`;
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const renderTask = page.render({ canvasContext: ctx, viewport, intent: "display" });
+    state.scroll.renderTask = renderTask;
+    await renderTask.promise;
+    if (token !== state.scroll.renderToken) return;
+    if (state.scroll.renderTask === renderTask) state.scroll.renderTask = null;
+    state.pdfViewport = viewport;
+    updatePageMinHeight(canvas.height);
+    await ensurePage(page0);
+    renderBoxes();
+    const rotNote = rotation ? ` · rot ${rotation}°` : "";
+    const data = pageData(page0);
+    const has = data && !data.missing ? "" : " · no json";
+    setStatus(`PDF p.${page0 + 1} / ${state.pageCount}${has}${rotNote} · run ${state.run}`);
+  } catch (err) {
+    if (isCancelError(err)) return;
+    console.error(err);
+    toast(`PDF render failed: ${err.message || err}`);
+  }
+}
+
+function syncRoute(push) {
+  const url = new URL(location.href);
+  if (state.mode === "pack" && state.packName) {
+    url.searchParams.set("pack", state.packName);
+    url.searchParams.delete("run");
+  } else {
+    url.searchParams.set("run", state.run);
+    url.searchParams.delete("pack");
+  }
+  url.searchParams.set("page", String(state.page + 1));
+  // Preserve / apply hash for QA modal vs page
+  if (qaPanel?.isOpen()) {
+    const rid = qaPanel.reportId() || "overview";
+    url.hash = `#/qa/${rid}`;
+  } else {
+    url.hash = `#/p/${state.page + 1}`;
+  }
+  if (push) history.pushState({}, "", url);
+  else history.replaceState({}, "", url);
+  $("#btn-qa")?.classList.toggle("active", Boolean(qaPanel?.isOpen()));
+  const bd = $("#qa-backdrop");
+  if (bd) bd.setAttribute("aria-hidden", qaPanel?.isOpen() ? "false" : "true");
+}
+
+function parseHash() {
+  const raw = (location.hash || "").replace(/^#/, "");
+  const parts = raw.split("/").filter(Boolean);
+  // #/qa | #/qa/labels | #qa/labels | #/p/13 | #p/13
+  if (parts[0] === "qa") {
+    const report = parts[1] && QA_REPORT_IDS.includes(parts[1]) ? parts[1] : "overview";
+    return { kind: "qa", report };
+  }
+  if (parts[0] === "p" || parts[0] === "page") {
+    const n = parseInt(parts[1], 10);
+    if (Number.isFinite(n) && n >= 1) return { kind: "page", page1: n };
+  }
+  return { kind: "none" };
+}
+
+let hashApplying = false;
+let qaPanel = null;
+
+async function goToPage(page1, { row = null, push = true } = {}) {
+  if (!state.pageCount) return;
+  state.page = Math.min(Math.max(0, page1 - 1), state.pageCount - 1);
+  $("#pageno").value = String(state.page + 1);
+  await remountWindow(state.page);
+  await renderPdfPage(state.page);
+  if (row != null) {
+    // Best-effort: scroll HTML row into view after mount
+    requestAnimationFrame(() => {
+      const sec = document.querySelector(`.page-section[data-page="${state.page}"]`);
+      const cell = sec?.querySelector(`td.ln[data-bbox]`);
+      // Prefer matching row index text
+      const hit = [...(sec?.querySelectorAll("td.ln") || [])].find(
+        (el) => el.textContent.trim() === String(row)
+      );
+      (hit || cell)?.scrollIntoView({ block: "center", behavior: "smooth" });
+      if (hit) hit.click();
+    });
+  }
+  syncRoute(push);
+}
+
+function applyHashRoute({ push = false } = {}) {
+  if (hashApplying) return;
+  hashApplying = true;
+  try {
+    const h = parseHash();
+    if (h.kind === "qa") {
+      qaPanel?.open(h.report);
+      $("#qa-backdrop")?.classList.add("open");
+      $("#btn-qa")?.classList.add("active");
+    } else {
+      qaPanel?.close();
+      $("#qa-backdrop")?.classList.remove("open");
+      $("#btn-qa")?.classList.remove("active");
+      if (h.kind === "page" && state.pageCount) {
+        const page0 = Math.min(Math.max(0, h.page1 - 1), state.pageCount - 1);
+        if (page0 !== state.page) {
+          state.page = page0;
+          $("#pageno").value = String(page0 + 1);
+          remountWindow(page0).then(() => renderPdfPage(page0));
+        }
+      }
+    }
+    // Keep query page in sync without fighting hash
+    if (!push) {
+      const url = new URL(location.href);
+      url.searchParams.set("page", String(state.page + 1));
+      history.replaceState({}, "", url);
+    }
+  } finally {
+    hashApplying = false;
+  }
+}
+
+function openQa(report = "overview") {
+  hashApplying = true;
+  const url = new URL(location.href);
+  url.hash = `#/qa/${report}`;
+  history.pushState({}, "", url);
+  hashApplying = false;
+  applyHashRoute();
+}
+
+function closeQa() {
+  hashApplying = true;
+  const url = new URL(location.href);
+  url.hash = `#/p/${state.page + 1}`;
+  history.pushState({}, "", url);
+  hashApplying = false;
+  applyHashRoute();
+}
+
+function nearestAvailable(page0, dir) {
+  const pdfPages = [...state.byPdf.keys()].sort((a, b) => a - b);
+  if (!pdfPages.length) return page0;
+  if (dir > 0) {
+    const hit = pdfPages.find((p) => p - 1 > page0);
+    return hit != null ? hit - 1 : pdfPages[pdfPages.length - 1] - 1;
+  }
+  if (dir < 0) {
+    const hit = [...pdfPages].reverse().find((p) => p - 1 < page0);
+    return hit != null ? hit - 1 : pdfPages[0] - 1;
+  }
+  if (state.byPdf.has(page0 + 1)) return page0;
+  const next = pdfPages.find((p) => p - 1 >= page0);
+  if (next != null) return next - 1;
+  return pdfPages[pdfPages.length - 1] - 1;
+}
+
+async function openPdfDocument(bytes) {
+  setLoad("Opening PDF…");
+  await cancelActiveRender();
+  if (state.pdfDoc) {
+    try { await state.pdfDoc.destroy(); } catch (_) { /* ignore */ }
+    state.pdfDoc = null;
+  }
+  state.rotateExtra = 0;
+  state.pdfViewport = null;
+  state.pdfPageSize = null;
+  state.pdfView = null;
+  state.pdfDoc = await pdfjsLib.getDocument({ data: bytes }).promise;
+  state.pageCount = state.pdfDoc.numPages;
+  state.pages = new Array(state.pageCount);
+}
+
+async function loadPack(name, page0) {
+  state.mode = "pack";
+  state.packName = name;
+  state.run = name;
+  state.page = page0;
+  state.pages = [];
+  state.byPdf = new Map();
+  state.inflight.clear();
+  state.dataShardCache.clear();
+  state.manifest = null;
+  state.index = null;
+  $("#run").value = name;
+  $("#pageno").value = String(page0 + 1);
+
+  setLoad(`Loading pack manifest ${name}…`);
+  const manifest = await fetchJsonMaybeGzip(PACK_MANIFEST_URL(name));
+  if (!(manifest.data_shards || []).length) {
+    throw new Error(
+      `Pack ${name} has no data_shards — re-run pack_pdf_ocr_pages.py with --data`
+    );
+  }
+  state.manifest = manifest;
+  state.volume = manifest.volume || inferVolume(manifest.index_pdf) || "VOLUME-2B";
+
+  for (let p1 = 1; p1 <= (manifest.page_count || 0); p1++) {
+    state.byPdf.set(p1, { page: p1, inferred: true });
+  }
+
+  const bytes = await loadPdfBytes(state.volume, manifest.index_pdf, manifest);
+  await openPdfDocument(bytes);
+
+  if (manifest.page_count && manifest.page_count !== state.pageCount) {
+    console.warn(
+      `manifest page_count=${manifest.page_count} vs PDF ${state.pageCount}`
+    );
+  }
+
+  state.page = Math.min(Math.max(0, page0), state.pageCount - 1);
+  $("#pageno").value = String(state.page + 1);
+
+  populateKindFilter();
+  await loadQaSuspects(name);
+  await remountWindow(state.page);
+  await renderPdfPage(state.page);
+  syncRoute(true);
+  setLoad(null);
+  let status =
+    `Pack ${name} · ${state.pageCount}p · ${(manifest.data_shards || []).length} data shard(s) · ${state.volume}`;
+  if (state.qa.loaded) {
+    status += ` · QA unfixed ${state.qa.nUnfixed} (fixed ${state.qa.nFixed})`;
+  }
+  setStatus(status);
+}
+
+async function loadRun(run, page0) {
+  state.mode = "live";
+  state.packName = null;
+  state.manifest = null;
+  state.dataShardCache.clear();
+  state.run = run;
+  state.page = page0;
+  state.pages = [];
+  state.byPdf = new Map();
+  state.inflight.clear();
+  $("#run").value = run;
+  $("#pageno").value = String(page0 + 1);
+
+  setLoad(`Loading ${run}/index.json…`);
+  const indexUrl = `${runDirUrl(run)}/index.json`;
+  const res = await fetch(indexUrl);
+  if (!res.ok) {
+    setLoad(null);
+    throw new Error(`Missing ${indexUrl} — run pdf_to_html.py with --out pdf_ocr/output/${run}`);
+  }
+  const index = await res.json();
+  state.index = index;
+  state.volume = inferVolume(index.pdf);
+  for (const entry of index.pages || []) {
+    const p = entry.page;
+    if (typeof p === "number") state.byPdf.set(p, entry);
+  }
+
+  const bytes = await loadPdfBytes(state.volume, index.pdf, null);
+  await openPdfDocument(bytes);
+
+  if (state.byPdf.size > 0 && state.byPdf.size < Math.min(20, state.pageCount * 0.25)) {
+    console.warn(
+      `index.json only lists ${state.byPdf.size} pages; enabling on-demand fetch for all ${state.pageCount} PDF pages`
+    );
+    toast(`index.json incomplete (${state.byPdf.size} entries) — fetching page JSON on demand`);
+  }
+  for (let p1 = 1; p1 <= state.pageCount; p1++) {
+    if (!state.byPdf.has(p1)) state.byPdf.set(p1, { page: p1, inferred: true });
+  }
+
+  state.page = Math.min(Math.max(0, page0), state.pageCount - 1);
+  $("#pageno").value = String(state.page + 1);
+
+  populateKindFilter();
+  await loadQaSuspects(run);
+  await remountWindow(state.page);
+  await renderPdfPage(state.page);
+  syncRoute(true);
+  setLoad(null);
+  const listed = [...state.byPdf.values()].filter((e) => !e.inferred).length;
+  let status =
+    `Live ${run} · index ${listed}/${state.pageCount} · PDF ${state.pageCount} · ${state.volume}`;
+  if (state.qa.loaded) {
+    status += ` · QA unfixed ${state.qa.nUnfixed} (fixed ${state.qa.nFixed})`;
+  }
+  setStatus(status);
+}
+
+function loadViewer(name, page0) {
+  if (boot.mode === "pack" || SITE.defaultPack) {
+    const pack = (boot.mode === "pack" ? name : null) || state.packName || SITE.defaultPack || name;
+    return loadPack(pack, page0);
+  }
+  return loadRun(name || state.run, page0);
+}
+
+function applyPdfSplit(pct) {
+  const clamped = Math.min(75, Math.max(20, pct));
+  state.pdfSplitPct = clamped;
+  $("#pdfpane").style.flex = `0 0 ${clamped}%`;
+  $("#pdfpane").style.width = `${clamped}%`;
+}
+
+$("#reload").onclick = () => {
+  const name = $("#run").value.trim() || state.run;
+  const page0 = Math.max(0, parseInt($("#pageno").value, 10) - 1 || 0);
+  // Reload keeps current mode; typing a name with ?pack= or SITE.defaultPack uses pack
+  const loader =
+    state.mode === "pack" || SITE.defaultPack
+      ? () => loadPack(name, page0)
+      : () => loadRun(name, page0);
+  loader().catch((e) => { console.error(e); toast(String(e.message || e)); });
+};
+$("#run").addEventListener("keydown", (e) => {
+  if (e.key === "Enter") $("#reload").click();
+});
+$("#kind-filter").onchange = (e) => {
+  state.kindFilter = e.target.value || "";
+  applyKindFilter(document);
+  renderBoxes();
+};
+$("#go-page").onclick = async () => {
+  const p = Math.max(1, parseInt($("#pageno").value, 10) || 1);
+  await goToPage(p, { push: true });
+};
+$("#prev-avail").onclick = async () => {
+  await goToPage(nearestAvailable(state.page, -1) + 1, { push: true });
+};
+$("#next-avail").onclick = async () => {
+  await goToPage(nearestAvailable(state.page, 1) + 1, { push: true });
+};
+$("#auto-pdf-sync").onchange = (e) => {
+  state.scroll.autoPdfSync = e.target.checked;
+};
+$("#show-qa").onchange = async (e) => {
+  state.qa.show = e.target.checked;
+  document.body.classList.toggle("hide-qa-marks", !state.qa.show);
+  await remountWindow(state.page);
+};
+$("#toggle-calib").onclick = () => {
+  const bar = $("#calibbar");
+  const open = bar.classList.toggle("open");
+  $("#toggle-calib").classList.toggle("active", open);
+  $("#toggle-calib").textContent = open ? "Hide offset" : "BBox offset";
+};
+$("#show-cells").onchange = (e) => {
+  state.show.cells = e.target.checked;
+  renderBoxes();
+};
+$("#show-cols").onchange = (e) => {
+  state.show.cols = e.target.checked;
+  renderBoxes();
+};
+$("#clear-sel").onclick = () => selectNone();
+
+$("#rd-close").onclick = () => {
+  const dlg = $("#row-detail");
+  if (!dlg) return;
+  if (typeof dlg.close === "function") dlg.close();
+  else dlg.removeAttribute("open");
+};
+$("#rd-copy").onclick = async () => {
+  const raw = state._detailJson;
+  if (!raw) return;
+  try {
+    await navigator.clipboard.writeText(JSON.stringify(raw, null, 2));
+    toast("Row JSON copied");
+  } catch (_) {
+    toast("Copy failed");
+  }
+};
+$("#row-detail")?.addEventListener("click", (ev) => {
+  if (ev.target === $("#row-detail")) {
+    if (typeof $("#row-detail").close === "function") $("#row-detail").close();
+  }
+});
+
+function bindCalibPair(numId, rangeId, onNum) {
+  const num = $(numId);
+  const range = $(rangeId);
+  const sync = (fromRange) => {
+    if (fromRange) num.value = range.value;
+    else range.value = num.value;
+    onNum();
+  };
+  num.addEventListener("input", () => sync(false));
+  range.addEventListener("input", () => sync(true));
+}
+
+$("#cal-flip-y").onchange = () => readCalibFromUi();
+bindCalibPair("#cal-scale", "#cal-scale-range", readCalibFromUi);
+bindCalibPair("#cal-ox", "#cal-ox-range", readCalibFromUi);
+bindCalibPair("#cal-oy", "#cal-oy-range", readCalibFromUi);
+bindCalibPair("#cal-vx", "#cal-vx-range", readCalibFromUi);
+bindCalibPair("#cal-vy", "#cal-vy-range", readCalibFromUi);
+
+document.querySelectorAll("#calibbar [data-nudge]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const [key, delta] = btn.getAttribute("data-nudge").split(",");
+    const el = key === "ox" ? $("#cal-ox") : $("#cal-oy");
+    el.value = String((parseFloat(el.value) || 0) + parseFloat(delta));
+    readCalibFromUi();
+  });
+});
+
+$("#cal-reset").onclick = () => {
+  state.bboxCalib = { flipY: true, scale: 1, ox: 0, oy: 0, vx: 0, vy: 0 };
+  try {
+    localStorage.removeItem("pdf-ocr-live-bbox-calib");
+    localStorage.removeItem("pdf-ocr-live-bbox-calib-v2");
+    localStorage.removeItem("pdf-ocr-live-bbox-calib-v3");
+    localStorage.removeItem("pdf-ocr-live-bbox-calib-v4");
+  } catch (_) { /* ignore */ }
+  syncCalibUi();
+  renderBoxes();
+};
+
+$("#z-fitw").onclick = () => {
+  state.zoom.mode = "fitw";
+  syncZoomUi();
+  renderPdfPage(state.scroll.pdfFocusPage ?? state.page);
+};
+$("#z-fith").onclick = () => {
+  state.zoom.mode = "fith";
+  syncZoomUi();
+  renderPdfPage(state.scroll.pdfFocusPage ?? state.page);
+};
+$("#z-in").onclick = () => {
+  state.zoom.mode = "custom";
+  state.zoom.pct = Math.min(400, state.zoom.pct + 10);
+  $("#z-pct").value = String(state.zoom.pct);
+  syncZoomUi();
+  renderPdfPage(state.scroll.pdfFocusPage ?? state.page);
+};
+$("#z-out").onclick = () => {
+  state.zoom.mode = "custom";
+  state.zoom.pct = Math.max(10, state.zoom.pct - 10);
+  $("#z-pct").value = String(state.zoom.pct);
+  syncZoomUi();
+  renderPdfPage(state.scroll.pdfFocusPage ?? state.page);
+};
+$("#z-pct").onchange = () => {
+  state.zoom.mode = "custom";
+  state.zoom.pct = Math.min(400, Math.max(10, parseInt($("#z-pct").value, 10) || 100));
+  syncZoomUi();
+  renderPdfPage(state.scroll.pdfFocusPage ?? state.page);
+};
+$("#z-rot").onclick = () => {
+  state.rotateExtra = (state.rotateExtra + 90) % 360;
+  renderPdfPage(state.scroll.pdfFocusPage ?? state.page);
+};
+
+(() => {
+  const bar = $("#splitbar");
+  let dragging = false;
+  bar.addEventListener("pointerdown", (e) => {
+    dragging = true;
+    bar.classList.add("dragging");
+    document.body.classList.add("split-dragging");
+    bar.setPointerCapture(e.pointerId);
+  });
+  bar.addEventListener("pointermove", (e) => {
+    if (!dragging) return;
+    const main = $("#main").getBoundingClientRect();
+    applyPdfSplit(((e.clientX - main.left) / main.width) * 100);
+    renderPdfPage(state.scroll.pdfFocusPage ?? state.page);
+  });
+  bar.addEventListener("pointerup", () => {
+    dragging = false;
+    bar.classList.remove("dragging");
+    document.body.classList.remove("split-dragging");
+  });
+})();
+
+window.addEventListener("resize", () => {
+  if (state.pdfDoc) renderPdfPage(state.scroll.pdfFocusPage ?? state.page);
+});
+
+applyPdfSplit(state.pdfSplitPct);
+$("#run").value = state.run;
+loadCalib();
+
+qaPanel = createQaPanel({
+  root: $("#qa-panel"),
+  getRun: () => state.run,
+  getQaBases: () => {
+    const name = state.packName || state.run;
+    const bases = [];
+    if (OUTPUT_BASE) bases.push(`${OUTPUT_BASE}/${encodeURIComponent(name)}/qa`);
+    if (PACK_BASE) bases.push(`${PACK_BASE}/${encodeURIComponent(name)}/qa`);
+    return bases;
+  },
+  onGoPage: async (page1, { row } = {}) => {
+    closeQa();
+    await goToPage(page1, { row, push: true });
+  },
+  onReportChange: (reportId) => {
+    if (hashApplying) return;
+    if (reportId == null) {
+      // Closed via panel ✕
+      hashApplying = true;
+      $("#qa-backdrop")?.classList.remove("open");
+      $("#btn-qa")?.classList.remove("active");
+      const url = new URL(location.href);
+      url.hash = `#/p/${state.page + 1}`;
+      history.pushState({}, "", url);
+      hashApplying = false;
+      return;
+    }
+    hashApplying = true;
+    const url = new URL(location.href);
+    url.hash = `#/qa/${reportId}`;
+    history.replaceState({}, "", url);
+    hashApplying = false;
+    $("#btn-qa")?.classList.add("active");
+  },
+});
+
+$("#btn-qa").onclick = () => {
+  if (qaPanel.isOpen()) closeQa();
+  else openQa(qaPanel.reportId() || "overview");
+};
+$("#qa-backdrop").addEventListener("click", (ev) => {
+  if (ev.target === $("#qa-backdrop")) closeQa();
+});
+window.addEventListener("hashchange", () => applyHashRoute());
+window.addEventListener("popstate", () => applyHashRoute());
+window.addEventListener("keydown", (ev) => {
+  if (ev.key === "Escape" && qaPanel?.isOpen()) {
+    ev.preventDefault();
+    closeQa();
+  }
+});
+
+const bootLoader =
+  boot.mode === "pack" || SITE.defaultPack
+    ? () => loadPack(boot.pack || SITE.defaultPack || state.run, state.page)
+    : () => loadRun(state.run, state.page);
+bootLoader()
+  .then(() => {
+    // Honor hash after data load (#/qa/… or #/p/N)
+    if ((location.hash || "").includes("qa")) applyHashRoute();
+    else if (!(location.hash || "").match(/#\/?p\//)) {
+      // Normalize empty hash → #/p/N
+      hashApplying = true;
+      const url = new URL(location.href);
+      url.hash = `#/p/${state.page + 1}`;
+      history.replaceState({}, "", url);
+      hashApplying = false;
+    } else {
+      applyHashRoute();
+    }
+  })
+  .catch((err) => {
+    console.error(err);
+    setLoad(null);
+    setStatus("Load failed");
+    toast(String(err.message || err));
+  });
+</script>
+</body>
+</html>

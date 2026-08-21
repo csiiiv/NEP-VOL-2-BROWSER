@@ -1,0 +1,136 @@
+# PAP bbox QA — `v2b-full`
+
+Overhang of each PAP label past the **next** amount top, in **deskewed Y** when `pap_skew` is applied (`y' = y - m*(x - x_ref)`).
+
+- PAP pages: **576** (skew applied on ~**541**)
+- Rows with positive overhang: **1046**
+- Soft-flagged (`overhang_frac` ≥ 45%): **0**
+- Misaligned label top only: **2**
+
+### overhang_frac buckets
+
+- trace (<15%): **926**
+- low (15–45%): **120**
+
+## Highest overhang_frac
+
+- p.**246** row 21 · `frac=0.35` depth=0.34 · over=3.74pt / lab_h=10.71 · gap=11.05 · skew=True · amt `204,000,000`
+  - `Nationwide`
+- p.**246** row 23 · `frac=0.34` depth=0.35 · over=3.99pt / lab_h=11.68 · gap=11.29 · skew=True · amt `556,970,000`
+  - `Cordillera Administrative Region`
+- p.**246** row 19 · `frac=0.33` depth=0.31 · over=3.5pt / lab_h=10.73 · gap=11.28 · skew=True · amt `51,000,000`
+  - `Region XIII`
+- p.**246** row 24 · `frac=0.32` depth=0.35 · over=3.87pt / lab_h=11.96 · gap=11.04 · skew=True · amt `44,000,000`
+  - `Apayao 1st District Engineering Office`
+- p.**281** row 19 · `frac=0.32` depth=0.34 · over=3.72pt / lab_h=11.65 · gap=11.07 · skew=True · amt `4,635,250,000`
+  - `Region V`
+- p.**292** row 26 · `frac=0.32` depth=0.33 · over=3.66pt / lab_h=11.6 · gap=11.28 · skew=True · amt `50,000,000`
+  - `Region XI`
+- p.**292** row 29 · `frac=0.32` depth=0.32 · over=3.67pt / lab_h=11.65 · gap=11.53 · skew=True · amt `470,000`
+  - `Region XII`
+- p.**243** row 24 · `frac=0.31` depth=0.30 · over=3.33pt / lab_h=10.67 · gap=11.05 · skew=True · amt `23,053,000`
+  - `Region III`
+- p.**243** row 27 · `frac=0.31` depth=0.30 · over=3.35pt / lab_h=10.73 · gap=11.07 · skew=True · amt `76,398,000`
+  - `Region VIII`
+- p.**292** row 30 · `frac=0.31` depth=0.36 · over=3.94pt / lab_h=12.87 · gap=11.07 · skew=True · amt `51,500,000`
+  - `Sarangani District Engineering Office`
+- p.**246** row 16 · `frac=0.30` depth=0.29 · over=3.25pt / lab_h=10.69 · gap=11.06 · skew=True · amt `155,312,000`
+  - `Region XII`
+- p.**243** row 34 · `frac=0.30` depth=0.34 · over=3.72pt / lab_h=12.35 · gap=11.04 · skew=True · amt `8,508,000`
+  - `Southern Leyte 2nd District Engineering Office`
+- p.**292** row 24 · `frac=0.30` depth=0.35 · over=3.95pt / lab_h=13.34 · gap=11.29 · skew=True · amt `20,000,000`
+  - `Misamis Oriental 1st District Engineering Office`
+- p.**292** row 23 · `frac=0.29` depth=0.31 · over=3.41pt / lab_h=11.58 · gap=11.04 · skew=True · amt `20,000,000`
+  - `Region X`
+- p.**292** row 27 · `frac=0.29` depth=0.35 · over=3.91pt / lab_h=13.26 · gap=11.05 · skew=True · amt `50,000,000`
+  - `Davao Oriental 1st District Engineering Office`
+- p.**243** row 25 · `frac=0.28` depth=0.31 · over=3.43pt / lab_h=12.1 · gap=11.03 · skew=True · amt `23,053,000`
+  - `Zambales 2nd District Engineering Office`
+- p.**243** row 30 · `frac=0.28` depth=0.30 · over=3.37pt / lab_h=11.91 · gap=11.04 · skew=True · amt `60,390,000`
+  - `Samar 1st District Engineering Office`
+- p.**243** row 28 · `frac=0.28` depth=0.30 · over=3.33pt / lab_h=11.9 · gap=11.28 · skew=True · amt `500,000`
+  - `Leyte 2nd District Engineering Office`
+- p.**243** row 22 · `frac=0.27` depth=0.27 · over=2.93pt / lab_h=10.71 · gap=11.03 · skew=True · amt `500,000,000`
+  - `Nationwide`
+- p.**290** row 32 · `frac=0.26` depth=0.30 · over=3.34pt / lab_h=12.68 · gap=11.07 · skew=True · amt `190,000,000`
+  - `Quezon 4th District Engineering Office`
+- p.**292** row 17 · `frac=0.26` depth=0.33 · over=3.57pt / lab_h=13.52 · gap=10.8 · skew=True · amt `91,887,000`
+  - `Zamboanga Sibugay 1st District Engineering Office`
+- p.**246** row 6 · `frac=0.26` depth=0.24 · over=2.74pt / lab_h=10.61 · gap=11.31 · skew=True · amt `106,100,000`
+  - `Region X`
+- p.**246** row 9 · `frac=0.26` depth=0.25 · over=2.74pt / lab_h=10.64 · gap=11.06 · skew=True · amt `398,260,000`
+  - `Region XI`
+- p.**296** row 22 · `frac=0.26` depth=0.28 · over=3.1pt / lab_h=12.02 · gap=11.08 · skew=True · amt `1,260,000,000`
+  - `MIMAROPA Region`
+- p.**288** row 9 · `frac=0.25` depth=0.26 · over=2.92pt / lab_h=11.6 · gap=11.07 · skew=True · amt `2,818,605,000`
+  - `Region XI`
+- p.**243** row 20 · `frac=0.25` depth=0.24 · over=2.69pt / lab_h=10.73 · gap=11.28 · skew=True · amt `106,000,000`
+  - `Region XIII`
+- p.**303** row 27 · `frac=0.25` depth=0.28 · over=3.06pt / lab_h=12.2 · gap=11.04 · skew=True · amt `65,507,000`
+  - `Misamis Oriental 1st District Engineering Office`
+- p.**290** row 26 · `frac=0.24` depth=0.28 · over=3.11pt / lab_h=12.67 · gap=11.03 · skew=True · amt `50,000,000`
+  - `Quezon 1st District Engineering Office`
+- p.**290** row 28 · `frac=0.24` depth=0.28 · over=3.09pt / lab_h=12.68 · gap=11.05 · skew=True · amt `64,500,000`
+  - `Quezon 3rd District Engineering Office`
+- p.**290** row 25 · `frac=0.24` depth=0.25 · over=2.8pt / lab_h=11.69 · gap=11.32 · skew=True · amt `354,500,000`
+  - `Region IV-A`
+- p.**246** row 0 · `frac=0.24` depth=0.23 · over=2.55pt / lab_h=10.73 · gap=11.04 · skew=True · amt `397,367,000`
+  - `Region VIII`
+- p.**290** row 21 · `frac=0.23` depth=0.27 · over=2.95pt / lab_h=12.83 · gap=10.81 · skew=True · amt `30,000,000`
+  - `Nueva Ecija 1st District Engineering Office`
+- p.**290** row 23 · `frac=0.23` depth=0.26 · over=2.93pt / lab_h=12.78 · gap=11.52 · skew=True · amt `500,000`
+  - `Zambales 2nd District Engineering Office`
+- p.**363** row 16 · `frac=0.23` depth=0.24 · over=2.61pt / lab_h=11.5 · gap=11.07 · skew=True · amt `418,000,000`
+  - `Region XII`
+- p.**364** row 18 · `frac=0.23` depth=0.23 · over=2.6pt / lab_h=11.52 · gap=11.3 · skew=True · amt `1,170,000,000`
+  - `Nationwide`
+- p.**308** row 26 · `frac=0.22` depth=0.21 · over=2.37pt / lab_h=10.81 · gap=11.52 · skew=True · amt `694,000`
+  - `Region IV-A`
+- p.**308** row 30 · `frac=0.22` depth=0.23 · over=2.59pt / lab_h=11.85 · gap=11.29 · skew=True · amt `781,000`
+  - `Laguna 3rd District Engineering Office`
+- p.**364** row 22 · `frac=0.22` depth=0.25 · over=2.76pt / lab_h=12.73 · gap=11.04 · skew=True · amt `90,000,000`
+  - `Las Piñas-Muntinlupa District Engineering Office`
+- p.**290** row 20 · `frac=0.21` depth=0.21 · over=2.44pt / lab_h=11.57 · gap=11.51 · skew=True · amt `74,500,000`
+  - `Region III`
+- p.**292** row 12 · `frac=0.21` depth=0.25 · over=2.84pt / lab_h=13.52 · gap=11.32 · skew=True · amt `120,000,000`
+  - `Zamboanga del Sur 2nd District Engineering Office`
+- p.**363** row 22 · `frac=0.21` depth=0.22 · over=2.39pt / lab_h=11.53 · gap=11.06 · skew=True · amt `3,025,284,000`
+  - `Region XIII`
+- p.**200** row 25 · `frac=0.21` depth=0.21 · over=2.29pt / lab_h=11.07 · gap=11.05 · skew=True · amt `623,087,000`
+  - `Region XIII`
+- p.**200** row 29 · `frac=0.21` depth=0.21 · over=2.32pt / lab_h=11.28 · gap=11.04 · skew=True · amt `20,573,000`
+  - `Quezon City 2nd District Engineering Office`
+- p.**303** row 18 · `frac=0.21` depth=0.20 · over=2.21pt / lab_h=10.69 · gap=11.29 · skew=True · amt `148,843,000`
+  - `Region X`
+- p.**308** row 27 · `frac=0.20` depth=0.22 · over=2.41pt / lab_h=11.92 · gap=11.05 · skew=True · amt `46,913,000`
+  - `Batangas 4th District Engineering Office`
+- p.**388** row 26 · `frac=0.20` depth=0.22 · over=2.44pt / lab_h=12.1 · gap=11.04 · skew=True · amt `51,350,000`
+  - `Cebu 7th District Engineering Office`
+- p.**299** row 16 · `frac=0.20` depth=0.19 · over=2.09pt / lab_h=10.44 · gap=11.07 · skew=True · amt `1,020,000,000`
+  - `Region XI`
+- p.**303** row 19 · `frac=0.20` depth=0.21 · over=2.42pt / lab_h=12.4 · gap=11.28 · skew=True · amt `83,336,000`
+  - `Cagayan de Oro City 2nd District Engineering Office`
+- p.**397** row 17 · `frac=0.20` depth=0.21 · over=2.35pt / lab_h=12.04 · gap=11.05 · skew=True · amt `1,474,296,000`
+  - `Region IV-A`
+- p.**290** row 15 · `frac=0.19` depth=0.22 · over=2.41pt / lab_h=12.74 · gap=10.83 · skew=True · amt `19,500,000`
+  - `Cagayan 2nd District Engineering Office`
+- p.**301** row 24 · `frac=0.19` depth=0.21 · over=2.34pt / lab_h=12.35 · gap=11.03 · skew=True · amt `84,937,000`
+  - `Sultan Kudarat 1st District Engineering Office`
+- p.**245** row 22 · `frac=0.19` depth=0.19 · over=2.11pt / lab_h=11.25 · gap=11.31 · skew=True · amt `313,000,000`
+  - `Region VII`
+- p.**290** row 18 · `frac=0.19` depth=0.21 · over=2.37pt / lab_h=12.67 · gap=11.27 · skew=True · amt `6,000 000`
+  - `Isabela 4th District Engineering Office`
+- p.**347** row 5 · `frac=0.19` depth=0.20 · over=2.2pt / lab_h=11.78 · gap=11.07 · skew=True · amt `9,976,301,000`
+  - `National Capital Region`
+- p.**363** row 9 · `frac=0.19` depth=0.19 · over=2.13pt / lab_h=11.47 · gap=11.03 · skew=True · amt `759,900,000`
+  - `Region XI`
+- p.**212** row 23 · `frac=0.18` depth=0.20 · over=2.26pt / lab_h=12.3 · gap=11.05 · skew=True · amt `32,780,000`
+  - `Quezon 2nd District Engineering Office`
+- p.**243** row 8 · `frac=0.18` depth=0.18 · over=1.98pt / lab_h=10.74 · gap=11.04 · skew=True · amt `100,000,000`
+  - `Region VIII`
+- p.**263** row 23 · `frac=0.18` depth=0.18 · over=2.04pt / lab_h=11.14 · gap=11.03 · skew=True · amt `825,716,000`
+  - `Region XII`
+- p.**381** row 19 · `frac=0.18` depth=0.20 · over=2.21pt / lab_h=12.12 · gap=11.04 · skew=True · amt `276,000,000`
+  - `Cavite 1st District Engineering Office`
+- p.**212** row 21 · `frac=0.18` depth=0.20 · over=2.24pt / lab_h=12.27 · gap=11.04 · skew=True · amt `2,381,000`
+  - `Quezon 1st District Engineering Office`
