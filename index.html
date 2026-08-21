@@ -1565,11 +1565,22 @@ function applyKindFilter(root) {
 function populateKindFilter() {
   const sel = $("#kind-filter");
   const prev = state.kindFilter;
-  const counts = {};
-  for (const entry of state.byPdf.values()) {
-    const k = entry.table_kind;
-    if (!k) continue;
-    counts[k] = (counts[k] || 0) + 1;
+  const tax = state.manifest?.taxonomy || state.index?.taxonomy || {};
+  const keyNames = {
+    ...KIND_NAMES,
+    ...(tax.keys || tax.kind_names || {}),
+  };
+  let counts = {};
+  // Pack/index taxonomy.kinds is authoritative for the whole run.
+  // byPdf.table_kind only fills in as pages load, so it stays incomplete in pack mode.
+  if (tax.kinds && typeof tax.kinds === "object" && Object.keys(tax.kinds).length) {
+    counts = { ...tax.kinds };
+  } else {
+    for (const entry of state.byPdf.values()) {
+      const k = entry.table_kind;
+      if (!k) continue;
+      counts[k] = (counts[k] || 0) + 1;
+    }
   }
   sel.replaceChildren();
   const all = document.createElement("option");
@@ -1579,10 +1590,11 @@ function populateKindFilter() {
   for (const k of Object.keys(counts).sort()) {
     const opt = document.createElement("option");
     opt.value = k;
-    opt.textContent = `${k} · ${KIND_NAMES[k] || k} (${counts[k]})`;
+    const label = keyNames[k] || k;
+    opt.textContent = `${k} · ${label} (${counts[k]})`;
     sel.appendChild(opt);
   }
-  sel.value = prev && counts[prev] ? prev : "";
+  sel.value = prev && counts[prev] != null ? prev : "";
   state.kindFilter = sel.value;
   sel.disabled = !Object.keys(counts).length;
 }

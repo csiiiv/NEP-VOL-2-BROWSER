@@ -20,6 +20,21 @@
           "H": 5,
           "P": 42,
           "U": 2
+        },
+        "keys": {
+          "A": "By-OU expense grid",
+          "B": "PAP",
+          "C": "Operations by program",
+          "D": "Regional allocation",
+          "E": "Current operating expenditures",
+          "F": "Multi-year trend",
+          "G": "GAS/STO/OPS year slices",
+          "H": "OO / PI performance",
+          "I": "Project list",
+          "J": "Misc",
+          "K": "Headerless (raw)",
+          "P": "Prose",
+          "U": "Unknown"
         }
       },
       "manifest": "v2b-full/manifest.json"
