@@ -1,5 +1,7 @@
 # NEP Volume II-B Browser (GitHub Pages)
 
+**Live:** [csiiiv.github.io/NEP-VOL-2-BROWSER](https://csiiiv.github.io/NEP-VOL-2-BROWSER/?pack=v2b-full&page=1)
+
 Full-featured **pdf_ocr live** viewer as the site root:
 
 - **Left:** PDF.js + **cell / column / row bbox** highlights  
