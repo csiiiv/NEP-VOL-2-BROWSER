@@ -2,7 +2,7 @@
  * QA report panel for pdf-ocr-live (modal-friendly).
  *
  *   import { createQaPanel } from "./qa-panel.js";
- *   const qa = createQaPanel({ root, getRun, getQaBases, onGoPage, onReportChange });
+ *   const qa = createQaPanel({ root, getRun, getQaBases, getTaxonomy, onGoPage, onReportChange });
  */
 const REPORT_DEFS = [
   { id: "overview", title: "Overview", group: "Volume", files: ["qa_summary.json", "QA.md"] },
@@ -12,6 +12,23 @@ const REPORT_DEFS = [
   { id: "project_desc", title: "Chainage / GPS", group: "Enrichment", files: ["project_desc_summary.json", "project_desc_QA.md", "chainage_QA.md", "gps_QA.md"] },
   { id: "raw_md", title: "All Markdown", group: "Raw", files: ["QA.md", "labels_QA.md", "pap_bbox_QA.md", "byou_skew_QA.md", "project_desc_QA.md", "chainage_QA.md", "gps_QA.md"] },
 ];
+
+/** Fallback when pack/index taxonomy.keys is missing — keep in sync with pdf_ocr/table_kind.py */
+const KIND_NAMES = {
+  A: "By-OU expense grid",
+  B: "PAP",
+  C: "Operations by program",
+  D: "Regional allocation",
+  E: "Current operating expenditures",
+  F: "Multi-year trend",
+  G: "GAS/STO/OPS year slices",
+  H: "OO / PI performance",
+  I: "Project list",
+  J: "Misc",
+  K: "Headerless",
+  P: "Prose",
+  U: "Unknown",
+};
 
 function esc(s) {
   return String(s ?? "")
@@ -39,6 +56,7 @@ export function createQaPanel(opts) {
   const root = opts.root;
   const getRun = opts.getRun;
   const getQaBases = opts.getQaBases;
+  const getTaxonomy = opts.getTaxonomy || (() => null);
   const onGoPage = opts.onGoPage;
   const onReportChange = opts.onReportChange || (() => {});
 
@@ -65,6 +83,47 @@ export function createQaPanel(opts) {
   const mainEl = root.querySelector(".qa-main");
   const footEl = root.querySelector(".qa-foot");
   const runEl = root.querySelector(".qa-run");
+
+  function taxonomy() {
+    const tax = getTaxonomy() || {};
+    return {
+      kinds: tax.kinds || null,
+      keys: { ...KIND_NAMES, ...(tax.keys || tax.kind_names || {}) },
+      table_count: tax.table_count,
+      present: tax.present,
+    };
+  }
+
+  function kindLabel(code) {
+    const k = String(code ?? "");
+    const name = taxonomy().keys[k];
+    return name ? `${k} · ${name}` : k || "—";
+  }
+
+  function kindChip(code) {
+    const k = String(code ?? "");
+    const name = taxonomy().keys[k];
+    const title = name ? `${k} — ${name}` : k;
+    return `<span class="qa-chip" title="${esc(title)}">${esc(kindLabel(k))}</span>`;
+  }
+
+  function kindCountsTable(counts, { preferTaxonomy = false } = {}) {
+    const tax = taxonomy();
+    const src =
+      preferTaxonomy && tax.kinds && Object.keys(tax.kinds).length
+        ? tax.kinds
+        : counts;
+    if (!src || typeof src !== "object" || !Object.keys(src).length) {
+      return `<p class="qa-muted">No kind counts</p>`;
+    }
+    const rows = Object.entries(src).sort(([a], [b]) => a.localeCompare(b));
+    let t = `<table class="qa-data"><thead><tr><th>Kind</th><th>Name</th><th>Count</th></tr></thead><tbody>`;
+    for (const [k, n] of rows) {
+      t += `<tr><td class="mono">${esc(k)}</td><td>${esc(tax.keys[k] || "—")}</td><td>${esc(n)}</td></tr>`;
+    }
+    t += `</tbody></table>`;
+    return t;
+  }
 
   function pageLink(page, { row } = {}) {
     const p = Number(page) || 1;
@@ -119,6 +178,7 @@ export function createQaPanel(opts) {
   function renderOverview({ out, errors }) {
     const s = out["qa_summary.json"];
     const md = out["QA.md"];
+    const tax = taxonomy();
     let html = `<h1>Volume overview</h1><p class="qa-muted">${esc(getRun())}</p>`;
     if (errors.length) html += `<p class="qa-error">${esc(errors.join("; "))}</p>`;
     if (s) {
@@ -127,23 +187,39 @@ export function createQaPanel(opts) {
       const nMulti = (s.multi_zone || []).length;
       html += `<div class="qa-cards">
         ${card("Pages", s.n_pages ?? "—")}
+        ${card("Tables", tax.table_count ?? "—")}
         ${card("Multi-zone", nMulti, nMulti ? "warn" : "ok")}
         ${card("Empty", nEmpty, nEmpty ? "warn" : "ok")}
         ${card("Transitions", (s.kind_transitions || []).length)}
         ${card("Row-sum fails", nFail, nFail ? "bad" : "ok")}
       </div>`;
-      html += `<h2>Kinds</h2>${kvTable(s.kind_counts)}`;
+
+      html += `<h2>Taxonomy keys</h2>
+        <p class="qa-muted">Kind legend (A–U / P) used by the Kind filter and page badges.</p>
+        <table class="qa-data"><thead><tr><th>Key</th><th>Name</th></tr></thead><tbody>`;
+      for (const k of Object.keys(tax.keys).sort()) {
+        html += `<tr><td class="mono">${esc(k)}</td><td>${esc(tax.keys[k])}</td></tr>`;
+      }
+      html += `</tbody></table>`;
+
+      html += `<h2>Page kinds</h2>${kindCountsTable(s.kind_counts)}`;
+      if (s.zone_kind_counts && Object.keys(s.zone_kind_counts).length) {
+        html += `<h2>Zone kinds</h2>${kindCountsTable(s.zone_kind_counts)}`;
+      }
+      if (tax.kinds && Object.keys(tax.kinds).length) {
+        html += `<h2>Pack taxonomy tallies</h2>${kindCountsTable(tax.kinds)}`;
+      }
       if (s.kind_transitions?.length) {
         html += `<h2>Kind transitions</h2><table class="qa-data"><thead><tr><th>Page</th><th>From</th><th>To</th></tr></thead><tbody>`;
         for (const t of s.kind_transitions) {
-          html += `<tr><td>${pageLink(t.page)}</td><td><span class="qa-chip">${esc(t.from)}</span></td><td><span class="qa-chip">${esc(t.to)}</span></td></tr>`;
+          html += `<tr><td>${pageLink(t.page)}</td><td>${kindChip(t.from)}</td><td>${kindChip(t.to)}</td></tr>`;
         }
         html += `</tbody></table>`;
       }
       if (s.multi_zone?.length) {
         html += `<h2>Multi-zone</h2><table class="qa-data"><thead><tr><th>Page</th><th>Zones</th></tr></thead><tbody>`;
         for (const m of s.multi_zone) {
-          html += `<tr><td>${pageLink(m.page)}</td><td>${(m.zones || []).map((z) => `<span class="qa-chip">${esc(z)}</span>`).join("")}</td></tr>`;
+          html += `<tr><td>${pageLink(m.page)}</td><td>${(m.zones || []).map((z) => kindChip(z)).join(" ")}</td></tr>`;
         }
         html += `</tbody></table>`;
       }
@@ -269,7 +345,7 @@ export function createQaPanel(opts) {
       </div>${kvTable(j.reasons)}
       <h2>Per-page</h2><table class="qa-data"><thead><tr><th>Page</th><th>Kind</th><th>Rows</th><th>m</th></tr></thead><tbody>`;
       for (const x of (j.pages || []).slice(0, 400)) {
-        html += `<tr><td>${pageLink(x.page)}</td><td>${esc(x.kind)}</td><td>${esc(x.n_rows)}</td><td class="mono">${esc(x.m ?? "—")}</td></tr>`;
+        html += `<tr><td>${pageLink(x.page)}</td><td>${kindChip(x.kind)}</td><td>${esc(x.n_rows)}</td><td class="mono">${esc(x.m ?? "—")}</td></tr>`;
       }
       html += `</tbody></table>`;
     }

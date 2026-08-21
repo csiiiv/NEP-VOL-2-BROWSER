@@ -2834,6 +2834,7 @@ loadCalib();
 qaPanel = createQaPanel({
   root: $("#qa-panel"),
   getRun: () => state.run,
+  getTaxonomy: () => state.manifest?.taxonomy || state.index?.taxonomy || null,
   getQaBases: () => {
     const name = state.packName || state.run;
     const bases = [];
