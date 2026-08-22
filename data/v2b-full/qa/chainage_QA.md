@@ -4,14 +4,14 @@ See also `gps_QA.md` and `project_desc_QA.md` (apply order: chainage → GPS).
 
 | Cue | Parsed | Miss | Multi-segment | Incomplete |
 |----:|-------:|-----:|--------------:|-----------:|
-| 3562 | 3562 | 0 | 866 | 4 |
+| 3551 | 3551 | 0 | 860 | 4 |
 
 ## By kind (chainage spans)
 
-- **K**: 3261
-- **Sta**: 2012
-- **Chainage**: 281
-- **C**: 158
+- **K**: 3260
+- **Sta**: 1988
+- **Chainage**: 280
+- **C**: 156
 - **KM**: 1
 
 ### Kind `K`

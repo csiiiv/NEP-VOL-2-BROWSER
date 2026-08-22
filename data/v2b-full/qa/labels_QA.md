@@ -1,16 +1,16 @@
 # Label QA — `v2b-full`
 
 - Pages: **722**
-- Rows: **19567** (labeled 19567)
-- Unique labels: **11688**
-- Unfixed suspects: **26** (prose skipped: 653)
-- Fixed (OCR caught, label clean): **108**
-- Near-duplicate compact groups: **89**
-- Rows with label_ocr rewrite: **5863**
+- Rows: **19406** (labeled 19406)
+- Unique labels: **11669**
+- Unfixed suspects: **25** (prose skipped: 653)
+- Fixed (OCR caught, label clean): **107**
+- Near-duplicate compact groups: **90**
+- Rows with label_ocr rewrite: **5686**
 
 ## Unfixed reason counts
 
-- `rare_spaced_sibling`: 22
+- `rare_spaced_sibling`: 21
 - `possible_split`: 3
 - `weird_punct`: 1
 
@@ -20,8 +20,6 @@
   - `Maharlika Highway (Lanao-Pagadian-Zamboanga City Rd)`
 - **2×** p.205#21, p.212#21 · rare_spaced_sibling
   - `Lipa City- Alaminos Rd`
-- **1×** p.688#5 · rare_spaced_sibling
-  - `Asset Preservation Program`
 - **1×** p.689#6 · rare_spaced_sibling
   - `Bridge Program`
 - **1×** p.453#4 · rare_spaced_sibling
@@ -73,7 +71,7 @@
 
 - `bang_as_I`: 38
 - `letter_digit`: 30
-- `weird_punct`: 19
+- `weird_punct`: 18
 - `possible_split`: 17
 - `known_word_split`: 7
 
@@ -130,7 +128,7 @@
 - **1×** p.147#12 · bang_as_I · `dsc:symspell_compact_distance_1`
   - OCR: `!locos Norte 2nd District Engineering Office 2.`
   - now: `Ilocos Norte 2nd District Engineering Office`
-- **1×** p.153#27 · bang_as_I · `dsc:symspell_compact_distance_1`
+- **1×** p.153#22 · bang_as_I · `dsc:symspell_compact_distance_1`
   - OCR: `!locos Sur 1st District Engineering Office 3.`
   - now: `Ilocos Sur 1st District Engineering Office`
 - **1×** p.143#13 · letter_digit:0KB · `normalize_or_strip`
@@ -228,12 +226,12 @@
 - compact=`calapansouthrd…` (2 forms, 19 rows)
   - 18× `Calapan South Rd`
   - 1× `calapan South Rd`
-- compact=`cavite1stdistrictengineeringoffice…` (2 forms, 18 rows)
-  - 17× `Cavite 1st District Engineering Office`
-  - 1× `cavite 1st District Engineering Office`
 - compact=`maharlikahighwaylanaopagadianzamboangaci…` (2 forms, 17 rows)
   - 14× `Maharlika Highway( Lanao-Pagadian-Zamboanga City Rd)`
   - 3× `Maharlika Highway (Lanao-Pagadian-Zamboanga City Rd)`
+- compact=`cavite1stdistrictengineeringoffice…` (2 forms, 16 rows)
+  - 15× `Cavite 1st District Engineering Office`
+  - 1× `cavite 1st District Engineering Office`
 - compact=`palocarigaraormocrd…` (2 forms, 12 rows)
   - 11× `Palo-Carigara-Ormoc Rd`
   - 1× `Palo-carigara-Ormoc Rd`
@@ -261,6 +259,9 @@
 - compact=`isaac0tolentinoave…` (2 forms, 7 rows)
   - 6× `Isaac 0. Tolentino Ave.`
   - 1× `Isaac 0 . Tolentino Ave.`
+- compact=`assetpreservationprogram…` (2 forms, 6 rows)
+  - 4× `ASSET PRESERVATION PROGRAM`
+  - 2× `Asset Preservation Program`
 - compact=`pangasinanzambalesrd…` (2 forms, 6 rows)
   - 4× `Pangasinan - Zambales Rd`
   - 2× `Pangasinan-Zambales Rd`
@@ -270,9 +271,6 @@
 - compact=`surallahlakesebumaitumrd…` (2 forms, 6 rows)
   - 4× `Surallah-Lake Sebu-Maitum Rd`
   - 2× `Surallah-lake Sebu-Maitum Rd`
-- compact=`assetpreservationprogram…` (2 forms, 5 rows)
-  - 4× `ASSET PRESERVATION PROGRAM`
-  - 1× `Asset Preservation Program`
 - compact=`networkdevelopmentprogram…` (2 forms, 5 rows)
   - 4× `NETWORK DEVELOPMENT PROGRAM`
   - 1× `Network Development Program`
@@ -303,12 +301,12 @@
 - 140× `Central Office`
 - 93× `National Capital Region`
 - 89× `National Capital Region (NCR)`
-- 85× `Region VIII`
+- 86× `Region VIII`
 - 80× `Region XIII`
+- 78× `Region III`
 - 78× `Region IV-A`
-- 77× `Region III`
+- 78× `Region XII`
 - 77× `Region VII`
-- 76× `Region XII`
 - 75× `Region IX`
 - 72× `Region VI`
 - 70× `Region II`
@@ -323,10 +321,10 @@
 - 52× `Maharlika Highway (LZ)`
 - 41× `Leyte 4th District Engineering Office`
 - 40× `Nueva Ecija 1st District Engineering Office`
-- 39× `Apayao 2nd District Engineering Office`
-- 38× `Laguna 3rd District Engineering Office`
-- 37× `Batangas 2nd District Engineering Office`
+- 38× `Apayao 2nd District Engineering Office`
+- 36× `Laguna 3rd District Engineering Office`
+- 35× `Batangas 2nd District Engineering Office`
 - 35× `Negros Occidental 3rd District Engineering Office`
-- 33× `Batangas 4th District Engineering Office`
 - 33× `Capiz 2nd District Engineering Office`
-- 33× `Cotabato 1st District Engineering Office`
+- 33× `Negros Occidental 5th District Engineering Office`
+- 32× `Batangas 4th District Engineering Office`

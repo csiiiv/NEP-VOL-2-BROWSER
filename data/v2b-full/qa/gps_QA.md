@@ -4,11 +4,11 @@ See also `chainage_QA.md` and `project_desc_QA.md` (apply order: chainage → GP
 
 | Cue | Parsed | Miss | Multi-point | Incomplete | Swapped lon→lat |
 |----:|-------:|-----:|------------:|-------------:|----------------:|
-| 595 | 595 | 0 | 19 | 28 | 246 |
+| 591 | 591 | 0 | 19 | 28 | 245 |
 
 ## By kind (coordinate spans)
 
-- **decimal**: 742
+- **decimal**: 738
 - **decimal_hem**: 13
 - **dms**: 1
 

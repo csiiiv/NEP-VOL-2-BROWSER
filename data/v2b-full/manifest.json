@@ -51,8 +51,8 @@
     {
       "id": 0,
       "file": "pages-000.json.gz",
-      "bytes": 3048056,
-      "raw_bytes": 22404889,
+      "bytes": 3017688,
+      "raw_bytes": 22171997,
       "page_from": 0,
       "page_to": 721,
       "pdf_page_from": 1,
@@ -64,8 +64,8 @@
     {
       "id": 0,
       "file": "data-000.json.gz",
-      "bytes": 2920362,
-      "raw_bytes": 28216322,
+      "bytes": 2898892,
+      "raw_bytes": 27905342,
       "page_from": 0,
       "page_to": 721,
       "pdf_page_from": 1,

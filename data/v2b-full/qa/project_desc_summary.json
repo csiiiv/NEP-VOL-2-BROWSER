@@ -5,38 +5,38 @@
     "coordinates"
   ],
   "chainage": {
-    "cue_rows": 3562,
-    "parsed_rows": 3562,
+    "cue_rows": 3551,
+    "parsed_rows": 3551,
     "miss_rows": 0,
     "parse_rate": 1.0,
-    "multi_segment_rows": 866,
+    "multi_segment_rows": 860,
     "incomplete_spans": 4,
     "spans_by_kind": {
-      "K": 3261,
-      "Chainage": 281,
-      "Sta": 2012,
-      "C": 158,
+      "K": 3260,
+      "Chainage": 280,
+      "Sta": 1988,
+      "C": 156,
       "KM": 1
     }
   },
   "coordinates": {
-    "cue_rows": 595,
-    "parsed_rows": 595,
+    "cue_rows": 591,
+    "parsed_rows": 591,
     "miss_rows": 0,
     "parse_rate": 1.0,
     "multi_point_rows": 19,
     "incomplete_spans": 28,
-    "swapped_lon_lat": 246,
+    "swapped_lon_lat": 245,
     "by_kind": {
-      "decimal": 742,
+      "decimal": 738,
       "decimal_hem": 13,
       "dms": 1
     }
   },
   "write": true,
-  "pages_written": 338,
-  "rows_touched": 8278,
-  "label_ocr_rewrites": 4156,
+  "pages_written": 339,
+  "rows_touched": 8249,
+  "label_ocr_rewrites": 4141,
   "dsc_rewrites": 0,
   "dsc_matcher": "staged",
   "title_ocr_rewrites": 0,

@@ -1,18 +1,18 @@
 {
   "dir": "/mnt/6E9A84429A8408B3/WORK/BetterGovPH/Budget-NEP/NEP_PDF_DATA/pdf_ocr/output/v2b-full",
   "n_pages": 722,
-  "n_rows": 19567,
-  "n_labeled_rows": 19567,
-  "n_unique_labels": 11688,
-  "n_suspect": 26,
-  "n_suspect_unfixed": 26,
-  "n_suspect_fixed": 108,
+  "n_rows": 19406,
+  "n_labeled_rows": 19406,
+  "n_unique_labels": 11669,
+  "n_suspect": 25,
+  "n_suspect_unfixed": 25,
+  "n_suspect_fixed": 107,
   "n_prose_skipped": 653,
   "include_prose": false,
-  "n_near_dup_groups": 89,
-  "label_ocr_rewrites": 5863,
+  "n_near_dup_groups": 90,
+  "label_ocr_rewrites": 5686,
   "rows_by_kind": {
-    "B": 16298,
+    "B": 16137,
     "A": 2342,
     "P": 689,
     "F": 95,
@@ -24,14 +24,14 @@
     "E": 1
   },
   "suspect_reason_counts": {
-    "rare_spaced_sibling": 22,
+    "rare_spaced_sibling": 21,
     "possible_split": 3,
     "weird_punct": 1
   },
   "fixed_reason_counts": {
     "bang_as_I": 38,
     "letter_digit": 30,
-    "weird_punct": 19,
+    "weird_punct": 18,
     "possible_split": 17,
     "known_word_split": 7
   },
@@ -149,7 +149,7 @@
     },
     {
       "label": "Region VIII",
-      "count": 85,
+      "count": 86,
       "samples": [
         {
           "page": 119,
@@ -180,7 +180,7 @@
         143
       ],
       "kinds": {
-        "B": 85
+        "B": 86
       }
     },
     {
@@ -220,6 +220,42 @@
       }
     },
     {
+      "label": "Region III",
+      "count": 78,
+      "samples": [
+        {
+          "page": 122,
+          "row": 30
+        },
+        {
+          "page": 128,
+          "row": 33
+        },
+        {
+          "page": 134,
+          "row": 27
+        },
+        {
+          "page": 142,
+          "row": 14
+        },
+        {
+          "page": 142,
+          "row": 32
+        }
+      ],
+      "pages": [
+        122,
+        128,
+        134,
+        142,
+        142
+      ],
+      "kinds": {
+        "B": 78
+      }
+    },
+    {
       "label": "Region IV-A",
       "count": 78,
       "samples": [
@@ -256,39 +292,39 @@
       }
     },
     {
-      "label": "Region III",
-      "count": 77,
+      "label": "Region XII",
+      "count": 78,
       "samples": [
         {
-          "page": 122,
-          "row": 30
-        },
-        {
-          "page": 128,
-          "row": 33
-        },
-        {
-          "page": 134,
-          "row": 27
+          "page": 133,
+          "row": 2
         },
         {
           "page": 142,
-          "row": 14
+          "row": 25
         },
         {
-          "page": 142,
-          "row": 32
+          "page": 143,
+          "row": 9
+        },
+        {
+          "page": 144,
+          "row": 24
+        },
+        {
+          "page": 152,
+          "row": 18
         }
       ],
       "pages": [
-        122,
-        128,
-        134,
+        133,
         142,
-        142
+        143,
+        144,
+        152
       ],
       "kinds": {
-        "B": 77
+        "B": 78
       }
     },
     {
@@ -325,42 +361,6 @@
       ],
       "kinds": {
         "B": 77
-      }
-    },
-    {
-      "label": "Region XII",
-      "count": 76,
-      "samples": [
-        {
-          "page": 133,
-          "row": 2
-        },
-        {
-          "page": 142,
-          "row": 25
-        },
-        {
-          "page": 143,
-          "row": 9
-        },
-        {
-          "page": 144,
-          "row": 24
-        },
-        {
-          "page": 152,
-          "row": 27
-        }
-      ],
-      "pages": [
-        133,
-        142,
-        143,
-        144,
-        152
-      ],
-      "kinds": {
-        "B": 76
       }
     },
     {
@@ -493,7 +493,7 @@
         },
         {
           "page": 151,
-          "row": 34
+          "row": 29
         }
       ],
       "pages": [
@@ -529,7 +529,7 @@
         },
         {
           "page": 144,
-          "row": 29
+          "row": 28
         }
       ],
       "pages": [
@@ -629,11 +629,11 @@
         },
         {
           "page": 155,
-          "row": 28
+          "row": 12
         },
         {
           "page": 162,
-          "row": 7
+          "row": 4
         },
         {
           "page": 168,
@@ -871,7 +871,7 @@
     },
     {
       "label": "Apayao 2nd District Engineering Office",
-      "count": 39,
+      "count": 38,
       "samples": [
         {
           "page": 14,
@@ -903,12 +903,12 @@
       ],
       "kinds": {
         "A": 15,
-        "B": 24
+        "B": 23
       }
     },
     {
       "label": "Laguna 3rd District Engineering Office",
-      "count": 38,
+      "count": 36,
       "samples": [
         {
           "page": 16,
@@ -940,12 +940,12 @@
       ],
       "kinds": {
         "A": 15,
-        "B": 23
+        "B": 21
       }
     },
     {
       "label": "Batangas 2nd District Engineering Office",
-      "count": 37,
+      "count": 35,
       "samples": [
         {
           "page": 16,
@@ -977,7 +977,7 @@
       ],
       "kinds": {
         "A": 14,
-        "B": 23
+        "B": 21
       }
     },
     {
@@ -1018,43 +1018,6 @@
       }
     },
     {
-      "label": "Batangas 4th District Engineering Office",
-      "count": 33,
-      "samples": [
-        {
-          "page": 16,
-          "row": 7
-        },
-        {
-          "page": 29,
-          "row": 3
-        },
-        {
-          "page": 31,
-          "row": 14
-        },
-        {
-          "page": 38,
-          "row": 16
-        },
-        {
-          "page": 41,
-          "row": 18
-        }
-      ],
-      "pages": [
-        16,
-        29,
-        31,
-        38,
-        41
-      ],
-      "kinds": {
-        "A": 12,
-        "B": 21
-      }
-    },
-    {
       "label": "Capiz 2nd District Engineering Office",
       "count": 33,
       "samples": [
@@ -1092,43 +1055,6 @@
       }
     },
     {
-      "label": "Cotabato 1st District Engineering Office",
-      "count": 33,
-      "samples": [
-        {
-          "page": 22,
-          "row": 6
-        },
-        {
-          "page": 33,
-          "row": 15
-        },
-        {
-          "page": 36,
-          "row": 8
-        },
-        {
-          "page": 37,
-          "row": 23
-        },
-        {
-          "page": 50,
-          "row": 13
-        }
-      ],
-      "pages": [
-        22,
-        33,
-        36,
-        37,
-        50
-      ],
-      "kinds": {
-        "A": 13,
-        "B": 20
-      }
-    },
-    {
       "label": "Negros Occidental 5th District Engineering Office",
       "count": 33,
       "samples": [
@@ -1163,6 +1089,80 @@
       "kinds": {
         "A": 12,
         "B": 21
+      }
+    },
+    {
+      "label": "Batangas 4th District Engineering Office",
+      "count": 32,
+      "samples": [
+        {
+          "page": 16,
+          "row": 7
+        },
+        {
+          "page": 29,
+          "row": 3
+        },
+        {
+          "page": 31,
+          "row": 14
+        },
+        {
+          "page": 38,
+          "row": 16
+        },
+        {
+          "page": 41,
+          "row": 18
+        }
+      ],
+      "pages": [
+        16,
+        29,
+        31,
+        38,
+        41
+      ],
+      "kinds": {
+        "A": 12,
+        "B": 20
+      }
+    },
+    {
+      "label": "Cotabato 1st District Engineering Office",
+      "count": 32,
+      "samples": [
+        {
+          "page": 22,
+          "row": 6
+        },
+        {
+          "page": 33,
+          "row": 15
+        },
+        {
+          "page": 36,
+          "row": 8
+        },
+        {
+          "page": 37,
+          "row": 23
+        },
+        {
+          "page": 50,
+          "row": 13
+        }
+      ],
+      "pages": [
+        22,
+        33,
+        36,
+        37,
+        50
+      ],
+      "kinds": {
+        "A": 13,
+        "B": 19
       }
     },
     {
@@ -1314,43 +1314,6 @@
       }
     },
     {
-      "label": "Cavite 2nd District Engineering Office",
-      "count": 31,
-      "samples": [
-        {
-          "page": 16,
-          "row": 8
-        },
-        {
-          "page": 31,
-          "row": 15
-        },
-        {
-          "page": 38,
-          "row": 17
-        },
-        {
-          "page": 41,
-          "row": 19
-        },
-        {
-          "page": 56,
-          "row": 10
-        }
-      ],
-      "pages": [
-        16,
-        31,
-        38,
-        41,
-        56
-      ],
-      "kinds": {
-        "A": 10,
-        "B": 21
-      }
-    },
-    {
       "label": "Mindoro Occidental District Engineering Office",
       "count": 31,
       "samples": [
@@ -1425,43 +1388,6 @@
       }
     },
     {
-      "label": "Surigao del Sur 2nd District Engineering Office",
-      "count": 31,
-      "samples": [
-        {
-          "page": 23,
-          "row": 2
-        },
-        {
-          "page": 30,
-          "row": 15
-        },
-        {
-          "page": 33,
-          "row": 21
-        },
-        {
-          "page": 40,
-          "row": 15
-        },
-        {
-          "page": 43,
-          "row": 20
-        }
-      ],
-      "pages": [
-        23,
-        30,
-        33,
-        40,
-        43
-      ],
-      "kinds": {
-        "A": 11,
-        "B": 20
-      }
-    },
-    {
       "label": "Upper Kalinga District Engineering Office",
       "count": 31,
       "samples": [
@@ -1495,6 +1421,80 @@
       ],
       "kinds": {
         "A": 11,
+        "B": 20
+      }
+    },
+    {
+      "label": "Cavite 2nd District Engineering Office",
+      "count": 30,
+      "samples": [
+        {
+          "page": 16,
+          "row": 8
+        },
+        {
+          "page": 31,
+          "row": 15
+        },
+        {
+          "page": 38,
+          "row": 17
+        },
+        {
+          "page": 41,
+          "row": 19
+        },
+        {
+          "page": 56,
+          "row": 10
+        }
+      ],
+      "pages": [
+        16,
+        31,
+        38,
+        41,
+        56
+      ],
+      "kinds": {
+        "A": 10,
+        "B": 20
+      }
+    },
+    {
+      "label": "Dinagat Islands District Engineering Office",
+      "count": 30,
+      "samples": [
+        {
+          "page": 33,
+          "row": 19
+        },
+        {
+          "page": 36,
+          "row": 13
+        },
+        {
+          "page": 43,
+          "row": 4
+        },
+        {
+          "page": 52,
+          "row": 24
+        },
+        {
+          "page": 53,
+          "row": 24
+        }
+      ],
+      "pages": [
+        33,
+        36,
+        43,
+        52,
+        53
+      ],
+      "kinds": {
+        "A": 10,
         "B": 20
       }
     }
@@ -1560,29 +1560,6 @@
       "parents": [
         "Region IV-A",
         "Laguna 3rd District Engineering Office"
-      ]
-    },
-    {
-      "status": "unfixed",
-      "label": "Asset Preservation Program",
-      "count": 1,
-      "samples": [
-        {
-          "page": 688,
-          "row": 5
-        }
-      ],
-      "pages": [
-        688
-      ],
-      "kinds": {
-        "B": 1
-      },
-      "reasons": [
-        "rare_spaced_sibling"
-      ],
-      "parents": [
-        "ORGANIZATIONAL OUTCOME 1 : Ensure Safe and Reliable National Road System"
       ]
     },
     {
@@ -2735,7 +2712,7 @@
       "samples": [
         {
           "page": 153,
-          "row": 27
+          "row": 22
         }
       ],
       "pages": [
@@ -3705,8 +3682,8 @@
     },
     {
       "status": "fixed",
-      "label_ocr": "Construction of NRJ Tagum - Panabo Circum Road, Barangay Datu Balang · Barangay Gupitan, Sta. 1505+440.000 - Sta. 1517+440.000, Kapalong Section, to Loreto (Agusan del Sur), Davao del Norte",
-      "label": "Construction of NRJ Tagum - Panabo Circum Road, Barangay Datu Balang - Barangay Gupitan, Kapalong Section, to Loreto (Agusan del Sur), Davao del Norte",
+      "label_ocr": "Construction of NRJ Tagum - Panabo Circum Road, Barangay Datu Balang · Barangay Gupitan, Sta. 1505+440.000 - Sta. 1517+440.000, Kapalong Section, to Loreto",
+      "label": "Construction of NRJ Tagum - Panabo Circum Road, Barangay Datu Balang - Barangay Gupitan, Kapalong Section, to Loreto",
       "count": 1,
       "samples": [
         {
@@ -4431,21 +4408,6 @@
       "total": 19
     },
     {
-      "compact": "cavite1stdistrictengineeringoffice",
-      "forms": [
-        {
-          "label": "Cavite 1st District Engineering Office",
-          "count": 17
-        },
-        {
-          "label": "cavite 1st District Engineering Office",
-          "count": 1
-        }
-      ],
-      "n_forms": 2,
-      "total": 18
-    },
-    {
       "compact": "maharlikahighwaylanaopagadianzamboangacityrd",
       "forms": [
         {
@@ -4459,6 +4421,21 @@
       ],
       "n_forms": 2,
       "total": 17
+    },
+    {
+      "compact": "cavite1stdistrictengineeringoffice",
+      "forms": [
+        {
+          "label": "Cavite 1st District Engineering Office",
+          "count": 15
+        },
+        {
+          "label": "cavite 1st District Engineering Office",
+          "count": 1
+        }
+      ],
+      "n_forms": 2,
+      "total": 16
     },
     {
       "compact": "palocarigaraormocrd",
@@ -4596,6 +4573,21 @@
       "total": 7
     },
     {
+      "compact": "assetpreservationprogram",
+      "forms": [
+        {
+          "label": "ASSET PRESERVATION PROGRAM",
+          "count": 4
+        },
+        {
+          "label": "Asset Preservation Program",
+          "count": 2
+        }
+      ],
+      "n_forms": 2,
+      "total": 6
+    },
+    {
       "compact": "pangasinanzambalesrd",
       "forms": [
         {
@@ -4639,21 +4631,6 @@
       ],
       "n_forms": 2,
       "total": 6
-    },
-    {
-      "compact": "assetpreservationprogram",
-      "forms": [
-        {
-          "label": "ASSET PRESERVATION PROGRAM",
-          "count": 4
-        },
-        {
-          "label": "Asset Preservation Program",
-          "count": 1
-        }
-      ],
-      "n_forms": 2,
-      "total": 5
     },
     {
       "compact": "networkdevelopmentprogram",

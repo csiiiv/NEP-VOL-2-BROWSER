@@ -2,25 +2,25 @@
   "summary": {
     "dir": "/mnt/6E9A84429A8408B3/WORK/BetterGovPH/Budget-NEP/NEP_PDF_DATA/pdf_ocr/output/v2b-full",
     "n_pages": 722,
-    "n_rows": 19567,
-    "n_labeled_rows": 19567,
-    "n_unique_labels": 11688,
-    "n_suspect": 26,
-    "n_suspect_unfixed": 26,
-    "n_suspect_fixed": 108,
+    "n_rows": 19406,
+    "n_labeled_rows": 19406,
+    "n_unique_labels": 11669,
+    "n_suspect": 25,
+    "n_suspect_unfixed": 25,
+    "n_suspect_fixed": 107,
     "n_prose_skipped": 653,
     "include_prose": false,
-    "n_near_dup_groups": 89,
-    "label_ocr_rewrites": 5863,
+    "n_near_dup_groups": 90,
+    "label_ocr_rewrites": 5686,
     "suspect_reason_counts": {
-      "rare_spaced_sibling": 22,
+      "rare_spaced_sibling": 21,
       "possible_split": 3,
       "weird_punct": 1
     },
     "fixed_reason_counts": {
       "bang_as_I": 38,
       "letter_digit": 30,
-      "weird_punct": 19,
+      "weird_punct": 18,
       "possible_split": 17,
       "known_word_split": 7
     }
@@ -86,29 +86,6 @@
       "parents": [
         "Region IV-A",
         "Laguna 3rd District Engineering Office"
-      ]
-    },
-    {
-      "status": "unfixed",
-      "label": "Asset Preservation Program",
-      "count": 1,
-      "samples": [
-        {
-          "page": 688,
-          "row": 5
-        }
-      ],
-      "pages": [
-        688
-      ],
-      "kinds": {
-        "B": 1
-      },
-      "reasons": [
-        "rare_spaced_sibling"
-      ],
-      "parents": [
-        "ORGANIZATIONAL OUTCOME 1 : Ensure Safe and Reliable National Road System"
       ]
     },
     {
@@ -1261,7 +1238,7 @@
       "samples": [
         {
           "page": 153,
-          "row": 27
+          "row": 22
         }
       ],
       "pages": [
@@ -2231,8 +2208,8 @@
     },
     {
       "status": "fixed",
-      "label_ocr": "Construction of NRJ Tagum - Panabo Circum Road, Barangay Datu Balang · Barangay Gupitan, Sta. 1505+440.000 - Sta. 1517+440.000, Kapalong Section, to Loreto (Agusan del Sur), Davao del Norte",
-      "label": "Construction of NRJ Tagum - Panabo Circum Road, Barangay Datu Balang - Barangay Gupitan, Kapalong Section, to Loreto (Agusan del Sur), Davao del Norte",
+      "label_ocr": "Construction of NRJ Tagum - Panabo Circum Road, Barangay Datu Balang · Barangay Gupitan, Sta. 1505+440.000 - Sta. 1517+440.000, Kapalong Section, to Loreto",
+      "label": "Construction of NRJ Tagum - Panabo Circum Road, Barangay Datu Balang - Barangay Gupitan, Kapalong Section, to Loreto",
       "count": 1,
       "samples": [
         {
@@ -3056,31 +3033,6 @@
     },
     {
       "status": "fixed",
-      "label_ocr": "Network Deyelopment Program The Network Development Program focuses specifically on the expansion and improvement of the national road network.It aims to expand the capacity of the national road network by constructing new roads that meet the functional classification criteria and improving the quality of existing national roads through various activities. Eligibility for later classification as a national road is determined by a feasibility study and the functional classification criteria set by DPWH. This is also achieved through a range of activities such as road widening, the construction of bypasses and diversion roads, the construction of missing links/new roads, the construction of flyovers, interchanges, underpasses, long-span bridges, off-carriageway improvement, and the paving of unpaved roads. The program includes several sub-programs aimed at achieving its objectives. These sub-programs include: Road Widening; Construction of By-Passes and Diversion Roads; Construction of Missing Links/ New Roads; Construction of Flyovers/ Interchanges/ Underpasses/ Long Span Bridges; Off-Carriageway Improvement,· Paving of Unpaved Roads",
-      "label": "Network Deyelopment Program The Network Development Program focuses specifically on the expansion and improvement of the national road network.It aims to expand the capacity of the national road network by constructing new roads that meet the functional classification criteria and improving the quality of existing national roads through various activities. Eligibility for later classification as a national road is determined by a feasibility study and the functional classification criteria set by DPWH. This is also achieved through a range of activities such as road widening, the construction of bypasses and diversion roads, the construction of missing links/new roads, the construction of flyovers, interchanges, underpasses, long-span bridges, off-carriageway improvement, and the paving of unpaved roads. The program includes several sub-programs aimed at achieving its objectives. These sub-programs include: Road Widening; Construction of By-Passes and Diversion Roads; Construction of Missing Links/ New Roads; Construction of Flyovers/ Interchanges/ Underpasses/ Long Span Bridges; Off-Carriageway Improvement,- Paving of Unpaved Roads",
-      "count": 1,
-      "samples": [
-        {
-          "page": 262,
-          "row": 1
-        }
-      ],
-      "pages": [
-        262
-      ],
-      "kinds": {
-        "B": 1
-      },
-      "reasons": [
-        "weird_punct"
-      ],
-      "fix_source": "normalize_or_strip",
-      "fix_sources": {
-        "normalize_or_strip": 1
-      }
-    },
-    {
-      "status": "fixed",
       "label_ocr": "Palo-Carigara-Ormoc Rd - K1008 + 555 - KlOl0 + 000",
       "label": "Palo-Carigara-Ormoc Rd",
       "count": 1,
@@ -3658,21 +3610,6 @@
       "total": 19
     },
     {
-      "compact": "cavite1stdistrictengineeringoffice",
-      "forms": [
-        {
-          "label": "Cavite 1st District Engineering Office",
-          "count": 17
-        },
-        {
-          "label": "cavite 1st District Engineering Office",
-          "count": 1
-        }
-      ],
-      "n_forms": 2,
-      "total": 18
-    },
-    {
       "compact": "maharlikahighwaylanaopagadianzamboangacityrd",
       "forms": [
         {
@@ -3686,6 +3623,21 @@
       ],
       "n_forms": 2,
       "total": 17
+    },
+    {
+      "compact": "cavite1stdistrictengineeringoffice",
+      "forms": [
+        {
+          "label": "Cavite 1st District Engineering Office",
+          "count": 15
+        },
+        {
+          "label": "cavite 1st District Engineering Office",
+          "count": 1
+        }
+      ],
+      "n_forms": 2,
+      "total": 16
     },
     {
       "compact": "palocarigaraormocrd",
@@ -3823,6 +3775,21 @@
       "total": 7
     },
     {
+      "compact": "assetpreservationprogram",
+      "forms": [
+        {
+          "label": "ASSET PRESERVATION PROGRAM",
+          "count": 4
+        },
+        {
+          "label": "Asset Preservation Program",
+          "count": 2
+        }
+      ],
+      "n_forms": 2,
+      "total": 6
+    },
+    {
       "compact": "pangasinanzambalesrd",
       "forms": [
         {
@@ -3866,21 +3833,6 @@
       ],
       "n_forms": 2,
       "total": 6
-    },
-    {
-      "compact": "assetpreservationprogram",
-      "forms": [
-        {
-          "label": "ASSET PRESERVATION PROGRAM",
-          "count": 4
-        },
-        {
-          "label": "Asset Preservation Program",
-          "count": 1
-        }
-      ],
-      "n_forms": 2,
-      "total": 5
     },
     {
       "compact": "networkdevelopmentprogram",
@@ -4468,6 +4420,21 @@
       "total": 2
     },
     {
+      "compact": "replacementofbridgestemporarytopermanent",
+      "forms": [
+        {
+          "label": "Replacement of Bridges ( Temporary to Permanent",
+          "count": 1
+        },
+        {
+          "label": "Replacement of Bridges (Temporary to Permanent}",
+          "count": 1
+        }
+      ],
+      "n_forms": 2,
+      "total": 2
+    },
+    {
       "compact": "constructionmaintenanceoffloodmitigationstructuresanddrainag",
       "forms": [
         {
@@ -4738,6 +4705,21 @@
       "total": 2
     },
     {
+      "compact": "eastwestlateralroadconnectingagusandelsurtobukidnonsanmiguel",
+      "forms": [
+        {
+          "label": "East-West Lateral Road connecting Agusan Del Sur to Bukidnon, San Miguel Proper",
+          "count": 1
+        },
+        {
+          "label": "East-West lateral road connecting Agusan Del Sur to Bukidnon San Miguel Proper",
+          "count": 1
+        }
+      ],
+      "n_forms": 2,
+      "total": 2
+    },
+    {
       "compact": "pangasinanzambalesrdroadsafetyroadwaylighting",
       "forms": [
         {
@@ -4866,21 +4848,6 @@
         },
         {
           "label": "Construction of Multi-Purpose Building (Barangay Hall), Barangay Belis, Kapatagan, Lanao del Norte",
-          "count": 1
-        }
-      ],
-      "n_forms": 2,
-      "total": 2
-    },
-    {
-      "compact": "constructionofmultipurposebuildingbarangayhallbarangaysanisi",
-      "forms": [
-        {
-          "label": "Construction of Multi-Purpose Building (Barangay Hall), Barangay San Isidro Upper, Lala, Lanao del Norte",
-          "count": 1
-        },
-        {
-          "label": "Construction of Multi-Purpose Building (Barangay Hall), Barangay San Isidro Upper, Lala, lanao del Norte",
           "count": 1
         }
       ],
